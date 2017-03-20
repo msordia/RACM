@@ -1,31 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_crear_contacto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="itesm.mx.racm.CrearContacto">
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="2dp"
+            app:tabGravity="fill"
+            app:tabMode="scrollable"
+            android:layout_alignBottom="@+id/toolbar3"
+            android:layout_alignParentStart="true">
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/contactos"
+                android:text="Contactos"/>
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/home"
+                android:text="Casa"/>
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/sos"
+                android:text="Ayuda"/>
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/perfil"
+                android:text="Perfil"/>
+        </android.support.design.widget.TabLayout>
+
+    </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <Space
+            android:layout_weight="0.23"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher"
-            android:id="@+id/imageView2" />
+            app:srcCompat="@drawable/user"
+            android:id="@+id/image_fotoRP"
+            android:layout_weight="0.17"
+            android:layout_gravity="left"/>
 
         <TextView
-            android:text="TextView"
+            android:text="Nombre"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView" />
+            android:id="@+id/text_nombreRP"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Escribe el nombre del contacto"
+            android:ems="10"
+            android:id="@+id/edit_nombreCC"
+            android:textAlignment="viewStart" />
+
+        <TextView
+            android:text="Teléfono"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_telefonoRP"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Escribe el teléfono del contacto"
+            android:ems="10"
+            android:id="@+id/edit_telefonoCC"
+            android:textAlignment="viewStart" />
+
+        <TextView
+            android:text="Categorías"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_direccionRP"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/spinnner_categoriasCC"
+            android:textAlignment="viewStart" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.10" />
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="0.23"
+            android:layout_height="10dp">
+
+            <TextView
+                android:text="Contacto de emergencia"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                android:layout_weight="1"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/check_EmergenciaCC"
+                android:layout_weight="0.05" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="0.23"
+            android:layout_height="10dp">
+
+            <TextView
+                android:text="Contacto Favorito"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textFavorito"
+                android:layout_weight="1"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/check_FavoritoCC"
+                android:layout_weight="0.04" />
+
+        </LinearLayout>
+
+        <Button
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonshape"
+            android:text="Guardar"
+            android:layout_gravity="center"
+            android:id="@+id/button_ubicacionRP" />
+
+
     </LinearLayout>
-</RelativeLayout>
+
+</LinearLayout>
