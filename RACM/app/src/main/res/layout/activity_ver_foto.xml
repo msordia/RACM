@@ -50,7 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/user"
-        android:id="@+id/image_fotoRP"
+        android:id="@+id/image_fotoVF"
         android:layout_weight="0.17" />
 
 

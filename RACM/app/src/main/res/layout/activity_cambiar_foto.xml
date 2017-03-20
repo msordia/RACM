@@ -50,7 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="440dp"
         app:srcCompat="@drawable/user"
-        android:id="@+id/image_fotoRP" />
+        android:id="@+id/image_fotoCF" />
 
     <LinearLayout
         android:orientation="horizontal"
