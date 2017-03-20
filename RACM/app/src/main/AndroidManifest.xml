@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CrearContacto"></activity>
+        <activity android:name=".CrearContacto" />
+        <activity android:name=".VerFoto"></activity>
     </application>
 
 </manifest>
