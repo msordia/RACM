@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/user"
-            android:id="@+id/image_fotoRP"
+            android:id="@+id/image_fotoEP"
             android:layout_weight="0.17" />
 
         <Space
@@ -70,60 +70,62 @@
             android:layout_weight="0.26" />
 
         <TextView
-            android:text="Nombre"
+            android:text="@string/nombre"
             android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_nombreRP" />
+            android:id="@+id/text_nombreEP" />
 
         <EditText
+            android:text="Luisa Méndez"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/edit_nombreRP" />
+            android:id="@+id/edit_nombreEP" />
 
         <TextView
-            android:text="Teléfono"
+            android:text="@string/telefono"
             android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_telefonoRP" />
+            android:id="@+id/text_telefonoEP" />
 
         <EditText
+            android:text="81853524"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/edit_telefonoRP" />
+            android:id="@+id/edit_telefonoEP" />
 
         <TextView
-            android:text="Dirección"
+            android:text="@string/direccion"
             android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_direccionRP" />
+            android:id="@+id/text_direccionEP" />
 
         <EditText
+            android:text="Avenida Siempre Viva 742"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/edit_direccionRP" />
+            android:id="@+id/edit_direccionEP" />
 
         <Button
+            android:text="@string/confirmar_direccion"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:background="@drawable/buttonshape"
-            android:text="Definir Ubicacion"
             android:layout_gravity="center"
-
-            android:id="@+id/button_ubicacionRP" />
+            android:id="@+id/button_ubicacionEP" />
 
         <Space
             android:layout_width="match_parent"
@@ -131,14 +133,14 @@
             android:layout_weight="0.17" />
 
         <Button
-            android:text="Guardar"
+            android:text="@string/guardar"
             android:textSize="18sp"
             android:textColor="#FFFFFF"
             android:layout_gravity="center"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:background="@drawable/buttonshape"
-            android:id="@+id/button_guardarRP" />
+            android:id="@+id/button_guardarEP" />
     </LinearLayout>
 
 </LinearLayout>
