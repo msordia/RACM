@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">RACM</string>
+    <string name="nombrePD">Mi Nombre</string>
+    <string name="telefonoPD">Mi teléfono</string>
+    <string name="hintNombrePD">Escribe tu nombre</string>
+    <string name="hintTelefonoPD">Escribe tu teléfono</string>
+    <string name="direccionPD">Mi Dirección</string>
+    <string name="hintDireccionPD">Escribe tu dirección</string>
+    <string name="cambiarFotoCF">Cambiar Foto</string>
+    <string name="guardarCF">Guardar</string>
 </resources>
