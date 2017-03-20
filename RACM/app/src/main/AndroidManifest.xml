@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".CrearContacto" />
-        <activity android:name=".VerFoto"></activity>
+        <activity android:name=".VerFoto" />
+        <activity android:name=".EditarPerfil"></activity>
     </application>
 
 </manifest>
