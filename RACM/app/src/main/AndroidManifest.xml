@@ -19,8 +19,8 @@
         <activity android:name=".VerFoto" />
         <activity android:name=".EditarPerfil" />
         <activity android:name=".PerfilDetalle" />
-        <activity android:name=".CambiarFoto" />
-        <activity android:name=".EditarContacto"></activity>
+        <activity android:name=".CambiarFoto"/>
+        <activity android:name=".EditarContacto"/>
     </application>
 
 </manifest>
