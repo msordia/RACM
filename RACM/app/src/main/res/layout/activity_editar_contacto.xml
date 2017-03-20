@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/user"
-            android:id="@+id/image_fotoCC"
+            android:id="@+id/image_fotoEC"
             android:layout_weight="0.17"
             android:layout_gravity="left"/>
 
@@ -71,16 +71,15 @@
             android:textColor="@color/colorPrimaryDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_nombreCC"
+            android:id="@+id/text_nombreEC"
             android:textSize="18sp" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:hint="Escribe el nombre del contacto"
             android:ems="10"
-            android:id="@+id/edit_nombreCC"
+            android:id="@+id/edit_nombreEC"
             android:textAlignment="viewStart" />
 
         <TextView
@@ -89,16 +88,15 @@
             android:textColor="@color/colorPrimaryDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_telefonoRP"
+            android:id="@+id/text_telefonoEC"
             android:textSize="18sp" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:hint="Escribe el teléfono del contacto"
             android:ems="10"
-            android:id="@+id/edit_telefonoCC"
+            android:id="@+id/edit_telefonoEC"
             android:textAlignment="viewStart" />
 
         <TextView
@@ -107,7 +105,7 @@
             android:textColor="@color/colorPrimaryDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_direccionCC"
+            android:id="@+id/text_direccionEC"
             android:textSize="18sp" />
 
         <Spinner
@@ -115,7 +113,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/spinnner_categoriasCC"
+            android:id="@+id/spinnner_categoriasEC"
             android:textAlignment="viewStart" />
 
         <Space
@@ -143,7 +141,7 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/check_EmergenciaCC"
+                android:id="@+id/check_EmergenciaEC"
                 android:layout_weight="0.05" />
 
         </LinearLayout>
@@ -166,7 +164,7 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/check_FavoritoCC"
+                android:id="@+id/check_FavoritoEC"
                 android:layout_weight="0.04" />
 
         </LinearLayout>
