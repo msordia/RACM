@@ -17,9 +17,12 @@
         </activity>
         <activity android:name=".CrearContacto" />
         <activity android:name=".VerFoto" />
+<<<<<<< HEAD
         <activity android:name=".EditarPerfil"/>
+=======
         <activity android:name=".PerfilDetalle" />
         <activity android:name=".CambiarFoto"/>
+>>>>>>> Yocelyn
     </application>
 
 </manifest>

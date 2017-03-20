@@ -48,10 +48,37 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="440dp"
         app:srcCompat="@drawable/user"
-        android:id="@+id/image_fotoRP"
-        android:layout_weight="0.17" />
+        android:id="@+id/image_fotoRP" />
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:text="@string/cambiarFotoCF"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonshape"
+            android:id="@+id/button_cambiarFotoCF"
+            android:layout_weight="1" />
+        <Button
+            android:text="@string/guardarCF"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonshape"
+            android:id="@+id/button_guardarCF"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
 
 </LinearLayout>
