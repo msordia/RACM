@@ -4,7 +4,9 @@
     <color name="colorPrimaryDark">#3F9D2F</color>
     <color name="colorAccent">#3F9D2F</color>
 
+    <color name="family">#467fd7</color>
+    <color name="neight">#f28500</color>
     <color name="textColorPrimary">#FFFFFF</color>
-    <color name="windowBackground">#FFFFFF</color>
+    <color name="windowBackground">#00eceded</color>
     <color name="navigationBarColor">#000000</color>
 </resources>
