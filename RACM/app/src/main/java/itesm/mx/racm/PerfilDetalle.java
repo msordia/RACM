@@ -5,11 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.ImageView;
 public class PerfilDetalle extends AppCompatActivity implements View.OnClickListener {
 
-     ImageView ivFotoPD;
+    ImageView ivFotoPD;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,14 +20,22 @@ public class PerfilDetalle extends AppCompatActivity implements View.OnClickList
 
         ivFotoPD= (ImageView) findViewById(R.id.image_fotoPD);
         ivFotoPD.setOnClickListener(this);
-       // Button btnModificarPD= (Button) findViewById(R.id.); //falta boton....
-
-        //btnModificarPD.setOnClickListener(this);
+        ImageButton ibModificarPD= (ImageButton) findViewById(R.id.image_modificarPD);
+        ibModificarPD.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        Intent  intent= new Intent(this,VerFoto.class);
-        startActivity(intent);
+        switch (v.getId()){
+            case R.id.image_modificarPD:
+                Intent  intentModify= new Intent(this,EditarPerfil.class);
+                startActivity(intentModify);
+                break;
+
+            case R.id.image_fotoPD:
+                Intent  intentFoto= new Intent(this,VerFoto.class);
+                startActivity(intentFoto);
+                break;
+        }
     }
 }
