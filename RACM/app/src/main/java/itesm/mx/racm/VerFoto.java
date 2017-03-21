@@ -10,4 +10,7 @@ public class VerFoto extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_foto);
     }
+
+
+
 }
