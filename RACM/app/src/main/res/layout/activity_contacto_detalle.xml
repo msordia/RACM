@@ -53,12 +53,13 @@
         android:background="@color/family"
         android:weightSum="1">
 
-        <ImageView
+        <ImageButton
+            android:background="@color/family"
             android:layout_width="218dp"
             android:layout_height="250dp"
             app:srcCompat="@drawable/family_contact"
             android:id="@+id/image_fotoPD"
-            android:layout_margin="20dp"
+            android:layout_margin="0dp"
             android:layout_gravity="center_horizontal"/>
 
         <LinearLayout
