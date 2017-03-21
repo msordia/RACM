@@ -67,7 +67,7 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.30" />
+            android:layout_weight="0.15" />
 
         <TextView
             android:text="@string/nombrePD"
@@ -75,15 +75,19 @@
             android:textColor="@color/colorPrimaryDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_nombrePD" />
+            android:id="@+id/text_1" />
 
-        <EditText
+        <TextView
+            android:text="Verónica Meneses"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="@string/hintNombrePD"
-            android:ems="10"
-            android:id="@+id/edit_nombrePD" />
+            android:id="@+id/text_nombrePD"
+            android:textSize="20dp"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.10" />
 
         <TextView
             android:text="@string/telefonoPD"
@@ -91,31 +95,34 @@
             android:textColor="@color/colorPrimaryDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_telefonoPD" />
+            android:id="@+id/text_2" />
 
-        <EditText
+        <TextView
+            android:text="818543342"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="@string/hintTelefonoPD"
-            android:ems="10"
-            android:id="@+id/edit_telefonoPD" />
+            android:id="@+id/text_telefonoPD"
+            android:textSize="20dp"/>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.10" />
         <TextView
             android:text="@string/direccionPD"
             android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_direccionPD" />
+            android:id="@+id/text_3" />
 
-        <EditText
+
+        <TextView
+            android:text="Avenida Siempre Viva, 742"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="@string/hintDireccionPD"
-            android:ems="10"
-            android:id="@+id/edit_direccionPD" />
+            android:id="@+id/text_"
+            android:textSize="20dp"/>
 
     </LinearLayout>
 </LinearLayout>

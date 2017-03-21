@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import java.io.File;
 
 public class CambiarFoto extends AppCompatActivity implements View.OnClickListener {
@@ -83,7 +82,7 @@ public class CambiarFoto extends AppCompatActivity implements View.OnClickListen
         startActivityForResult(intent.createChooser(intent, "Selecciona"), SELECT_PICTURE);
     }
 
-   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if((requestCode == REQUEST_IMAGE_CAPTURE) && resultCode == RESULT_OK){
@@ -91,11 +90,9 @@ public class CambiarFoto extends AppCompatActivity implements View.OnClickListen
             imageBitmap = (Bitmap) extras.get("data");
             ivFotoCF.setImageBitmap(imageBitmap);
         }
-       else{
+        else{
             Uri path = data.getData();
             ivFotoCF.setImageURI(path);
         }
     }
-
-
 }
