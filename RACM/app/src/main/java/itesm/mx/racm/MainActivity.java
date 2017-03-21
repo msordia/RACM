@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    ImageButton imageSearch;
+    ImageButton imageSearch, imageContact, imagePhone, imageCreate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,19 +18,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.main_manual);
 
         imageSearch = (ImageButton) findViewById(R.id.photo_search);
+        imageContact = (ImageButton) findViewById(R.id.photo_contact);
+        imagePhone = (ImageButton) findViewById(R.id.photo_phone);
+        imageCreate = (ImageButton) findViewById(R.id.photo_create);
+
+        imageSearch.setOnClickListener(this);
+        imageContact.setOnClickListener(this);
+        imagePhone.setOnClickListener(this);
+        imageCreate.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.image_fotoPD:
-                Intent intent = new Intent(this, VerFoto.class);
+            case R.id.photo_contact:
+                Intent intent = new Intent(this, ContactoDetalle.class);
                 startActivity(intent);
                 break;
 
-            case  R.id.photo_modify:
-                Intent intent2 = new Intent(this, EditarContacto.class);
+            case R.id.photo_create:
+                Intent intent2 = new Intent(this, CrearContacto.class);
                 startActivity(intent2);
                 break;
 
@@ -38,8 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this.getApplicationContext(), "Función de busqueda, no se encontró al usuario", Toast.LENGTH_LONG).show();
                 break;
 
-            case R.id.photo_icons:
-                Toast.makeText(this.getApplicationContext(), "Función de envio de mensaje SMS al numero: 38499583", Toast.LENGTH_LONG).show();
+            case R.id.photo_phone:
+                Toast.makeText(this.getApplicationContext(), "Función de llamada al numero: 38499583", Toast.LENGTH_LONG).show();
                 break;
         }
 

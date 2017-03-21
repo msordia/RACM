@@ -101,7 +101,7 @@
                 android:weightSum="1">
 
                 <ImageButton
-                    android:id="@+id/photo_contact_1"
+                    android:id="@+id/photo_contact"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/family_contact"
@@ -247,7 +247,7 @@
                 </LinearLayout>
 
                 <ImageButton
-                    android:id="@+id/photo_phone"
+                    android:id="@+id/photo_create"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:src="@drawable/create_button"
