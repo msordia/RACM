@@ -124,7 +124,6 @@
             android:background="@drawable/buttonshape"
             android:text="@string/definir_direccion"
             android:layout_gravity="center"
-
             android:id="@+id/button_ubicacionRP" />
 
         <Space
