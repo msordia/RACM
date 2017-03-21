@@ -35,7 +35,7 @@ public class RegistrarPerfil extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button_guardarRP:
-                Intent intent = new Intent(this, CrearContacto.class);
+                Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
 

@@ -18,19 +18,12 @@
         <activity android:name=".CrearContacto" />
         <activity android:name=".VerFoto" />
         <activity android:name=".EditarPerfil" />
-<<<<<<< HEAD
         <activity android:name=".PerfilDetalle" />
         <activity android:name=".CambiarFoto" />
         <activity android:name=".EditarContacto" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ContactoDetalle"></activity>
-=======
-        <activity android:name=".PerfilDetalle"/>
-        <activity android:name=".CambiarFoto"/>
-        <activity android:name=".EditarContacto"/>
 
-
->>>>>>> master
     </application>
 
 </manifest>

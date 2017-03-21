@@ -31,8 +31,8 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
             case R.id.button_guardarCC:
                 //Intent a Contacto Detalle
 
-                //Intent intent = new Intent(CrearContacto.this, ContactoDetalle.class);
-                //startActivity(intent);
+                Intent intent = new Intent(this, ContactoDetalle.class);
+                startActivity(intent);
 
                 break;
 
