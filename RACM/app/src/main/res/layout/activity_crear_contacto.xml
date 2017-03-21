@@ -179,7 +179,7 @@
             android:background="@drawable/buttonshape"
             android:text="Guardar"
             android:layout_gravity="center"
-            android:id="@+id/button_ubicacionRP" />
+            android:id="@+id/button_guardarCC" />
 
 
     </LinearLayout>

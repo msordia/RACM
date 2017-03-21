@@ -60,6 +60,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
             app:srcCompat="@drawable/user"
             android:id="@+id/image_fotoEC"
             android:layout_weight="0.17"
@@ -177,7 +178,7 @@
             android:background="@drawable/buttonshape"
             android:text="Guardar"
             android:layout_gravity="center"
-            android:id="@+id/button_ubicacionRP" />
+            android:id="@+id/button_guardarEC" />
 
 
     </LinearLayout>
