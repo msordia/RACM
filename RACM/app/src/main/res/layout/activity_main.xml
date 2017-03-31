@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="2dp"
+            app:tabGravity="fill"
+            app:tabMode="scrollable"
+            android:layout_alignBottom="@+id/toolbar3"
+            android:layout_alignParentStart="true">
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/contactos"
+                android:text="Contactos"/>
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/home"
+                android:text="Casa"/>
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/sos"
+                android:text="Ayuda"/>
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/perfil"
+                android:text="Perfil"/>
+        </android.support.design.widget.TabLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:padding="20dp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/buscar"
+                android:text="Artuto H"
+                android:id="@+id/edit_search" />
+
+            <ImageButton
+                android:background="@color/windowBackground"
+                android:src="@drawable/search_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/photo_search" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text_nombre_categoria_fm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Familia"
+                android:padding="20dp"
+                android:textSize="18dp"/>
+
+
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/family"
+                android:weightSum="1">
+
+                <ImageButton
+                    android:id="@+id/photo_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/family_contact"
+                    android:background="@color/family"
+                    android:paddingTop="5dp"
+                    />
+                <LinearLayout
+                    android:padding="20dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.74">
+
+                    <TextView
+                        android:id="@+id/text_nombreCC_ls"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Luis Mendez"
+                        android:textSize="20dp"
+                        android:textColor="#FFF"
+                        android:paddingBottom="10dp"/>
+
+                    <TextView
+                        android:id="@+id/text_telefonoCC_ls"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="38499583"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#FFF"
+                        android:paddingTop="10dp"/>
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/photo_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/family_phone"
+                    android:background="@color/family"
+                    android:layout_weight="0.26" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/family"
+                android:weightSum="1">
+
+                <ImageButton
+                    android:id="@+id/photo_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/family_contact"
+                    android:background="@color/family"
+                    android:paddingTop="5dp"
+                    />
+                <LinearLayout
+                    android:padding="20dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.74">
+
+                    <TextView
+                        android:id="@+id/text_nombreCC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Luis Mendez"
+                        android:textSize="20dp"
+                        android:textColor="#FFF"
+                        android:paddingBottom="10dp"/>
+
+                    <TextView
+                        android:id="@+id/text_telefonoCC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="38499583"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#FFF"
+                        android:paddingTop="10dp"/>
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/photo_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/family_phone"
+                    android:background="@color/family"
+                    android:layout_weight="0.26" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_nombre_categoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Servicios"
+                android:padding="20dp"
+                android:textSize="18dp"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/neight"
+                android:weightSum="1">
+
+                <ImageButton
+                    android:id="@+id/photo_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/neightboard_contact"
+                    android:background="@color/neight"
+                    android:paddingTop="5dp"
+                    />
+                <LinearLayout
+                    android:padding="20dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.74">
+
+                    <TextView
+                        android:id="@+id/text_nombreCC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Luis Mendez"
+                        android:textSize="20dp"
+                        android:textColor="#FFF"
+                        android:paddingBottom="10dp"/>
+
+                    <TextView
+                        android:id="@+id/text_telefonoCC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="38499583"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#FFF"
+                        android:paddingTop="10dp"/>
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/photo_create"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/create_button"
+                    android:background="@color/neight"
+                    android:layout_weight="0.26" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

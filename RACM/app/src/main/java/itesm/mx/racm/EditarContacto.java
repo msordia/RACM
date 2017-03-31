@@ -30,16 +30,16 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
             case R.id.button_guardarEC:
                 //Intent a Contacto Detalle
 
-                //Intent intent = new Intent(CrearContacto.this, ContactoDetalle.class);
-                //startActivity(intent);
+                Intent intent = new Intent(this, ContactoDetalle.class);
+                startActivity(intent);
 
                 break;
 
             case R.id.image_fotoEC:
-                //Intent a Editar Foto
+                //Intent a Cambiar Foto
 
-                Intent intent = new Intent(EditarContacto.this, CambiarFoto.class);
-                startActivity(intent);
+                Intent intentFoto = new Intent(this, CambiarFoto.class);
+                startActivity(intentFoto);
 
                 break;
 

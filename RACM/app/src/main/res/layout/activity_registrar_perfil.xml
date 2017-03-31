@@ -5,46 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-        <android.support.design.widget.TabLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="2dp"
-            app:tabGravity="fill"
-            app:tabMode="scrollable"
-            android:layout_alignBottom="@+id/toolbar3"
-            android:layout_alignParentStart="true">
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/contactos"
-                android:text="Contactos"/>
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/home"
-                android:text="Casa"/>
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/sos"
-                android:text="Ayuda"/>
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/perfil"
-                android:text="Perfil"/>
-        </android.support.design.widget.TabLayout>
-
-    </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
         android:orientation="vertical"
@@ -57,12 +17,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.23" />
 
-        <ImageView
-            android:layout_width="match_parent"
+        <ImageButton
+            android:layout_gravity="center_horizontal"
+            android:background="#00ffffff"
+            android:padding="0dp"
+            android:layout_width="134dp"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/user"
             android:id="@+id/image_fotoRP"
-            android:layout_weight="0.17" />
+            android:layout_weight="0.26" />
 
         <Space
             android:layout_width="match_parent"
@@ -79,6 +42,7 @@
 
         <EditText
             android:hint="Escribe tu nombre"
+            android:text="Rogelio Hernandez"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -95,6 +59,7 @@
 
         <EditText
             android:hint="Escribe tu telefono"
+            android:text="123456789"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -110,6 +75,7 @@
 
         <EditText
             android:hint="Escribe tu dirección"
+            android:text="Garza Sada 200, Col Tecnologico"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"

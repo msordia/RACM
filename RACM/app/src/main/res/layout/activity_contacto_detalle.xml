@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="2dp"
+            app:tabGravity="fill"
+            app:tabMode="scrollable"
+            android:layout_alignBottom="@+id/toolbar3"
+            android:layout_alignParentStart="true">
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/contactos"
+                android:text="Contactos"/>
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/home"
+                android:text="Casa"/>
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/sos"
+                android:text="Ayuda"/>
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/perfil"
+                android:text="Perfil"/>
+        </android.support.design.widget.TabLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/family"
+        android:weightSum="1">
+
+        <ImageButton
+            android:background="@color/family"
+            android:layout_width="218dp"
+            android:layout_height="250dp"
+            app:srcCompat="@drawable/family_contact"
+            android:id="@+id/image_fotoPD"
+            android:layout_margin="0dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.92">
+
+
+            <ImageButton
+                android:id="@+id/photo_modify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/modify_user"
+                android:background="@color/family"
+                android:paddingLeft="10dp"/>
+            <LinearLayout
+                android:paddingLeft="20dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Luis Mendez"
+                    android:textSize="20dp"
+                    android:textColor="#FFF"
+                    android:paddingTop="10dp"
+                    android:ems="10"
+                    android:id="@+id/text_nombreCC" />
+
+
+                <TextView
+                    android:layout_width="216dp"
+                    android:layout_height="wrap_content"
+                    android:text="38499583"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#FFF"
+                    android:paddingTop="10dp"
+                    android:ems="10"
+                    android:id="@+id/text_telefonoCC" />
+
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/photo_phone"
+                android:background="@color/family"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/contact_family_phone"/>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF"
+            android:layout_gravity="end">
+
+            <ImageButton
+                android:id="@+id/photo_icons"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icons_message"
+                android:background="#FFF"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+
