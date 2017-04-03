@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lvLista = (ListView) findViewById(R.id.listview_with_fab);
+        lvLista = (ListView) findViewById(R.id.lb_Contactos);
 
         String[] listItwms = new String[]{"Prueba1", "Prueba2", "Prueba3", "Prueba4",
                 "Prueba5", "Prueba6", "Prueba7", "Prueba8", "Prueba9",
@@ -31,13 +31,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 android.R.layout.simple_list_item_1, android.R.id.text1, listItwms);
         lvLista.setAdapter(adapter);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.floating_action_button_fab_with_listview);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_Crear_Contacto);
+        ImageButton ibSearch = (ImageButton) findViewById(R.id.ib_search);
+        ibSearch.setOnClickListener(this);
         fab.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(this, CrearContacto.class);
-        startActivity(intent);
+        switch (v.getId()) {
+            case R.id.fab_Crear_Contacto:
+                Intent intent = new Intent(this, CrearContacto.class);
+                startActivity(intent);
+                break;
+
+            case R.id.ib_search:
+
+                break;
+        }
     }
 }
