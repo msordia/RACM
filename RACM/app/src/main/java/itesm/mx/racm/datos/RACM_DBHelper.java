@@ -39,7 +39,7 @@ public class RACM_DBHelper extends SQLiteOpenHelper {
                     DataBaseSchema.ContactoTable.COLUMN_NAME_CATEGORIA+ " INTEGER,"+
                     DataBaseSchema.ContactoTable.COLUMN_NAME_EMERGENCIA+ " INTEGER,"+
                     DataBaseSchema.ContactoTable.COLUMN_NAME_FAVORITO+ " INTEGER,"+
-                    DataBaseSchema.ContactoTable.COLUMN_NAME_IMAGEN+ " BLOB, "+
+                    DataBaseSchema.ContactoTable.COLUMN_NAME_IMAGEN+ " TEXT, "+
                     "FOREIGN KEY("+DataBaseSchema.ContactoTable.COLUMN_NAME_CATEGORIA+") "+
                     "REFERENCES "+DataBaseSchema.CategoriaTable.TABLE_NAME+"("+
                     DataBaseSchema.CategoriaTable._ID+")"+
@@ -57,7 +57,7 @@ public class RACM_DBHelper extends SQLiteOpenHelper {
                 DataBaseSchema.PerfilTable.COLUMN_NAME_TELEFONO+ " TEXT,"+
                 DataBaseSchema.PerfilTable.COLUMN_NAME_DIRECCION+ " TEXT,"+
                 DataBaseSchema.PerfilTable.COLUMN_NAME_UBICACION+ " TEXT,"+
-                DataBaseSchema.PerfilTable.COLUMN_NAME_IMAGEN+ " BLOB "+
+                DataBaseSchema.PerfilTable.COLUMN_NAME_IMAGEN+ " TEXT "+
                 ")";
         return query;
     }
