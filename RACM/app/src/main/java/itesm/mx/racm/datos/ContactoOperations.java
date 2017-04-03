@@ -59,7 +59,7 @@ public class ContactoOperations {
     public ArrayList<Contacto> obtenerContactos(){
         ArrayList<Contacto> listaElectro= new ArrayList<Contacto>();
 
-        String selectQuery= "SELECT * FROM "+ DataBaseSchema.ContactoTable.TABLE_NAME;
+        String selectQuery= "SELECT * FROM "+ DataBaseSchema.ContactoTable.TABLE_NAME+ " Order By idCategoria ASC";;
         Log.d("Select", selectQuery);
 
         try{

@@ -28,7 +28,7 @@ public final class DataBaseSchema {
     }
 
     public static class CategoriaTable implements BaseColumns {
-        public static final String TABLE_NAME= "Categoria";
+        public static final String TABLE_NAME= "idCategoria";
         public static final String COLUMN_NAME_NOMBRE= "nombreCategoria";
     }
 }
