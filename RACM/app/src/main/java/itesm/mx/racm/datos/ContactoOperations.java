@@ -74,7 +74,7 @@ public class ContactoOperations {
                             cursor.getInt(4),
                             cursor.getInt(5),
                             cursor.getInt(6),
-                            cursor.getString(7));
+                            cursor.getBlob(7));
 
                     listaContactos.add(contacto);
                 }while(cursor.moveToNext());

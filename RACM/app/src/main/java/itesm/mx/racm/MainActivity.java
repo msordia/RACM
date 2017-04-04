@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String[] fotos= {"Foto1","Foto2","Foto3"};
 
         for(int i=0; i<cat.length;i++ ){
-            dao_Contactos.añadirContacto(new Contacto(nom[i],cel[i],tel[i],cat[i],emer[i],fav[i],fotos[i]));
+            dao_Contactos.añadirContacto(new Contacto(nom[i],cel[i],tel[i],cat[i],emer[i],fav[i],new byte[1]));
         }
     }
 }

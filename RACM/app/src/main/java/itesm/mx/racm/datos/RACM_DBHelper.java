@@ -39,7 +39,7 @@ public class RACM_DBHelper extends SQLiteOpenHelper {
                     DataBaseSchema.ContactoTable.COLUMN_NAME_CATEGORIA+ " INTEGER,"+
                     DataBaseSchema.ContactoTable.COLUMN_NAME_EMERGENCIA+ " INTEGER,"+
                     DataBaseSchema.ContactoTable.COLUMN_NAME_FAVORITO+ " INTEGER,"+
-                    DataBaseSchema.ContactoTable.COLUMN_NAME_IMAGEN+ " TEXT, "+
+                    DataBaseSchema.ContactoTable.COLUMN_NAME_IMAGEN+ " BLOB, "+
                     "FOREIGN KEY("+DataBaseSchema.ContactoTable.COLUMN_NAME_CATEGORIA+") "+
                     "REFERENCES "+DataBaseSchema.CategoriaTable.TABLE_NAME+"("+
                     DataBaseSchema.CategoriaTable._ID+")"+

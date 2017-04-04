@@ -21,8 +21,8 @@
             android:layout_gravity="center_horizontal"
             android:background="#00ffffff"
             android:padding="0dp"
-            android:layout_width="134dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="103dp"
             app:srcCompat="@drawable/user"
             android:id="@+id/image_fotoRP"
             android:layout_weight="0.26" />
@@ -42,7 +42,6 @@
 
         <EditText
             android:hint="Escribe tu nombre"
-            android:text="Rogelio Hernandez"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -58,12 +57,12 @@
             android:id="@+id/text_telefonoRP" />
 
         <EditText
-            android:hint="Escribe tu telefono"
-            android:text="123456789"
+            android:hint="Escribe tu teléfono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:id="@+id/edit_telefonoRP" />
+            android:id="@+id/edit_telefonoRP"
+            android:inputType="phone" />
 
         <TextView
             android:text="@string/direccion"
@@ -75,14 +74,13 @@
 
         <EditText
             android:hint="Escribe tu dirección"
-            android:text="Garza Sada 200, Col Tecnologico"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/edit_direccionRP" />
 
-        <Button
+        <!--<Button
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:layout_width="220dp"
@@ -90,7 +88,7 @@
             android:background="@drawable/buttonshape"
             android:text="@string/definir_direccion"
             android:layout_gravity="center"
-            android:id="@+id/button_ubicacionRP" />
+            android:id="@+id/button_ubicacionRP" />-->
 
         <Space
             android:layout_width="match_parent"

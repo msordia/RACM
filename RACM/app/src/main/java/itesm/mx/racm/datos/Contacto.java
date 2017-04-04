@@ -1,16 +1,16 @@
 package itesm.mx.racm.datos;
 
 public class Contacto {
-    private int id;
+    private long id;
     private String nombre;
     private String celular;
     private String telefono;
     private int categoria;
     private int emergencia;
     private int favorito;
-    private String foto;
+    private byte[] foto;
 
-    public Contacto(int id, String nombre, String celular, String telefono, int categoria, int emergencia, int favorito, String foto) {
+    public Contacto(long id, String nombre, String celular, String telefono, int categoria, int emergencia, int favorito, byte[] foto) {
         this.id = id;
         this.nombre = nombre;
         this.celular = celular;
@@ -21,7 +21,7 @@ public class Contacto {
         this.foto = foto;
     }
 
-    public Contacto(String nombre, String celular, String telefono, int categoria, int emergencia, int favorito, String foto) {
+    public Contacto(String nombre, String celular, String telefono, int categoria, int emergencia, int favorito, byte[] foto) {
         this.nombre = nombre;
         this.celular = celular;
         this.telefono = telefono;
@@ -31,11 +31,11 @@ public class Contacto {
         this.foto = foto;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -87,11 +87,11 @@ public class Contacto {
         this.favorito = favorito;
     }
 
-    public String getFoto() {
+    public byte[] getFoto() {
         return foto;
     }
 
-    public void setFoto(String foto) {
+    public void setFoto(byte[] foto) {
         this.foto = foto;
     }
 }
