@@ -8,15 +8,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/family"
+        android:id="@+id/linear_Row"
         android:weightSum="1">
 
         <ImageButton
             android:id="@+id/photo_contact"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/family_contact"
-            android:background="@color/family"
+            android:src="@drawable/white_user"
             android:paddingTop="5dp"
+            android:background="@android:color/transparent"
             />
         <LinearLayout
             android:padding="20dp"
@@ -31,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:text="Nombre"
                 android:textSize="20dp"
+                android:textStyle="bold"
                 android:textColor="#FFF"
                 android:paddingBottom="10dp"/>
 
@@ -49,8 +51,8 @@
             android:id="@+id/photo_phone"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/family_phone"
-            android:background="@color/family"
+            android:src="@drawable/llamar_icono"
+            android:background="@android:color/transparent"
             android:layout_weight="0.26" />
 
     </LinearLayout>

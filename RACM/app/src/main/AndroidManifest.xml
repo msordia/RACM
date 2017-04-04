@@ -23,6 +23,9 @@
         <activity android:name=".EditarContacto" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ContactoDetalle" />
+        <activity android:name=".prueba.AdapterListaContactosActivity" >
+
+        </activity>
     </application>
 
 </manifest>

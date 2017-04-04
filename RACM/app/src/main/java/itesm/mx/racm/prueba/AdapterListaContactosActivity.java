@@ -1,24 +1,25 @@
-package itesm.mx.racm;
+package itesm.mx.racm.prueba;
 
-import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import itesm.mx.racm.ContactoAdapter;
+import itesm.mx.racm.ListaContactoAdapter;
+import itesm.mx.racm.R;
 import itesm.mx.racm.datos.Categoria;
 import itesm.mx.racm.datos.CategoriaOperations;
 import itesm.mx.racm.datos.Contacto;
 import itesm.mx.racm.datos.ContactoOperations;
 import itesm.mx.racm.datos.ListaContacto;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class AdapterListaContactosActivity extends AppCompatActivity {
 
-    ImageButton imageSearch, imageContact, imagePhone, imageCreate;
+    ContactoAdapter adapter;
+    TextView tvNombre;
     ListView lvLista;
 
     ////Nuevo
@@ -27,16 +28,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ContactoOperations dao_Contactos;
     CategoriaOperations dao_Categorias;
 
-    ////
-    ListaContactoAdapter adapter;
-    ///
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        lvLista = (ListView) findViewById(R.id.list_categorias);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.categories);
+
+        lvLista = (ListView) findViewById(R.id.list_contactos);
+        tvNombre = (TextView) findViewById(R.id.text_nombre_categoria);
 
         ////Nuevooo
         dao_Contactos = new ContactoOperations(this);
@@ -44,8 +42,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dao_Categorias = new CategoriaOperations(this);
         dao_Categorias.open();
 
-       // crearCategoriasEstaticas();
-        //crearContactosEstaticos();
+     //   crearCategoriasEstaticas();
+       // crearContactosEstaticos();
 
         contactosCompletos= new ArrayList<Contacto>();
         contactosCompletos= dao_Contactos.obtenerContactos();
@@ -54,29 +52,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ////
 
-        adapter = new ListaContactoAdapter(getApplicationContext(),separarCategorias());
+        ListaContacto contactosPrueba= separarCategorias().get(1);
+
+        adapter = new ContactoAdapter(getApplicationContext(),contactosPrueba.getLista());
         lvLista.setAdapter(adapter);
 
-        ////
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_Crear_Contacto);
-        ImageButton ibSearch = (ImageButton) findViewById(R.id.ib_search);
-        ibSearch.setOnClickListener(this);
-        fab.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.fab_Crear_Contacto:
-                Intent intent = new Intent(this, CrearContacto.class);
-                startActivity(intent);
-                break;
-
-            case R.id.ib_search:
-
-                break;
-        }
+        tvNombre.setText(contactosPrueba.getTitulo());
     }
 
     public ArrayList<ListaContacto> separarCategorias(){
@@ -115,10 +96,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void crearContactosEstaticos(){
-        String[] nom= {"Yocelyn","Xinia","Shamir"};
+        String[] nom= {"Yocelyn","Ricardo","Sergio"};
         String[] cel= {"85262809","85189299","84401188"};
         String[] tel= {"27984959","27584959","27954959"};
-        int [] cat= {1,1,2};
+        int [] cat= {2,1,1};
         int [] emer= {0,1,0};
         int [] fav= {0,1,1};
         String[] fotos= {"Foto1","Foto2","Foto3"};
