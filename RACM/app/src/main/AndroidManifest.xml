@@ -22,8 +22,7 @@
         <activity android:name=".CambiarFoto" />
         <activity android:name=".EditarContacto" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ContactoDetalle"></activity>
-
+        <activity android:name=".ContactoDetalle" />
     </application>
 
 </manifest>

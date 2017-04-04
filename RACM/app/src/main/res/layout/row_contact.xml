@@ -29,7 +29,7 @@
                 android:id="@+id/text_nombreCC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Luis Mendez"
+                android:text="Nombre"
                 android:textSize="20dp"
                 android:textColor="#FFF"
                 android:paddingBottom="10dp"/>
@@ -38,7 +38,7 @@
                 android:id="@+id/text_telefonoCC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="38499583"
+                android:text="Telefono"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:textColor="#FFF"
