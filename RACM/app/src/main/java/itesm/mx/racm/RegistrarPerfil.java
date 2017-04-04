@@ -2,6 +2,8 @@ package itesm.mx.racm;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
 
 import itesm.mx.racm.datos.Perfil;
 import itesm.mx.racm.datos.PerfilOperations;
@@ -24,6 +28,10 @@ public class RegistrarPerfil extends AppCompatActivity implements View.OnClickLi
     private ProgressDialog pDialog;
     private PerfilOperations dao_Perfil;
 
+    Bitmap imageBitmap;
+    int REQUEST_CODE = 1;
+    Bitmap bitmap;
+    byte[] byteArray;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +43,7 @@ public class RegistrarPerfil extends AppCompatActivity implements View.OnClickLi
         editTelefono = (EditText) findViewById(R.id.edit_telefonoRP);
 
         btnGuardar = (Button) findViewById(R.id.button_guardarRP);
-        btnDireccion = (Button) findViewById(R.id.button_ubicacionRP);
+        //btnDireccion = (Button) findViewById(R.id.button_ubicacionRP);
         btnImagePhoto = (ImageButton) findViewById(R.id.image_fotoRP);
 
         pDialog = new ProgressDialog(this);
@@ -70,23 +78,47 @@ public class RegistrarPerfil extends AppCompatActivity implements View.OnClickLi
                 String phone = editTelefono.getText().toString().trim();
                 String adress = editDireccion.getText().toString().trim();
 
+                //Falta la foto
                 if(!name.isEmpty() && !adress.isEmpty() && !phone.isEmpty()){
                     login(name, phone, adress);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Favor de completar la información", Toast.LENGTH_SHORT).show();
+
                 }
 
                 break;
 
             case  R.id.image_fotoRP:
-                Intent intent2 = new Intent(this, CambiarFoto.class);
-                startActivity(intent2);
+                //Intent a Media Store
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if(intent.resolveActivity(getPackageManager()) != null){
+                    startActivityForResult(intent, REQUEST_CODE);
+                }
                 break;
-
-            case R.id.button_ubicacionRP:
+            /*
+            case R.idx.button_ubicacionRP:
                 Toast.makeText(this.getApplicationContext(), "Activar GPS", Toast.LENGTH_LONG).show();
                 break;
+              */
         }
 
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            imageBitmap = (Bitmap) extras.get("data");
+            btnImagePhoto.setImageBitmap(imageBitmap);
+
+
+            bitmap = (Bitmap)data.getExtras().get("data");
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            //Imagen que se pasa con el contacto
+            byteArray = stream.toByteArray();
+        }
     }
 
     private void login(final String name, final String phone, final String adress){
@@ -95,17 +127,18 @@ public class RegistrarPerfil extends AppCompatActivity implements View.OnClickLi
         pDialog.setMessage("Registrando ...");
         showDialog();
 
-        String name1 = editNombre.getText().toString().trim();
-        String phone2 = editTelefono.getText().toString().trim();
-        String adress1 = editDireccion.getText().toString().trim();
 
-        Perfil perfil = new Perfil(name1, phone2, adress1);
+
+        Perfil perfil = new Perfil(name, phone, phone, adress, adress, byteArray);
 
         long id = dao_Perfil.registrarPerfil(perfil);
-
         perfil.setId(id);
+
+        hideDialog();
         Toast.makeText(this, "Correctamente Agregado", Toast.LENGTH_SHORT).show();
-        finish();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        //finish();
 
     }
 

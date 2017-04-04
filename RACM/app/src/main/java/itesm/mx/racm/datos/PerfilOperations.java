@@ -44,10 +44,10 @@ public class PerfilOperations {
         try{
             ContentValues values= new ContentValues();
             values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_NOMBRE,perfil.getNombre());
-            values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_CELULAR,perfil.getCelular());
+            values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_CELULAR,perfil.getTelefonoFIjo());
             values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_TELEFONO,perfil.getTelefonoFIjo());
             values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_DIRECCION,perfil.getDireccion());
-            values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_UBICACION,perfil.getUbicacion());
+            values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_UBICACION,perfil.getDireccion());
             values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_IMAGEN,perfil.getFoto());
 
             newRowId = db.insert(DataBaseSchema.ContactoTable.TABLE_NAME,null,values);
