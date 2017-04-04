@@ -15,14 +15,13 @@ import java.util.ArrayList;
 
 import itesm.mx.racm.datos.Contacto;
 
-/**
- * Created by everm on 4/3/2017.
- */
-
 public class ContactoAdapter extends ArrayAdapter<Contacto>{
 
-    ContactoAdapter(Context context, ArrayList<Contacto> contactos) { super(context, 0, contactos); }
-        public View getView(int position, View convertView, ViewGroup parent) {
+    public ContactoAdapter(Context context, ArrayList<Contacto> contactos) {
+        super(context, 0, contactos);
+    }
+
+    public View getView(int position, View convertView, ViewGroup parent) {
 
             Contacto contacto = getItem(position);
 
@@ -37,8 +36,8 @@ public class ContactoAdapter extends ArrayAdapter<Contacto>{
             tvNombre.setText(contacto.getNombre());
             tvTelefono.setText(contacto.getTelefono());
 
-            Bitmap foto = decodeBase64(contacto.getFoto());
-            ivFoto.setImageBitmap(foto);
+           // Bitmap foto = decodeBase64(contacto.getFoto());
+           // ivFoto.setImageBitmap(foto);
 
             return convertView;
         }

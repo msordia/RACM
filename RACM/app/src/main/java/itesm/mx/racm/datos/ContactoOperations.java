@@ -57,7 +57,7 @@ public class ContactoOperations {
 
 
     public ArrayList<Contacto> obtenerContactos(){
-        ArrayList<Contacto> listaElectro= new ArrayList<Contacto>();
+        ArrayList<Contacto> listaContactos= new ArrayList<Contacto>();
 
         String selectQuery= "SELECT * FROM "+ DataBaseSchema.ContactoTable.TABLE_NAME+ " Order By idCategoria ASC";;
         Log.d("Select", selectQuery);
@@ -76,13 +76,13 @@ public class ContactoOperations {
                             cursor.getInt(6),
                             cursor.getString(7));
 
-                    listaElectro.add(contacto);
+                    listaContactos.add(contacto);
                 }while(cursor.moveToNext());
             }
             cursor.close();
         }catch(SQLException e){
             Log.e("SQLList", e.toString());
         }
-        return listaElectro;
+        return listaContactos;
     }
 }
