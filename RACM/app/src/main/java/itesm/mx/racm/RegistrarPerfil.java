@@ -10,6 +10,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import itesm.mx.racm.datos.Perfil;
+import itesm.mx.racm.datos.PerfilOperations;
+import itesm.mx.racm.datos.RACM_DBHelper;
+
 
 public class RegistrarPerfil extends AppCompatActivity implements View.OnClickListener {
 
@@ -18,6 +22,7 @@ public class RegistrarPerfil extends AppCompatActivity implements View.OnClickLi
     private ImageButton btnImagePhoto;
     private SessionManager session;
     private ProgressDialog pDialog;
+    private PerfilOperations dao_Perfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,10 @@ public class RegistrarPerfil extends AppCompatActivity implements View.OnClickLi
 
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
+
+        dao_Perfil = new PerfilOperations(this);
+        dao_Perfil.open();
+
 
         session = new SessionManager(getApplicationContext());
 
@@ -83,11 +92,20 @@ public class RegistrarPerfil extends AppCompatActivity implements View.OnClickLi
     private void login(final String name, final String phone, final String adress){
         String tag_string_req = "req_login";
 
-        pDialog.setMessage("Registrando in ...");
+        pDialog.setMessage("Registrando ...");
         showDialog();
 
+        String name1 = editNombre.getText().toString().trim();
+        String phone2 = editTelefono.getText().toString().trim();
+        String adress1 = editDireccion.getText().toString().trim();
 
+        Perfil perfil = new Perfil(name1, phone2, adress1);
 
+        long id = dao_Perfil.registrarPerfil(perfil);
+
+        perfil.setId(id);
+        Toast.makeText(this, "Correctamente Agregado", Toast.LENGTH_SHORT).show();
+        finish();
 
     }
 

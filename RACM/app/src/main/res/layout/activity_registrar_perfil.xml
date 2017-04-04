@@ -82,7 +82,7 @@
             android:ems="10"
             android:id="@+id/edit_direccionRP" />
 
-        <Button
+        <!--<Button
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:layout_width="220dp"
@@ -90,7 +90,7 @@
             android:background="@drawable/buttonshape"
             android:text="@string/definir_direccion"
             android:layout_gravity="center"
-            android:id="@+id/button_ubicacionRP" />
+            android:id="@+id/button_ubicacionRP" />-->
 
         <Space
             android:layout_width="match_parent"
