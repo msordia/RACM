@@ -37,7 +37,8 @@ public class ContactoAdapter extends ArrayAdapter<Contacto>{
             tvNombre.setText(contacto.getNombre());
             tvTelefono.setText(contacto.getTelefono());
 
-            Bitmap foto = decodeBase64(contacto.getFoto());
+            byte[] image = contacto.getFoto();
+            Bitmap foto = BitmapFactory.decodeByteArray(image, 0, image.length);
             ivFoto.setImageBitmap(foto);
 
             return convertView;

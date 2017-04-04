@@ -38,14 +38,16 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
     int REQUEST_CODE = 1;
     Bitmap bitmap;
     byte[] byteArray;
-    int checkEme = 0;
-    int checkFav = 0;
+    int checkEme;
+    int checkFav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_contacto);
-
+        byteArray = new byte[1];
+        checkEme = 0;
+        checkFav = 0;
         dao = new ContactoOperations(this);
         dao.open();
 
@@ -53,7 +55,7 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
         String[] items = new String[]{"Seleccione la categoría","Familia", "Amigos", "Salud", "Proveedores", "Servicios"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         spinnerCategorias.setAdapter(adapter);
-
+        spinnerCategorias.setOnItemSelectedListener(this);
         btnGuardar = (Button) findViewById(R.id.button_guardarCC);
         etNombre = (EditText) findViewById(R.id.edit_nombreCC);
         etTelefono = (EditText) findViewById(R.id.edit_telefonoCC);
@@ -83,11 +85,18 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
 
                 //Guardar el contacto en la base de datos
 
-                //nuevoContacto();
+                if(posicionCategoria == 0 || etNombre.getText().toString().isEmpty() || etTelefono.getText().toString().isEmpty() || etCelular.getText().toString().isEmpty())  {
+                    Toast.makeText(getApplicationContext(), "Favor de completar la información", Toast.LENGTH_SHORT).show();
+                }else{
+
+                    nuevoContacto();
+                    finish();
+                }
+                /*
                 //Intent a Contacto Detalle
                 Intent intent2 = new Intent(this, ContactoDetalle.class);
                 startActivity(intent2);
-
+                */
                 break;
 
             default:
@@ -95,27 +104,28 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    /*
+
     public Contacto nuevoContacto(){
         if (checkEmergencia.isChecked()){
+
             checkEme = 1;
         }
 
         if (checkFavorito.isChecked()){
+
             checkFav = 1;
         }
-        //Contacto(String nombre, String celular, String telefono, int categoria, int emergencia, int favorito, String foto)
-        //Falta modificar el constructor para agregar la imagen
+
         Contacto contacto = new Contacto(etNombre.toString(), etCelular.toString(), etTelefono.toString(), posicionCategoria, checkEme, checkFav, byteArray);
 
         long id = dao.añadirContacto(contacto);
-        contacto.setID(id);
+        contacto.setId(id);
 
         Toast.makeText(getApplicationContext(), "Contacto Agregado", Toast.LENGTH_SHORT).show();
         finish();
-        //return contacto;
+        return contacto;
     }
-    */
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
