@@ -127,6 +127,7 @@ public class RegistrarPerfil extends AppCompatActivity implements View.OnClickLi
         pDialog.setMessage("Registrando ...");
         showDialog();
 
+        session.setLogin(true);
 
 
         Perfil perfil = new Perfil(name, phone, phone, adress, adress, byteArray);
@@ -135,6 +136,8 @@ public class RegistrarPerfil extends AppCompatActivity implements View.OnClickLi
         perfil.setId(id);
 
         hideDialog();
+
+
         Toast.makeText(this, "Correctamente Agregado", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

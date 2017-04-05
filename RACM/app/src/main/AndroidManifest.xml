@@ -26,6 +26,7 @@
         <activity android:name=".prueba.AdapterListaContactosActivity" >
 
         </activity>
+        <uses-permission android:name="android.permission.CALL_PHONE" />
     </application>
 
 </manifest>

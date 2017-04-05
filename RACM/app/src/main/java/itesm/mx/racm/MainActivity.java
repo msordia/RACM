@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dao_Categorias = new CategoriaOperations(this);
         dao_Categorias.open();
 
-       // crearCategoriasEstaticas();
+        crearCategoriasEstaticas();
         //crearContactosEstaticos();
 
         contactosCompletos= new ArrayList<Contacto>();
@@ -66,6 +66,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        contactosCompletos= dao_Contactos.obtenerContactos();
+        categorias= dao_Categorias.obtenerCategorias();
+        adapter = new ListaContactoAdapter(getApplicationContext(),separarCategorias());
+        lvLista.setAdapter(adapter);
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fab_Crear_Contacto:
@@ -83,31 +93,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ArrayList<ListaContacto> arregloFinal= new ArrayList<ListaContacto>();
         ArrayList<Contacto> arregloLista= new ArrayList<Contacto>();
 
-        int categoriaActual= contactosCompletos.get(0).getCategoria();
-        arregloLista.add(contactosCompletos.get(0));
+        if(contactosCompletos.size()!=0) {
 
-        for(int i=1; i<=contactosCompletos.size(); i++){
+            int categoriaActual = contactosCompletos.get(0).getCategoria();
+            arregloLista.add(contactosCompletos.get(0));
 
-            if(i==contactosCompletos.size()){
-                ListaContacto temporal= new ListaContacto("otro",arregloLista);//enviar categoria y arreglo de contactos
-                arregloFinal.add(temporal);
-            }else {
-                if (categoriaActual == contactosCompletos.get(i).getCategoria()) {
-                    arregloLista.add(contactosCompletos.get(i));
-                } else {
-                    ListaContacto temporal = new ListaContacto("fam", arregloLista);//enviar categoria y arreglo de contactos
+            for (int i = 1; i <= contactosCompletos.size(); i++) {
+
+                if (i == contactosCompletos.size()) {
+                    ListaContacto temporal = new ListaContacto(obtenerNombreCategoria(arregloLista.get(0).getCategoria()), arregloLista);//enviar categoria y arreglo de contactos
                     arregloFinal.add(temporal);
-                    arregloLista = new ArrayList<Contacto>();
-                    categoriaActual = contactosCompletos.get(i).getCategoria();
-                    arregloLista.add(contactosCompletos.get(i));
+                } else {
+                    if (categoriaActual == contactosCompletos.get(i).getCategoria()) {
+                        arregloLista.add(contactosCompletos.get(i));
+                    } else {
+                        ListaContacto temporal = new ListaContacto(obtenerNombreCategoria(arregloLista.get(0).getCategoria()), arregloLista);//enviar categoria y arreglo de contactos
+                        arregloFinal.add(temporal);
+                        arregloLista = new ArrayList<Contacto>();
+                        categoriaActual = contactosCompletos.get(i).getCategoria();
+                        arregloLista.add(contactosCompletos.get(i));
+                    }
                 }
             }
         }
         return arregloFinal;
     }
 
+
     public void crearCategoriasEstaticas(){
-        String[] cat= {"Familia","Amigos","Proveedores","Salud","Servicios"};
+        String[] cat= {"Familia","Amigos","Salud","Proveedores","Servicios"};
 
         for(int i=0; i<cat.length;i++ ){
             dao_Categorias.añadirCategoria(new Categoria(cat[i]));
@@ -126,5 +140,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for(int i=0; i<cat.length;i++ ){
             dao_Contactos.añadirContacto(new Contacto(nom[i],cel[i],tel[i],cat[i],emer[i],fav[i],new byte[1]));
         }
+    }
+
+    public String obtenerNombreCategoria(int id){
+        String categoria= "";
+                for(int i=0; i<categorias.size();i++){
+                 if(categorias.get(i).getIdCategoria()==id){
+                     categoria= categorias.get(i).getNombreCategoria();
+                 }
+                }
+        return categoria;
     }
 }

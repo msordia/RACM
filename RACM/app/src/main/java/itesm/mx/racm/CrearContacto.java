@@ -116,7 +116,9 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
             checkFav = 1;
         }
 
-        Contacto contacto = new Contacto(etNombre.toString(), etCelular.toString(), etTelefono.toString(), posicionCategoria, checkEme, checkFav, byteArray);
+        Contacto contacto = new Contacto(etNombre.getText().toString(),
+                etCelular.getText().toString(), etTelefono.getText().toString(),
+                posicionCategoria, checkEme, checkFav, byteArray);
 
         long id = dao.añadirContacto(contacto);
         contacto.setId(id);
