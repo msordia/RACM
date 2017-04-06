@@ -69,11 +69,12 @@ public class ContactoAdapter extends ArrayAdapter<Contacto>{
             }
         });
 
-
         byte[] image = contacto.getFoto();
-        if(image != null){
+        if(image.length>1){
             Bitmap bmimage = BitmapFactory.decodeByteArray(image, 0, image.length);
             ivFoto.setImageBitmap(bmimage);
+        }else{
+            ivFoto.setImageResource(R.drawable.white_user);
         }
 
 
@@ -96,7 +97,7 @@ public class ContactoAdapter extends ArrayAdapter<Contacto>{
                 ll.setBackgroundColor(Color.parseColor("#f28500"));//Naranja
                 break;
             case 2:
-                ll.setBackgroundColor(Color.parseColor("#fdc8b1"));//Rosadito
+                ll.setBackgroundColor(Color.parseColor("#00897b"));//Verde Marino
                 break;
             case 3:
                 ll.setBackgroundColor(Color.parseColor("#e10000"));//Rojo
