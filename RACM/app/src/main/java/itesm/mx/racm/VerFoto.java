@@ -10,11 +10,14 @@ public class VerFoto extends AppCompatActivity {
 
     ImageView ivFoto;
     Bitmap imageBitmap;
+    MenuFragment fragmentoMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_foto);
+
+        fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
 
         ivFoto= (ImageView) findViewById(R.id.image_fotoVF);
 

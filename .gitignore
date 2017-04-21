@@ -1,2 +1,4 @@
 .idea/workspace.xml
 RACM/.idea/misc.xml
+RACM/build/intermediates/dex-cache/cache.xml
+*.gradle

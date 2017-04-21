@@ -10,11 +10,14 @@ import android.widget.Toast;
 public class ContactoDetalle extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton imageFoto, imageModify, imagePhone, imageIcons;
+    MenuFragment fragmentoMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacto_detalle);
+
+        fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
 
         imageFoto = (ImageButton) findViewById(R.id.image_fotoPD);
         imageModify = (ImageButton) findViewById(R.id.photo_modify);

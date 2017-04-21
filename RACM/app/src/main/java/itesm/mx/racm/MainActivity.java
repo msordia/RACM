@@ -31,10 +31,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ListaContactoAdapter adapter;
     ///
 
+    MenuFragment fragmentoMenu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
 
         lvLista = (ListView) findViewById(R.id.list_categorias);
 
