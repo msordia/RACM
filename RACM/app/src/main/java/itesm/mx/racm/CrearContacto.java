@@ -41,10 +41,15 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
     int checkEme;
     int checkFav;
 
+    MenuFragment fragmentoMenu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_contacto);
+
+        fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
+
         byteArray = new byte[1];
         checkEme = 0;
         checkFav = 0;

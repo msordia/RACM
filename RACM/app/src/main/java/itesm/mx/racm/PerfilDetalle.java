@@ -11,12 +11,14 @@ import android.widget.ImageView;
 public class PerfilDetalle extends AppCompatActivity implements View.OnClickListener {
 
     ImageView ivFotoPD;
-
+    MenuFragment fragmentoMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_detalle);
+
+        fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
 
         ivFotoPD= (ImageView) findViewById(R.id.image_fotoPD);
         ivFotoPD.setOnClickListener(this);

@@ -11,11 +11,14 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
 
     Button btnGuardar;
     ImageView imgFoto;
+    MenuFragment fragmentoMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_contacto);
+
+        fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
 
         btnGuardar = (Button) findViewById(R.id.button_guardarEC);
         btnGuardar.setOnClickListener(this);

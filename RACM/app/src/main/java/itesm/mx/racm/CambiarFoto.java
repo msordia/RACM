@@ -20,12 +20,14 @@ public class CambiarFoto extends AppCompatActivity implements View.OnClickListen
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     ImageView ivFotoCF;
     Bitmap imageBitmap;
-
+    MenuFragment fragmentoMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cambiar_foto);
+
+        fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
 
         ivFotoCF= (ImageView) findViewById(R.id.image_fotoCF);
         Button btnGuardar= (Button) findViewById(R.id.button_guardarCF);
@@ -33,6 +35,7 @@ public class CambiarFoto extends AppCompatActivity implements View.OnClickListen
 
         btnGuardar.setOnClickListener(this);
         btnCambiarFoto.setOnClickListener(this);
+
     }
 
     @Override

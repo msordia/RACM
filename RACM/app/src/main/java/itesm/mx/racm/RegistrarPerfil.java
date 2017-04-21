@@ -4,7 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +19,7 @@ import itesm.mx.racm.datos.PerfilOperations;
 import itesm.mx.racm.datos.RACM_DBHelper;
 
 
-public class RegistrarPerfil extends AppCompatActivity implements View.OnClickListener {
+public class RegistrarPerfil extends FragmentActivity implements View.OnClickListener {
 
     private Button btnGuardar, btnDireccion;
     private EditText editNombre, editTelefono, editDireccion;
@@ -27,6 +27,8 @@ public class RegistrarPerfil extends AppCompatActivity implements View.OnClickLi
     private SessionManager session;
     private ProgressDialog pDialog;
     private PerfilOperations dao_Perfil;
+
+    MenuFragment fragmentoMenu;
 
     Bitmap imageBitmap;
     int REQUEST_CODE = 1;
@@ -37,6 +39,7 @@ public class RegistrarPerfil extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_perfil);
 
+        fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
 
         editNombre = (EditText) findViewById(R.id.edit_nombreRP);
         editDireccion = (EditText) findViewById(R.id.edit_direccionRP);
@@ -64,8 +67,6 @@ public class RegistrarPerfil extends AppCompatActivity implements View.OnClickLi
 
         btnGuardar.setOnClickListener(this);
         btnImagePhoto.setOnClickListener(this);
-
-
 
     }
 
