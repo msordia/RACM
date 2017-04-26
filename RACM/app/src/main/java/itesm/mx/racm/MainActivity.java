@@ -1,14 +1,21 @@
 package itesm.mx.racm;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ExpandableListView;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 
 import itesm.mx.racm.datos.Categoria;
 import itesm.mx.racm.datos.CategoriaOperations;
@@ -18,31 +25,23 @@ import itesm.mx.racm.datos.ListaContacto;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    ExpandableListAdapter listAdapter;
+    ExpandableListView expListView;
     ImageButton imageSearch, imageContact, imagePhone, imageCreate;
-    ListView lvLista;
-
-    ////Nuevo
     ArrayList<Contacto> contactosCompletos;
     ArrayList<Categoria> categorias;
     ContactoOperations dao_Contactos;
     CategoriaOperations dao_Categorias;
-
-    ////
-    ListaContactoAdapter adapter;
-    ///
-
+    List<String> titulos;
+    HashMap<String,List<Contacto>> listaContactos;
     MenuFragment fragmentoMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
-
-        lvLista = (ListView) findViewById(R.id.list_categorias);
-
-        ////Nuevooo
+        expListView = (ExpandableListView) findViewById(R.id.list_categorias);
         dao_Contactos = new ContactoOperations(this);
         dao_Contactos.open();
         dao_Categorias = new CategoriaOperations(this);
@@ -55,14 +54,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         contactosCompletos= dao_Contactos.obtenerContactos();
         categorias= new ArrayList<Categoria>();
         categorias= dao_Categorias.obtenerCategorias();
+        titulos= new ArrayList<String>();
+        listaContactos= new HashMap<String,List<Contacto>>();
+        separarCategorias();
+        listAdapter = new ExpandableListAdapter(this, titulos,listaContactos);
+        expListView.setAdapter(listAdapter);
+        expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
 
-        ////
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 
-        adapter = new ListaContactoAdapter(getApplicationContext(),separarCategorias());
-        lvLista.setAdapter(adapter);
+                Contacto contacto= (Contacto) listaContactos.get(titulos.get(groupPosition)).get(childPosition);
+                Intent intent= new Intent(getApplicationContext(),ContactoDetalle.class);
+                intent.putExtra("idContacto",contacto.getId());
+                startActivity(intent);
+                return false;
+            }
+        });
 
-        ////
-
+        ////BOTON FLOTANTE
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_Crear_Contacto);
         ImageButton ibSearch = (ImageButton) findViewById(R.id.ib_search);
         ibSearch.setOnClickListener(this);
@@ -75,8 +85,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         contactosCompletos= dao_Contactos.obtenerContactos();
         categorias= dao_Categorias.obtenerCategorias();
-        adapter = new ListaContactoAdapter(getApplicationContext(),separarCategorias());
-        lvLista.setAdapter(adapter);
+        titulos.clear();
+        listaContactos.clear();
+        separarCategorias();
+        listAdapter.setTitles(titulos);
+        listAdapter.setContent(listaContactos);
+        listAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -93,36 +107,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public ArrayList<ListaContacto> separarCategorias(){
-        ArrayList<ListaContacto> arregloFinal= new ArrayList<ListaContacto>();
+    public void separarCategorias(){
         ArrayList<Contacto> arregloLista= new ArrayList<Contacto>();
 
         if(contactosCompletos.size()!=0) {
 
             int categoriaActual = contactosCompletos.get(0).getCategoria();
             arregloLista.add(contactosCompletos.get(0));
+            titulos.add(obtenerNombreCategoria(categoriaActual));
 
             for (int i = 1; i <= contactosCompletos.size(); i++) {
 
                 if (i == contactosCompletos.size()) {
-                    ListaContacto temporal = new ListaContacto(obtenerNombreCategoria(arregloLista.get(0).getCategoria()), arregloLista);//enviar categoria y arreglo de contactos
-                    arregloFinal.add(temporal);
+                    listaContactos.put(obtenerNombreCategoria(arregloLista.get(0).getCategoria()), arregloLista);//enviar categoria y arreglo de contactos
                 } else {
                     if (categoriaActual == contactosCompletos.get(i).getCategoria()) {
                         arregloLista.add(contactosCompletos.get(i));
                     } else {
-                        ListaContacto temporal = new ListaContacto(obtenerNombreCategoria(arregloLista.get(0).getCategoria()), arregloLista);//enviar categoria y arreglo de contactos
-                        arregloFinal.add(temporal);
+                        listaContactos.put(obtenerNombreCategoria(arregloLista.get(0).getCategoria()), arregloLista);//enviar categoria y arreglo de contactos
                         arregloLista = new ArrayList<Contacto>();
                         categoriaActual = contactosCompletos.get(i).getCategoria();
+                        titulos.add(obtenerNombreCategoria(categoriaActual));
                         arregloLista.add(contactosCompletos.get(i));
                     }
                 }
             }
         }
-        return arregloFinal;
     }
-
 
     public void crearCategoriasEstaticas(){
         String[] cat= {"Familia","Amigos","Salud","Proveedores","Servicios"};
