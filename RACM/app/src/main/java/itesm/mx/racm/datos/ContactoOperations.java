@@ -28,6 +28,22 @@ public class ContactoOperations {
         }
     }
 
+    public Contacto findContacto(long idContacto){
+        String query = "Select * FROM " + DataBaseSchema.ContactoTable.TABLE_NAME + " WHERE " + DataBaseSchema.ContactoTable._ID + " = \"" + idContacto + "\"";
+        try{
+            Cursor cursor = db.rawQuery(query, null);
+            contacto = null;
+            if(cursor.moveToFirst()){
+                contacto = new Contacto(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), Integer.parseInt(cursor.getString(4)), Integer.parseInt(cursor.getString(5)), Integer.parseInt(cursor.getString(6)), cursor.getBlob(7));
+
+            }
+            cursor.close();
+        }catch (SQLException e){
+            Log.e("SQLFind", e.toString());
+        }
+        return contacto;
+    }
+
     public void close(){
         db.close();
     }
