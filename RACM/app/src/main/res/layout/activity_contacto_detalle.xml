@@ -22,18 +22,18 @@
 
         <ImageButton
             android:background="@color/family"
-            android:layout_width="218dp"
-            android:layout_height="250dp"
+            android:layout_width="227dp"
+            android:layout_height="wrap_content"
             app:srcCompat="@drawable/family_contact"
             android:id="@+id/image_fotoPD"
             android:layout_margin="0dp"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.47" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.92">
+            android:layout_height="wrap_content">
 
 
             <ImageButton
@@ -52,12 +52,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Luis Mendez"
+                    android:text="evert"
                     android:textSize="20dp"
                     android:textColor="#FFF"
                     android:paddingTop="10dp"
                     android:ems="10"
-                    android:id="@+id/text_nombreCC" />
+                    android:id="@+id/text_nombreCD" />
 
 
                 <TextView
@@ -69,7 +69,7 @@
                     android:textColor="#FFF"
                     android:paddingTop="10dp"
                     android:ems="10"
-                    android:id="@+id/text_telefonoCC" />
+                    android:id="@+id/text_telefonoCD" />
 
 
             </LinearLayout>
@@ -86,19 +86,63 @@
 
         </LinearLayout>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.42" />
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:background="#FFF"
-            android:layout_gravity="end">
+            android:layout_height="wrap_content"
+            android:layout_weight="0.15"
+            android:weightSum="1">
 
-            <ImageButton
-                android:id="@+id/photo_icons"
-                android:layout_width="380dp"
+            <Space
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icons_message"
-                android:background="#FFF"/>
+                android:layout_weight="0.35" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="end">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/comidaemoji"
+                    android:id="@+id/image_button_hambreCD"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/enfermoemoji"
+                    android:id="@+id/image_button_enfermoCD"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/tristeemoji"
+                    android:id="@+id/image_button_soloCD"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/corazonrotoemoji"
+                    android:id="@+id/image_button_tristeCD"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
         </LinearLayout>
 
