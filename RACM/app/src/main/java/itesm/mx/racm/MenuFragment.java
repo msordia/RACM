@@ -63,7 +63,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
                 break;
 
             case R.id.image_button_perfil:
-                Intent intent3 = new Intent(getActivity(), PerfilDetalle.class);
+                Intent intent3 = new Intent(getActivity(), ContactoDetalle.class);
                 startActivity(intent3);
                 break;
 

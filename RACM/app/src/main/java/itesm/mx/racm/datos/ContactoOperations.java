@@ -55,6 +55,29 @@ public class ContactoOperations {
         return newRowId;
     }
 
+    public Contacto obtenerContactoDetalle(String nombre) {
+
+        String [] columns = {DataBaseSchema.ContactoTable._ID, DataBaseSchema.ContactoTable.COLUMN_NAME_NOMBRE,
+                DataBaseSchema.ContactoTable.COLUMN_NAME_CELULAR, DataBaseSchema.ContactoTable.COLUMN_NAME_TELEFONO,
+                DataBaseSchema.ContactoTable.COLUMN_NAME_CATEGORIA, DataBaseSchema.ContactoTable.COLUMN_NAME_EMERGENCIA,
+                DataBaseSchema.ContactoTable.COLUMN_NAME_FAVORITO, DataBaseSchema.ContactoTable.COLUMN_NAME_IMAGEN};
+        String[] selectionArg = {nombre};
+        Cursor cursor = db.query(DataBaseSchema.ContactoTable.TABLE_NAME,
+                columns, DataBaseSchema.ContactoTable.COLUMN_NAME_NOMBRE + "=?",selectionArg, null, null, null, null);
+        while(cursor.moveToNext()) {
+            contacto= new Contacto(
+                    cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getInt(4),
+                    cursor.getInt(5),
+                    cursor.getInt(6),
+                    cursor.getBlob(7));
+        }
+        cursor.close();
+        return contacto;
+    }
 
     public ArrayList<Contacto> obtenerContactos(){
         ArrayList<Contacto> listaContactos= new ArrayList<Contacto>();
