@@ -57,7 +57,7 @@
                     android:textColor="#FFF"
                     android:paddingTop="10dp"
                     android:ems="10"
-                    android:id="@+id/text_nombreCC" />
+                    android:id="@+id/text_nombreCD" />
 
 
                 <TextView
@@ -69,7 +69,8 @@
                     android:textColor="#FFF"
                     android:paddingTop="10dp"
                     android:ems="10"
-                    android:id="@+id/text_telefonoCC" />
+                    android:id="@+id/text_telefonoCD"
+                    android:clickable="false" />
 
 
             </LinearLayout>
