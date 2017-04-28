@@ -1,10 +1,14 @@
 package itesm.mx.racm;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -38,10 +42,12 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
 
     long id;
     String telefono;
+    String texto = "";
     Contacto contacto;
     String nombre;
     ContactoOperations dao_Contactos;
     ArrayList<Contacto> contactosCompletos;
+    Contacto contactoPrueba;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,16 +95,41 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
         if(bundle!=null){
            idContacto = bundle.getLong("idContacto");
             Log.d("Este es el id", String.valueOf(idContacto));
-            Contacto contactoPrueba;
+
             contactoPrueba = dao.findContacto(idContacto);
             Log.d("Nombre", contactoPrueba.getNombre());
             //Cambiar imageFoto,tvNombre y tvTelefono
             imageBitmap = BitmapFactory.decodeByteArray(contactoPrueba.getFoto(), 0, contactoPrueba.getFoto().length);
             ibFoto.setImageBitmap(imageBitmap);
             tvNombre.setText(contactoPrueba.getNombre());
-            tvTelefono.setText(contactoPrueba.getTelefono());
+            tvTelefono.setText(contactoPrueba.getCelular());
+            telefono = contactoPrueba.getCelular();
         }
 
+    }
+    private void showLocationDialog(final String texto) {
+        AlertDialog.Builder builder =
+                new AlertDialog.Builder(this, R.style.alertDialog);
+        builder.setTitle("SMS");
+        builder.setMessage("¿Está seguro?");
+        builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // Write your code here to execute after dialog
+                // smsManager.sendTextMessage(phoneNo, null, sms, null, null);
+                String sms = texto;
+
+                SmsManager smsManager = SmsManager.getDefault();
+                smsManager.sendTextMessage(telefono, null, sms, null, null);
+                Toast.makeText(getApplicationContext(), "Sí", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which) {
+                // Write your code here to execute after dialog
+                Toast.makeText(getApplicationContext(), "No", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.show();
     }
 
     @Override
@@ -119,19 +150,33 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.image_button_hambreCD:
-                Toast.makeText(this.getApplicationContext(), "hungry" , Toast.LENGTH_LONG).show();
+                Toast.makeText(ContactoDetalle.this, "Hungry", Toast.LENGTH_SHORT).show();
+                texto = "Tengo hambre";
+
+                showLocationDialog(texto);
+
+
                 break;
 
             case R.id.image_button_enfermoCD:
                 Toast.makeText(this.getApplicationContext(), "enfermo", Toast.LENGTH_LONG).show();
+                texto = "Estoy enfermo";
+
+                showLocationDialog(texto);
                 break;
 
             case R.id.image_button_soloCD:
                 Toast.makeText(this.getApplicationContext(), "solo", Toast.LENGTH_LONG).show();
+                texto = "Me siento solo";
+
+                showLocationDialog(texto);
                 break;
 
             case R.id.image_button_tristeCD:
                 Toast.makeText(this.getApplicationContext(), "triste", Toast.LENGTH_LONG).show();
+                texto = "Estoy triste";
+
+                showLocationDialog(texto);
                 break;
         }
 
