@@ -17,11 +17,12 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/linearLayoutCD"
         android:background="@color/family"
         android:weightSum="1">
 
         <ImageButton
-            android:background="@color/family"
+            android:background="@android:color/transparent"
             android:layout_width="227dp"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/family_contact"
@@ -33,21 +34,23 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:weightSum="1">
 
 
             <ImageButton
                 android:id="@+id/photo_modify"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/modify_user"
-                android:background="@color/family"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/modify_blanco"
+                android:background="@android:color/transparent"
                 android:paddingLeft="10dp"/>
             <LinearLayout
                 android:paddingLeft="20dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="0.74"
+                android:layout_width="170dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -61,7 +64,6 @@
 
 
                 <TextView
-                    android:layout_width="216dp"
                     android:layout_height="wrap_content"
                     android:text="38499583"
                     android:textSize="20dp"
@@ -69,7 +71,8 @@
                     android:textColor="#FFF"
                     android:paddingTop="10dp"
                     android:ems="10"
-                    android:id="@+id/text_telefonoCD" />
+                    android:id="@+id/text_telefonoCD"
+                    android:layout_width="match_parent" />
 
 
 
@@ -77,12 +80,10 @@
 
             <ImageButton
                 android:id="@+id/photo_phone"
-                android:background="@color/family"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/contact_family_phone"/>
-
-
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:src="@drawable/llamar_icono"/>
 
 
         </LinearLayout>

@@ -3,6 +3,7 @@ package itesm.mx.racm;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -23,7 +24,8 @@ public class PerfilDetalle extends AppCompatActivity implements View.OnClickList
     TextView tvDireccion;
 
     String nombre;
-    Perfil perfil;
+    Perfil perfilPrueba;
+    long idPerfil;
     PerfilOperations dao_Perfil;
 
     @Override
@@ -43,9 +45,11 @@ public class PerfilDetalle extends AppCompatActivity implements View.OnClickList
         dao_Perfil = new PerfilOperations(this);
         dao_Perfil.open();
 
+        perfilPrueba = dao_Perfil.findPerfil(0);
+
         //perfil = dao_Perfil.obtenerPerfilDetalle();
 
-        tvNombre.setText(dao_Perfil.ups().toString());
+        //tvNombre.setText(perfilPrueba.getNombre());
         //tvTelefono.setText(perfil.getCelular());
         //tvDireccion.setText(perfil.getDireccion());
 

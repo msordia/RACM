@@ -39,6 +39,21 @@ public class PerfilOperations {
 
     //Acciones sobre Base de Datos
 
+    public Perfil findPerfil(long idPerfil){
+        String query = "Select * FROM " + DataBaseSchema.PerfilTable.TABLE_NAME + " WHERE " + DataBaseSchema.ContactoTable._ID + " = \"" + idPerfil + "\"";
+        try{
+            Cursor cursor = db.rawQuery(query, null);
+            perfil = null;
+            if(cursor.moveToFirst()){
+                perfil = new Perfil(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getBlob(7));
+
+            }
+            cursor.close();
+        }catch (SQLException e){
+            Log.e("SQLFind", e.toString());
+        }
+        return perfil;
+    }
 
     public long registrarPerfil(Perfil perfil){
         long newRowId= 0;

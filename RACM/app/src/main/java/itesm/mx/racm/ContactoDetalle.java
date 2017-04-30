@@ -3,11 +3,14 @@ package itesm.mx.racm;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,12 +37,9 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
     ContactoOperations dao;
     TextView tvNombre, tvTelefono;
     Bitmap imageBitmap;
-
+    Contacto contactoPrueba;
 
     long id;
-    String telefono;
-    Contacto contacto;
-    String nombre;
     ContactoOperations dao_Contactos;
     ArrayList<Contacto> contactosCompletos;
 
@@ -61,12 +61,6 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
         tvNombre = (TextView) findViewById(R.id.text_nombreCD);
         tvTelefono = (TextView) findViewById(R.id.text_telefonoCD);
 
-        dao_Contactos = new ContactoOperations(this);
-        dao_Contactos.open();
-
-
-        nombre = "MARIA";
-        contacto = dao_Contactos.obtenerContactoDetalle(nombre);
         /*
         // SI SE QUIERE PROBAR LA QUERY: CAMBIAR LA VARIABLE NOMBRE A UN NOMBRE QUE EXISTA
         tvNombre.setText(contacto.getNombre());
@@ -82,23 +76,50 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
 
         //Get intent extras "idContacto"
 
-        dao = new ContactoOperations(this);
-        dao.open();
+        dao_Contactos = new ContactoOperations(this);
+        dao_Contactos.open();
 
         Bundle bundle= getIntent().getExtras();
         if(bundle!=null){
            idContacto = bundle.getLong("idContacto");
             Log.d("Este es el id", String.valueOf(idContacto));
-            Contacto contactoPrueba;
-            contactoPrueba = dao.findContacto(idContacto);
+            contactoPrueba = dao_Contactos.findContacto(idContacto);
             Log.d("Nombre", contactoPrueba.getNombre());
+            LinearLayout ll;
+            ll = (LinearLayout) findViewById(R.id.linearLayoutCD);
+            switch (contactoPrueba.getCategoria()) {
+                case 1:
+                    ll.setBackgroundColor(Color.parseColor("#2244aa"));//Azul #000000
+                    break;
+                case 2:
+                    ll.setBackgroundColor(Color.parseColor("#c601de"));//Morado #e300ff //#c601de //IGUAL #b006c4
+                    break;
+                case 3:
+                    ll.setBackgroundColor(Color.parseColor("#e10000"));//Rojo
+                    break;
+                case 4:
+                    ll.setBackgroundColor(Color.parseColor("#00897b"));//Verde Marino
+                    break;
+                case 5:
+                    ll.setBackgroundColor(Color.parseColor("#f28500"));//Naranja
+                    break;
+            }
             //Cambiar imageFoto,tvNombre y tvTelefono
             imageBitmap = BitmapFactory.decodeByteArray(contactoPrueba.getFoto(), 0, contactoPrueba.getFoto().length);
             ibFoto.setImageBitmap(imageBitmap);
             tvNombre.setText(contactoPrueba.getNombre());
             tvTelefono.setText(contactoPrueba.getTelefono());
         }
-
+        // Marca al numero de CELULAR
+        ibPhone.setFocusable(false);
+        ibPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callIntent = new Intent(Intent.ACTION_VIEW);
+                callIntent.setData(Uri.parse("tel:"+contactoPrueba.getCelular()));
+                startActivity(callIntent);
+            }
+        });
     }
 
     @Override
@@ -115,7 +136,7 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.photo_phone:
-                Toast.makeText(this.getApplicationContext(), "Función de llamada al numero: 38499583", Toast.LENGTH_LONG).show();
+                Toast.makeText(this.getApplicationContext(), "Función de llamada al numero: " + contactoPrueba.getTelefono(), Toast.LENGTH_LONG).show();
                 break;
 
             case R.id.image_button_hambreCD:
