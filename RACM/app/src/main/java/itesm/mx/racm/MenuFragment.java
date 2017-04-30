@@ -51,20 +51,21 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+        Intent intent;
         switch (v.getId()) {
             case R.id.image_button_contactos:
-                Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
                 break;
 
             case R.id.image_button_ayuda:
-                Intent intent2 = new Intent(getActivity(), CrearContacto.class);
-                startActivity(intent2);
+                intent = new Intent(getActivity(), CrearContacto.class);
+                startActivity(intent);
                 break;
 
             case R.id.image_button_perfil:
-                Intent intent3 = new Intent(getActivity(), ContactoDetalle.class);
-                startActivity(intent3);
+                intent = new Intent(getActivity(), PerfilDetalle.class);
+                startActivity(intent);
                 break;
 
         }
