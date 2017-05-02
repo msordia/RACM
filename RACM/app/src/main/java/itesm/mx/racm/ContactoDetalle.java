@@ -145,13 +145,13 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
 
                 SmsManager smsManager = SmsManager.getDefault();
                 smsManager.sendTextMessage(telefono, null, sms, null, null);
-                Toast.makeText(getApplicationContext(), "Sí", Toast.LENGTH_SHORT).show();
+
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener(){
             public void onClick(DialogInterface dialog, int which) {
                 // Write your code here to execute after dialog
-                Toast.makeText(getApplicationContext(), "No", Toast.LENGTH_SHORT).show();
+
             }
         });
         builder.show();
@@ -170,12 +170,8 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
                 startActivity(intent2);
                 break;
 
-            case R.id.photo_phone:
-                Toast.makeText(this.getApplicationContext(), "Función de llamada al numero: " + contactoPrueba.getTelefono(), Toast.LENGTH_LONG).show();
-                break;
-
             case R.id.image_button_hambreCD:
-                Toast.makeText(ContactoDetalle.this, "Hungry", Toast.LENGTH_SHORT).show();
+
                 texto = "Tengo hambre";
 
                 showLocationDialog(texto);
@@ -184,21 +180,18 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.image_button_enfermoCD:
-                Toast.makeText(this.getApplicationContext(), "enfermo", Toast.LENGTH_LONG).show();
                 texto = "Estoy enfermo";
 
                 showLocationDialog(texto);
                 break;
 
             case R.id.image_button_soloCD:
-                Toast.makeText(this.getApplicationContext(), "solo", Toast.LENGTH_LONG).show();
                 texto = "Me siento solo";
 
                 showLocationDialog(texto);
                 break;
 
             case R.id.image_button_tristeCD:
-                Toast.makeText(this.getApplicationContext(), "triste", Toast.LENGTH_LONG).show();
                 texto = "Estoy triste";
 
                 showLocationDialog(texto);
