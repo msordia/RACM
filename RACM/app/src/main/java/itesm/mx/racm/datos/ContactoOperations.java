@@ -71,15 +71,15 @@ public class ContactoOperations {
         return newRowId;
     }
 
-    public Contacto obtenerContactoDetalle(String nombre) {
+    public Contacto obtenerContactoDetalle(long iId) {
 
         String [] columns = {DataBaseSchema.ContactoTable._ID, DataBaseSchema.ContactoTable.COLUMN_NAME_NOMBRE,
                 DataBaseSchema.ContactoTable.COLUMN_NAME_CELULAR, DataBaseSchema.ContactoTable.COLUMN_NAME_TELEFONO,
                 DataBaseSchema.ContactoTable.COLUMN_NAME_CATEGORIA, DataBaseSchema.ContactoTable.COLUMN_NAME_EMERGENCIA,
                 DataBaseSchema.ContactoTable.COLUMN_NAME_FAVORITO, DataBaseSchema.ContactoTable.COLUMN_NAME_IMAGEN};
-        String[] selectionArg = {nombre};
+        String[] selectionArg = {Long.toString(iId)};
         Cursor cursor = db.query(DataBaseSchema.ContactoTable.TABLE_NAME,
-                columns, DataBaseSchema.ContactoTable.COLUMN_NAME_NOMBRE + "=?",selectionArg, null, null, null, null);
+                columns, DataBaseSchema.ContactoTable._ID + "=?",selectionArg, null, null, null, null);
         while(cursor.moveToNext()) {
             contacto= new Contacto(
                     cursor.getInt(0),
