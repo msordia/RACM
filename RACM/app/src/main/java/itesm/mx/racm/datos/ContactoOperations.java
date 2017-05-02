@@ -124,4 +124,34 @@ public class ContactoOperations {
         }
         return listaContactos;
     }
+
+    public ArrayList<Contacto> obtenerContactosEmergencia(){
+        ArrayList<Contacto> listaContactos= new ArrayList<Contacto>();
+
+        String query = "Select * FROM " + DataBaseSchema.ContactoTable.TABLE_NAME + " WHERE " + DataBaseSchema.ContactoTable.COLUMN_NAME_EMERGENCIA + " = \"" + 1 + "\"";
+        Log.d("Select", query);
+
+        try{
+            Cursor cursor= db.rawQuery(query, null);
+            if(cursor.moveToFirst()){
+                do{
+                    contacto= new Contacto(
+                            cursor.getInt(0),
+                            cursor.getString(1),
+                            cursor.getString(2),
+                            cursor.getString(3),
+                            cursor.getInt(4),
+                            cursor.getInt(5),
+                            cursor.getInt(6),
+                            cursor.getBlob(7));
+
+                    listaContactos.add(contacto);
+                }while(cursor.moveToNext());
+            }
+            cursor.close();
+        }catch(SQLException e){
+            Log.e("SQLList", e.toString());
+        }
+        return listaContactos;
+    }
 }
