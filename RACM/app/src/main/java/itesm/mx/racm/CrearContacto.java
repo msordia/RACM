@@ -1,7 +1,10 @@
 package itesm.mx.racm;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -41,6 +44,9 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
     int checkEme;
     int checkFav;
 
+    private static final int SELECT_PICTURE = 2;
+    private static final int REQUEST_IMAGE_CAPTURE = 1;
+
     MenuFragment fragmentoMenu;
 
     @Override
@@ -79,16 +85,13 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
             case R.id.image_fotoCC:
 
 
-                //Intent a Media Store
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                if(intent.resolveActivity(getPackageManager()) != null){
-                    startActivityForResult(intent, REQUEST_CODE);
-                }
+                mostrarOpciones();
 
                 break;
             case R.id.button_guardarCC:
 
                 //Guardar el contacto en la base de datos
+
 
                 if(posicionCategoria == 0 || etNombre.getText().toString().isEmpty() || etTelefono.getText().toString().isEmpty() || etCelular.getText().toString().isEmpty())  {
                     Toast.makeText(getApplicationContext(), "Favor de completar la información", Toast.LENGTH_SHORT).show();
@@ -132,6 +135,41 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
         finish();
         return contacto;
     }
+
+    public void mostrarOpciones(){
+        final CharSequence[] option = {"Tomar fotografía", "Elegir de galería", "Cancelar"};
+        final AlertDialog.Builder builder = new AlertDialog.Builder(CrearContacto.this);
+        builder.setTitle("Seleccione una opción");
+        builder.setItems(option, new DialogInterface.OnClickListener() {
+
+            @Override
+
+            public void onClick(DialogInterface dialog, int which) {
+                if(option[which] == "Tomar fotografía"){
+                    abrirCamera();
+                }else if(option[which] == "Elegir de galería"){
+                    cargarGaleria();
+                }else {
+                    dialog.dismiss();
+                }
+            }
+        });
+        builder.show();
+    }
+
+    public void abrirCamera() {
+        Intent fotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (fotoIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(fotoIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    public void cargarGaleria(){
+        Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        intent.setType("image/*");
+        startActivityForResult(intent.createChooser(intent, "Selecciona"), SELECT_PICTURE);
+    }
+
 
 
     @Override
