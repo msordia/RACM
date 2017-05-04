@@ -21,6 +21,7 @@ public class PerfilDetalle extends AppCompatActivity implements View.OnClickList
 
     TextView tvNombre;
     TextView tvTelefono;
+    TextView tvCelular;
     TextView tvDireccion;
 
     String nombre;
@@ -41,9 +42,16 @@ public class PerfilDetalle extends AppCompatActivity implements View.OnClickList
         tvNombre = (TextView) findViewById(R.id.text_nombrePD);
         tvTelefono = (TextView) findViewById(R.id.text_telefonoPD);
         tvDireccion = (TextView) findViewById(R.id.text_DireccionPD);
+        tvCelular = (TextView) findViewById(R.id.text_celularPD);
 
         dao_Perfil = new PerfilOperations(this);
         dao_Perfil.open();
+
+        perfilPrueba = new Perfil(1,"PruebaNom", "81111111", "82222222", "direccion de prueba", "la ubicacion de prueba", null);
+        tvNombre.setText(perfilPrueba.getNombre());
+        tvCelular.setText(perfilPrueba.getCelular());
+        tvTelefono.setText(perfilPrueba.getTelefonoFIjo());
+        tvDireccion.setText(perfilPrueba.getDireccion());
 /*
         perfilPrueba = dao_Perfil.findPerfil();
 
@@ -60,6 +68,7 @@ public class PerfilDetalle extends AppCompatActivity implements View.OnClickList
         switch (v.getId()){
             case R.id.image_modificarPD:
                 Intent  intentModify= new Intent(this,EditarPerfil.class);
+                intentModify.putExtra("perfil", perfilPrueba);
                 startActivity(intentModify);
                 break;
 
