@@ -28,6 +28,22 @@ public class ContactoOperations {
         }
     }
 
+    public Contacto findContacto(long idContacto){
+        String query = "Select * FROM " + DataBaseSchema.ContactoTable.TABLE_NAME + " WHERE " + DataBaseSchema.ContactoTable._ID + " = \"" + idContacto + "\"";
+        try{
+            Cursor cursor = db.rawQuery(query, null);
+            contacto = null;
+            if(cursor.moveToFirst()){
+                contacto = new Contacto(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), Integer.parseInt(cursor.getString(4)), Integer.parseInt(cursor.getString(5)), Integer.parseInt(cursor.getString(6)), cursor.getBlob(7));
+
+            }
+            cursor.close();
+        }catch (SQLException e){
+            Log.e("SQLFind", e.toString());
+        }
+        return contacto;
+    }
+
     public void close(){
         db.close();
     }
@@ -55,6 +71,29 @@ public class ContactoOperations {
         return newRowId;
     }
 
+    public Contacto obtenerContactoDetalle(long iId) {
+
+        String [] columns = {DataBaseSchema.ContactoTable._ID, DataBaseSchema.ContactoTable.COLUMN_NAME_NOMBRE,
+                DataBaseSchema.ContactoTable.COLUMN_NAME_CELULAR, DataBaseSchema.ContactoTable.COLUMN_NAME_TELEFONO,
+                DataBaseSchema.ContactoTable.COLUMN_NAME_CATEGORIA, DataBaseSchema.ContactoTable.COLUMN_NAME_EMERGENCIA,
+                DataBaseSchema.ContactoTable.COLUMN_NAME_FAVORITO, DataBaseSchema.ContactoTable.COLUMN_NAME_IMAGEN};
+        String[] selectionArg = {Long.toString(iId)};
+        Cursor cursor = db.query(DataBaseSchema.ContactoTable.TABLE_NAME,
+                columns, DataBaseSchema.ContactoTable._ID + "=?",selectionArg, null, null, null, null);
+        while(cursor.moveToNext()) {
+            contacto= new Contacto(
+                    cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getInt(4),
+                    cursor.getInt(5),
+                    cursor.getInt(6),
+                    cursor.getBlob(7));
+        }
+        cursor.close();
+        return contacto;
+    }
 
     public ArrayList<Contacto> obtenerContactos(){
         ArrayList<Contacto> listaContactos= new ArrayList<Contacto>();
@@ -86,6 +125,7 @@ public class ContactoOperations {
         return listaContactos;
     }
 
+<<<<<<< HEAD
     public void modificarContacto(Contacto contacto){
         try{
             ContentValues values= new ContentValues();
@@ -111,5 +151,35 @@ public class ContactoOperations {
         }catch(SQLException e){
             Log.e("SQLDEL",e.toString());
         }
+=======
+    public ArrayList<Contacto> obtenerContactosEmergencia(){
+        ArrayList<Contacto> listaContactos= new ArrayList<Contacto>();
+
+        String query = "Select * FROM " + DataBaseSchema.ContactoTable.TABLE_NAME + " WHERE " + DataBaseSchema.ContactoTable.COLUMN_NAME_EMERGENCIA + " = \"" + 1 + "\"";
+        Log.d("Select", query);
+
+        try{
+            Cursor cursor= db.rawQuery(query, null);
+            if(cursor.moveToFirst()){
+                do{
+                    contacto= new Contacto(
+                            cursor.getInt(0),
+                            cursor.getString(1),
+                            cursor.getString(2),
+                            cursor.getString(3),
+                            cursor.getInt(4),
+                            cursor.getInt(5),
+                            cursor.getInt(6),
+                            cursor.getBlob(7));
+
+                    listaContactos.add(contacto);
+                }while(cursor.moveToNext());
+            }
+            cursor.close();
+        }catch(SQLException e){
+            Log.e("SQLList", e.toString());
+        }
+        return listaContactos;
+>>>>>>> 39b4bc2cd8278d1b4ee8c6ccd47902f3894e8b86
     }
 }

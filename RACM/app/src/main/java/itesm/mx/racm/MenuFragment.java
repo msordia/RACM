@@ -1,11 +1,14 @@
 package itesm.mx.racm;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +16,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import itesm.mx.racm.datos.Contacto;
+import itesm.mx.racm.datos.ContactoOperations;
 
 import static android.R.attr.button;
 
@@ -23,6 +32,10 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
     ImageButton ibtnContactos;
     ImageButton ibtnAyuda;
     ImageButton ibtnPerfil;
+    ContactoOperations dao_Contactos;
+    ArrayList<Contacto> contactos;
+    List<Contacto> listaContactos = new ArrayList<Contacto>();
+
     public MenuFragment() {
         // Required empty public constructor
     }
@@ -32,6 +45,9 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(DEBUG_TAG, "onCreate");
+
+        dao_Contactos = new ContactoOperations(this.getContext());
+        dao_Contactos.open();
     }
 
     @Override
@@ -44,30 +60,62 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
         ibtnPerfil = (ImageButton) view.findViewById(R.id.image_button_perfil);
 
         ibtnContactos.setOnClickListener(this);
-        //ibtnAyuda.setOnClickListener(this);
+        ibtnAyuda.setOnClickListener(this);
         ibtnPerfil.setOnClickListener(this);
         return view;
     }
 
     @Override
     public void onClick(View v) {
+        Intent intent;
         switch (v.getId()) {
             case R.id.image_button_contactos:
-                Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
                 break;
 
             case R.id.image_button_ayuda:
-                Intent intent2 = new Intent(getActivity(), CrearContacto.class);
-                startActivity(intent2);
+                Log.d("Ayuda", "Ayuda");
+                contactos = dao_Contactos.obtenerContactosEmergencia();
+                showLocationDialog(contactos);
+                Log.d("Favoritos", String.valueOf(contactos));
+                //intent = new Intent(getActivity(), CrearContacto.class);
+                //startActivity(intent);
                 break;
 
             case R.id.image_button_perfil:
-                Intent intent3 = new Intent(getActivity(), PerfilDetalle.class);
-                startActivity(intent3);
+                intent = new Intent(getActivity(), PerfilDetalle.class);
+                startActivity(intent);
                 break;
 
         }
+    }
+
+    private void showLocationDialog(final ArrayList<Contacto> lista) {
+        AlertDialog.Builder builder =
+                new AlertDialog.Builder(getContext(), R.style.alertDialog);
+        builder.setTitle("Se enviará un mensaje a los contactos de emergencia");
+        builder.setMessage("¿Está seguro?");
+        builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // Write your code here to execute after dialog
+                // smsManager.sendTextMessage(phoneNo, null, sms, null, null);
+                for (int i = 0; i < lista.size(); i++) {
+                    Log.d("Celular", lista.get(i).getCelular());
+                    SmsManager smsManager = SmsManager.getDefault();
+                    smsManager.sendTextMessage(lista.get(i).getCelular(), null, "¡Necesito Ayuda!", null, null);
+                }
+
+
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which) {
+                // Write your code here to execute after dialog
+                //Toast.makeText(getContext(), "No", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.show();
     }
 
     @Override

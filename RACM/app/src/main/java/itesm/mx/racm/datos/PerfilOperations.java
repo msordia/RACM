@@ -17,7 +17,7 @@ public class PerfilOperations {
 
     private SQLiteDatabase db;
     private RACM_DBHelper dbHelper;
-    private Contacto contacto;
+    private Perfil perfil;
 
     public PerfilOperations(Context context) {
         this.dbHelper = new RACM_DBHelper(context);
@@ -39,6 +39,22 @@ public class PerfilOperations {
 
     //Acciones sobre Base de Datos
 
+    public Perfil findPerfil(long idPerfil){
+        String query = "Select * FROM " + DataBaseSchema.PerfilTable.TABLE_NAME + " WHERE " + DataBaseSchema.ContactoTable._ID + " = \"" + idPerfil + "\"";
+        try{
+            Cursor cursor = db.rawQuery(query, null);
+            perfil = null;
+            if(cursor.moveToFirst()){
+                perfil = new Perfil(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getBlob(7));
+
+            }
+            cursor.close();
+        }catch (SQLException e){
+            Log.e("SQLFind", e.toString());
+        }
+        return perfil;
+    }
+
     public long registrarPerfil(Perfil perfil){
         long newRowId= 0;
         try{
@@ -57,6 +73,39 @@ public class PerfilOperations {
         return newRowId;
     }
 
+    public Perfil obtenerPerfilDetalle() {
 
+        String [] columns = {DataBaseSchema.ContactoTable._ID, DataBaseSchema.ContactoTable.COLUMN_NAME_NOMBRE,
+                DataBaseSchema.ContactoTable.COLUMN_NAME_CELULAR, DataBaseSchema.ContactoTable.COLUMN_NAME_TELEFONO,
+                DataBaseSchema.ContactoTable.COLUMN_NAME_CATEGORIA, DataBaseSchema.ContactoTable.COLUMN_NAME_EMERGENCIA,
+                DataBaseSchema.ContactoTable.COLUMN_NAME_FAVORITO, DataBaseSchema.ContactoTable.COLUMN_NAME_IMAGEN};
+        Cursor cursor = db.query(DataBaseSchema.ContactoTable.TABLE_NAME,
+                columns, DataBaseSchema.ContactoTable.COLUMN_NAME_NOMBRE, null, null, null, null);
+        StringBuffer buffer = new StringBuffer();
+        while(cursor.moveToNext()) {
+            perfil = new Perfil(
+                    cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getString(4),
+                    cursor.getString(5),
+                    cursor.getBlob(7));
+        }
+        return perfil;
+    }
+
+    public String ups() {
+        String count = "SELECT count(*) FROM " + DataBaseSchema.PerfilTable.TABLE_NAME;
+        Cursor mcursor = db.rawQuery(count, null);
+        mcursor.moveToFirst();
+        int icount = mcursor.getInt(0);
+        if(icount>0) {
+            return "siii";
+        }
+        else{
+            return Integer.toString(icount);
+        }
+    }
 
 }
