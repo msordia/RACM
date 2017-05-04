@@ -47,6 +47,7 @@
                 android:src="@drawable/modify_blanco"
                 android:background="@android:color/transparent"
                 android:paddingLeft="10dp"/>
+
             <LinearLayout
                 android:paddingLeft="20dp"
                 android:orientation="vertical"
