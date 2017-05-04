@@ -159,6 +159,7 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()){
             case R.id.image_fotoPD:
                 Intent intent = new Intent(this, VerFoto.class);
+                intent.putExtra("foto",contactoPrueba.getFoto());
                 startActivity(intent);
                 break;
 
