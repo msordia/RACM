@@ -39,8 +39,8 @@ public class PerfilOperations {
 
     //Acciones sobre Base de Datos
 
-    public Perfil findPerfil(long idPerfil){
-        String query = "Select * FROM " + DataBaseSchema.PerfilTable.TABLE_NAME + " WHERE " + DataBaseSchema.ContactoTable._ID + " = \"" + idPerfil + "\"";
+    public Perfil findPerfil(){
+        String query = "Select * FROM " + DataBaseSchema.PerfilTable.TABLE_NAME;
         try{
             Cursor cursor = db.rawQuery(query, null);
             perfil = null;

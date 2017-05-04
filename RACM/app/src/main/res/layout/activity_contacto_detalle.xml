@@ -43,40 +43,48 @@
             <ImageButton
                 android:id="@+id/photo_modify"
                 android:layout_width="70dp"
-                android:layout_height="match_parent"
+                android:layout_height="75dp"
                 android:src="@drawable/modify_blanco"
                 android:background="@android:color/transparent"
                 android:paddingLeft="10dp"/>
 
             <LinearLayout
-                android:paddingLeft="20dp"
                 android:orientation="vertical"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.74"
+                android:layout_weight="0.86"
                 android:layout_width="170dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="evert"
+                    android:textAlignment="center"
                     android:textSize="20dp"
                     android:textColor="#FFF"
-                    android:paddingTop="10dp"
-                    android:ems="10"
                     android:id="@+id/text_nombreCD" />
 
 
                 <TextView
                     android:layout_height="wrap_content"
-                    android:text="38499583"
+                    android:text="Cel: 8101929"
+                    android:textAlignment="center"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:textColor="#FFF"
-                    android:paddingTop="10dp"
-                    android:ems="10"
-                    android:id="@+id/text_telefonoCD"
+                    android:id="@+id/text_celularCD"
+                    android:enabled="false"
                     android:layout_width="match_parent" />
 
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:text="Tel: 38499583"
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#FFF"
+                    android:id="@+id/text_telefonoCD"
+                    android:enabled="false"
+                    android:layout_width="match_parent" />
 
 
             </LinearLayout>
@@ -84,17 +92,54 @@
             <ImageButton
                 android:id="@+id/photo_phone"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:src="@drawable/llamar_icono"/>
 
 
         </LinearLayout>
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="78dp">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="Contacto de Emergencia"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#FFF"
+                android:visibility="gone"
+                android:paddingTop="10dp"
+                android:ems="10"
+                android:id="@+id/text_emergenciaCD"
+                android:enabled="false"
+                android:layout_width="match_parent" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="Contacto Favorito"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="#FFF"
+                android:paddingTop="10dp"
+                android:visibility="gone"
+                android:ems="10"
+                android:id="@+id/text_favoritoCD"
+                android:enabled="false"
+                android:layout_width="match_parent" />
+
+        </LinearLayout>
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.42" />
+            android:layout_weight="0.36" />
 
         <LinearLayout
             android:orientation="vertical"
