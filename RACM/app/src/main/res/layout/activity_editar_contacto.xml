@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
     <fragment
         android:name="itesm.mx.racm.MenuFragment"
@@ -13,141 +14,137 @@
         android:layout_height="wrap_content"
         tools:layout="@layout/fragment_menu"/>
 
-    <LinearLayout
-        android:orientation="vertical"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="1">
-
-        <Space
-            android:layout_weight="0.23"
-            android:layout_width="match_parent"
-            android:layout_height="1dp" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            app:srcCompat="@drawable/user"
-            android:id="@+id/image_fotoEC"
-            android:layout_weight="0.17"
-            android:layout_gravity="left"/>
-
-        <TextView
-            android:text="Nombre"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/text_nombreEC"
-            android:textSize="18sp" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/edit_nombreEC"
-            android:textAlignment="viewStart" />
-
-        <TextView
-            android:text="Teléfono"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/text_telefonoEC"
-            android:textSize="18sp" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/edit_telefonoEC"
-            android:textAlignment="viewStart" />
-
-        <TextView
-            android:text="Categorías"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/text_direccionEC"
-            android:textSize="18sp" />
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/spinnner_categoriasEC"
-            android:textAlignment="viewStart" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.10" />
-
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_weight="0.23"
-            android:layout_height="10dp">
+            android:layout_height="wrap_content">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="27dp" />
+
+            <ImageButton
+                android:background="@android:color/transparent"
+                android:layout_width="227dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/user"
+                android:id="@+id/image_fotoEC"
+                android:layout_margin="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.17" />
 
             <TextView
-                android:text="Contacto de emergencia"
+                android:text="Nombre"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView"
-                android:layout_weight="1"
+                android:id="@+id/text_nombreEC"
                 android:textSize="18sp" />
 
-            <CheckBox
-                android:layout_width="wrap_content"
+            <EditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/check_EmergenciaEC"
-                android:layout_weight="0.05" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_weight="0.23"
-            android:layout_height="10dp">
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/edit_nombreEC"
+                android:textAlignment="viewStart" />
 
             <TextView
-                android:text="Contacto Favorito"
+                android:text="Teléfono"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textFavorito"
-                android:layout_weight="1"
+                android:id="@+id/text_telefonoEC"
                 android:textSize="18sp" />
 
-            <CheckBox
-                android:layout_width="wrap_content"
+            <EditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/check_FavoritoEC"
-                android:layout_weight="0.04" />
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/edit_telefonoEC"
+                android:textAlignment="viewStart" />
+
+            <TextView
+                android:text="Categorías"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_direccionEC"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/spinnner_categoriasEC"
+                android:textAlignment="viewStart" />
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Contacto de emergencia"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView"
+                    android:layout_weight="1"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/check_EmergenciaEC"
+                    android:layout_weight="0.05" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Contacto Favorito"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textFavorito"
+                    android:layout_weight="1"
+                    android:textSize="18sp" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/check_FavoritoEC"
+                    android:layout_weight="0.04" />
+
+            </LinearLayout>
+
+            <Button
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonshape"
+                android:text="Guardar"
+                android:layout_gravity="center"
+                android:id="@+id/button_guardarEC"
+                android:layout_weight="0.23" />
 
         </LinearLayout>
-
-        <Button
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/buttonshape"
-            android:text="Guardar"
-            android:layout_gravity="center"
-            android:id="@+id/button_guardarEC" />
-
-
-    </LinearLayout>
-
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

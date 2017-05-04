@@ -38,18 +38,14 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
 
     MenuFragment fragmentoMenu;
     long idContacto;
-    ContactoOperations dao;
     TextView tvNombre, tvTelefono;
     Bitmap imageBitmap;
 
     long id;
     String telefono;
     String texto = "";
-    Contacto contacto;
-    String nombre;
 
     ContactoOperations dao_Contactos;
-    ArrayList<Contacto> contactosCompletos;
     Contacto contactoPrueba;
 
     @Override
@@ -131,6 +127,7 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
                 startActivity(callIntent);
             }
         });
+
     }
     private void showLocationDialog(final String texto) {
         AlertDialog.Builder builder =
@@ -167,6 +164,7 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
 
             case  R.id.photo_modify:
                 Intent intent2 = new Intent(this, EditarContacto.class);
+                intent2.putExtra("idContacto",idContacto);
                 startActivity(intent2);
                 break;
 
