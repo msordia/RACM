@@ -44,15 +44,13 @@ public class PerfilDetalle extends AppCompatActivity implements View.OnClickList
 
         dao_Perfil = new PerfilOperations(this);
         dao_Perfil.open();
+/*
+        perfilPrueba = dao_Perfil.findPerfil();
 
-        perfilPrueba = dao_Perfil.findPerfil(0);
-
-        //perfil = dao_Perfil.obtenerPerfilDetalle();
-
-        //tvNombre.setText(perfilPrueba.getNombre());
-        //tvTelefono.setText(perfil.getCelular());
-        //tvDireccion.setText(perfil.getDireccion());
-
+        tvNombre.setText(perfilPrueba.getNombre());
+        tvTelefono.setText(perfilPrueba.getCelular());
+        tvDireccion.setText(perfilPrueba.getDireccion());
+*/
         ImageButton ibModificarPD= (ImageButton) findViewById(R.id.image_modificarPD);
         ibModificarPD.setOnClickListener(this);
     }

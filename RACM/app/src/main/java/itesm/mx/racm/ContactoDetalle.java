@@ -38,7 +38,11 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
 
     MenuFragment fragmentoMenu;
     long idContacto;
-    TextView tvNombre, tvTelefono;
+    TextView tvNombre;
+    TextView tvTelefono;
+    TextView tvCelular;
+    TextView tvEmergencia;
+    TextView tvFavorito;
     Bitmap imageBitmap;
 
     long id;
@@ -65,6 +69,9 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
 
         tvNombre = (TextView) findViewById(R.id.text_nombreCD);
         tvTelefono = (TextView) findViewById(R.id.text_telefonoCD);
+        tvCelular = (TextView) findViewById(R.id.text_celularCD);
+        tvEmergencia = (TextView) findViewById(R.id.text_emergenciaCD);
+        tvFavorito = (TextView) findViewById(R.id.text_favoritoCD);
 
         /*
         // SI SE QUIERE PROBAR LA QUERY: CAMBIAR LA VARIABLE NOMBRE A UN NOMBRE QUE EXISTA
@@ -114,7 +121,16 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
             imageBitmap = BitmapFactory.decodeByteArray(contactoPrueba.getFoto(), 0, contactoPrueba.getFoto().length);
             ibFoto.setImageBitmap(imageBitmap);
             tvNombre.setText(contactoPrueba.getNombre());
-            tvTelefono.setText(contactoPrueba.getCelular());
+            tvCelular.setText("Cel. " + contactoPrueba.getCelular());
+            tvTelefono.setText("Tel. " + contactoPrueba.getTelefono());
+
+            if(contactoPrueba.getEmergencia() == 1) {
+                tvEmergencia.setVisibility(View.VISIBLE);
+            }
+            if(contactoPrueba.getFavorito() == 1) {
+                tvFavorito.setVisibility(View.VISIBLE);
+            }
+
             telefono = contactoPrueba.getCelular();
         }
         // Marca al numero de CELULAR
