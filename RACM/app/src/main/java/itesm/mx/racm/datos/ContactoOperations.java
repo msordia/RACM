@@ -125,7 +125,6 @@ public class ContactoOperations {
         return listaContactos;
     }
 
-<<<<<<< HEAD
     public void modificarContacto(Contacto contacto){
         try{
             ContentValues values= new ContentValues();
@@ -146,12 +145,13 @@ public class ContactoOperations {
     }
 
     public void borrarContacto(long id) {
-        try{
-        db.delete(DataBaseSchema.ContactoTable.TABLE_NAME, DataBaseSchema.ContactoTable._ID+"="+id, null);
-        }catch(SQLException e){
-            Log.e("SQLDEL",e.toString());
+        try {
+            db.delete(DataBaseSchema.ContactoTable.TABLE_NAME, DataBaseSchema.ContactoTable._ID + "=" + id, null);
+        } catch (SQLException e) {
+            Log.e("SQLDEL", e.toString());
         }
-=======
+    }
+
     public ArrayList<Contacto> obtenerContactosEmergencia(){
         ArrayList<Contacto> listaContactos= new ArrayList<Contacto>();
 
@@ -180,6 +180,5 @@ public class ContactoOperations {
             Log.e("SQLList", e.toString());
         }
         return listaContactos;
->>>>>>> 39b4bc2cd8278d1b4ee8c6ccd47902f3894e8b86
     }
 }

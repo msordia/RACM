@@ -26,16 +26,7 @@ import itesm.mx.racm.datos.ContactoOperations;
 
 public class ContactoDetalle extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton ibFoto;
-    ImageButton ibModify;
-    ImageButton ibPhone;
-    ImageButton ibHambre;
-    ImageButton ibEnfermo;
-    ImageButton ibSolo;
-    ImageButton ibTriste;
-
-
-
+    ImageButton ibFoto,ibModify,ibPhone,ibHambre,ibEnfermo,ibSolo,ibTriste;
     MenuFragment fragmentoMenu;
     long idContacto;
     ContactoOperations dao;
@@ -45,11 +36,8 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
     long id;
     String telefono;
     String texto = "";
-    Contacto contacto;
-    String nombre;
 
     ContactoOperations dao_Contactos;
-    ArrayList<Contacto> contactosCompletos;
     Contacto contactoPrueba;
 
     @Override
@@ -66,7 +54,6 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
         ibEnfermo = (ImageButton) findViewById(R.id.image_button_enfermoCD);
         ibSolo = (ImageButton) findViewById(R.id.image_button_soloCD);
         ibTriste = (ImageButton) findViewById(R.id.image_button_tristeCD);
-
         tvNombre = (TextView) findViewById(R.id.text_nombreCD);
         tvTelefono = (TextView) findViewById(R.id.text_telefonoCD);
 
@@ -91,12 +78,9 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
         Bundle bundle= getIntent().getExtras();
         if(bundle!=null){
            idContacto = bundle.getLong("idContacto");
-            Log.d("Este es el id", String.valueOf(idContacto));
 
             contactoPrueba = dao_Contactos.findContacto(idContacto);
-            Log.d("Nombre", contactoPrueba.getNombre());
-            LinearLayout ll;
-            ll = (LinearLayout) findViewById(R.id.linearLayoutCD);
+            LinearLayout ll= (LinearLayout) findViewById(R.id.linearLayoutCD);
             switch (contactoPrueba.getCategoria()) {
                 case 1:
                     ll.setBackgroundColor(Color.parseColor("#2244aa"));//Azul #000000
@@ -167,33 +151,27 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
 
             case  R.id.photo_modify:
                 Intent intent2 = new Intent(this, EditarContacto.class);
+                intent2.putExtra("contacto",contactoPrueba);
                 startActivity(intent2);
                 break;
 
             case R.id.image_button_hambreCD:
-
-                texto = "Tengo hambre";
-
-                showLocationDialog(texto);
-
-
-                break;
+               texto = "Tengo hambre";
+               showLocationDialog(texto);
+               break;
 
             case R.id.image_button_enfermoCD:
                 texto = "Estoy enfermo";
-
                 showLocationDialog(texto);
                 break;
 
             case R.id.image_button_soloCD:
                 texto = "Me siento solo";
-
                 showLocationDialog(texto);
                 break;
 
             case R.id.image_button_tristeCD:
                 texto = "Estoy triste";
-
                 showLocationDialog(texto);
                 break;
         }
