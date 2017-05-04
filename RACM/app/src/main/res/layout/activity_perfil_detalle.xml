@@ -21,31 +21,38 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight="0.07"
+            android:weightSum="1">
+
+            <Space
+                android:layout_width="173dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.95" />
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="left">
 
                 <ImageButton
                     android:id="@+id/image_modificarPD"
-                    android:layout_width="match_parent"
-                    android:layout_height="75dp"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/modificar"
-                    android:layout_weight="0.07"
-                    />
+                    android:src="@drawable/modify_verde" />
 
                 <TextView
                     android:text="Modificar"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimaryDark"
-                    android:id="@+id/text_modificarPD"
-                    android:layout_weight="0.07" />
+                    android:id="@+id/text_modificarPD" />
             </LinearLayout>
         </LinearLayout>
 
@@ -82,12 +89,27 @@
             android:layout_weight="0.10" />
 
         <TextView
+            android:text="Mi Celular"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_cel"/>
+
+        <TextView
+            android:text="8115122622"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_celularPD"
+            android:textSize="20dp"/>
+
+        <TextView
             android:text="@string/telefonoPD"
             android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_2" />
+            android:id="@+id/text_tel" />
 
         <TextView
             android:text="818543342"

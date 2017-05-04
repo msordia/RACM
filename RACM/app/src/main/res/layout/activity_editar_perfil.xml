@@ -13,7 +13,11 @@
         android:layout_height="wrap_content"
         tools:layout="@layout/fragment_menu"/>
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -53,6 +57,22 @@
             android:id="@+id/edit_nombreEP" />
 
         <TextView
+            android:text="Celular"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_celularEP" />
+
+        <EditText
+            android:text="81853524"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edit_celularEP" />
+
+        <TextView
             android:text="@string/telefono"
             android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
@@ -84,16 +104,6 @@
             android:ems="10"
             android:id="@+id/edit_direccionEP" />
 
-        <Button
-            android:text="@string/confirmar_direccion"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/buttonshape"
-            android:layout_gravity="center"
-            android:id="@+id/button_ubicacionEP" />
-
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -109,5 +119,5 @@
             android:background="@drawable/buttonshape"
             android:id="@+id/button_guardarEP" />
     </LinearLayout>
-
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>
