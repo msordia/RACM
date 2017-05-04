@@ -85,4 +85,31 @@ public class ContactoOperations {
         }
         return listaContactos;
     }
+
+    public void modificarContacto(Contacto contacto){
+        try{
+            ContentValues values= new ContentValues();
+            values.put(DataBaseSchema.ContactoTable.COLUMN_NAME_NOMBRE,contacto.getNombre());
+            values.put(DataBaseSchema.ContactoTable.COLUMN_NAME_CELULAR,contacto.getCelular());
+            values.put(DataBaseSchema.ContactoTable.COLUMN_NAME_TELEFONO,contacto.getTelefono());
+            values.put(DataBaseSchema.ContactoTable.COLUMN_NAME_CATEGORIA,contacto.getCategoria());
+            values.put(DataBaseSchema.ContactoTable.COLUMN_NAME_EMERGENCIA,contacto.getEmergencia());
+            values.put(DataBaseSchema.ContactoTable.COLUMN_NAME_FAVORITO,contacto.getFavorito());
+            values.put(DataBaseSchema.ContactoTable.COLUMN_NAME_IMAGEN,contacto.getFoto());
+
+            String selection= DataBaseSchema.ContactoTable._ID+"=?";
+            String[] selectionArgs = {Long.toString(contacto.getId())};
+            db.update(DataBaseSchema.ContactoTable.TABLE_NAME,values,selection,selectionArgs);
+        }catch(SQLException e){
+            Log.e("SQLUPD",e.toString());
+        }
+    }
+
+    public void borrarContacto(long id) {
+        try{
+        db.delete(DataBaseSchema.ContactoTable.TABLE_NAME, DataBaseSchema.ContactoTable._ID+"="+id, null);
+        }catch(SQLException e){
+            Log.e("SQLDEL",e.toString());
+        }
+    }
 }
