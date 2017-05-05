@@ -55,6 +55,23 @@
                 android:textAlignment="viewStart" />
 
             <TextView
+                android:text="Celular"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_celularEC"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/edit_celularEC"
+                android:textAlignment="viewStart" />
+
+            <TextView
                 android:text="Teléfono"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"
@@ -133,6 +150,17 @@
                     android:layout_weight="0.04" />
 
             </LinearLayout>
+
+            <Button
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonshape"
+                android:text="Eliminar"
+                android:layout_gravity="center"
+                android:id="@+id/button_eliminarEC"
+                android:layout_weight="0.23" />
 
             <Button
                 android:textColor="#FFFFFF"

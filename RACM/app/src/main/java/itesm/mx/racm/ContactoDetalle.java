@@ -181,7 +181,7 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
 
             case  R.id.photo_modify:
                 Intent intent2 = new Intent(this, EditarContacto.class);
-                intent2.putExtra("idContacto",idContacto);
+                intent2.putExtra("contacto",contactoPrueba);
                 startActivity(intent2);
                 break;
 

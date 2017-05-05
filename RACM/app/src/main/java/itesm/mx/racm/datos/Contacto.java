@@ -1,6 +1,8 @@
 package itesm.mx.racm.datos;
 
-public class Contacto {
+import java.io.Serializable;
+
+public class Contacto implements Serializable {
     private long id;
     private String nombre;
     private String celular;
