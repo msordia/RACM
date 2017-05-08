@@ -15,4 +15,5 @@
     <string name="cambiarFotoCF">Cambiar Foto</string>
     <string name="guardarCF">Guardar</string>
     <string name="buscar">Buscar Contacto</string>
+    <string name="title_activity_navegar_casa">Map</string>
 </resources>
