@@ -22,6 +22,8 @@ import java.util.List;
 
 import itesm.mx.racm.datos.Contacto;
 import itesm.mx.racm.datos.ContactoOperations;
+import itesm.mx.racm.datos.Perfil;
+import itesm.mx.racm.datos.PerfilOperations;
 
 import static android.R.attr.button;
 
@@ -33,9 +35,10 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
     ImageButton ibtnAyuda;
     ImageButton ibtnPerfil;
     ContactoOperations dao_Contactos;
+    PerfilOperations dao_Perfil;
     ArrayList<Contacto> contactos;
     List<Contacto> listaContactos = new ArrayList<Contacto>();
-
+    Perfil perfil;
     public MenuFragment() {
         // Required empty public constructor
     }
@@ -48,6 +51,9 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
 
         dao_Contactos = new ContactoOperations(this.getContext());
         dao_Contactos.open();
+
+        dao_Perfil = new PerfilOperations(this.getContext());
+        dao_Perfil.open();
     }
 
     @Override
@@ -75,12 +81,8 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
                 break;
 
             case R.id.image_button_ayuda:
-                Log.d("Ayuda", "Ayuda");
                 contactos = dao_Contactos.obtenerContactosEmergencia();
                 showLocationDialog(contactos);
-                Log.d("Favoritos", String.valueOf(contactos));
-                //intent = new Intent(getActivity(), CrearContacto.class);
-                //startActivity(intent);
                 break;
 
             case R.id.image_button_perfil:
@@ -92,13 +94,15 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
     }
 
     private void showLocationDialog(final ArrayList<Contacto> lista) {
+
+        //perfil = dao_Perfil.findPerfil();
+        Log.d("Este es el perfil", dao_Perfil.findPerfil().getNombre());
         AlertDialog.Builder builder =
                 new AlertDialog.Builder(getContext(), R.style.alertDialog);
         builder.setTitle("Se enviará un mensaje a los contactos de emergencia");
         builder.setMessage("¿Está seguro?");
         builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                // Write your code here to execute after dialog
                 // smsManager.sendTextMessage(phoneNo, null, sms, null, null);
                 for (int i = 0; i < lista.size(); i++) {
                     Log.d("Celular", lista.get(i).getCelular());
@@ -115,7 +119,9 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
                 //Toast.makeText(getContext(), "No", Toast.LENGTH_SHORT).show();
             }
         });
+
         builder.show();
+
     }
 
     @Override
