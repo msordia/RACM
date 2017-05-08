@@ -58,7 +58,7 @@ public class PerfilOperations {
     public long registrarPerfil(Perfil perfil){
         long newRowId= 0;
         try{
-            ContentValues values= new ContentValues();
+            ContentValues values = new ContentValues();
             values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_NOMBRE,perfil.getNombre());
             values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_CELULAR,perfil.getTelefonoFIjo());
             values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_TELEFONO,perfil.getTelefonoFIjo());
@@ -66,21 +66,21 @@ public class PerfilOperations {
             values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_UBICACION,perfil.getDireccion());
             values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_IMAGEN,perfil.getFoto());
 
-            newRowId = db.insert(DataBaseSchema.ContactoTable.TABLE_NAME,null,values);
+            newRowId = db.insert(DataBaseSchema.PerfilTable.TABLE_NAME,null,values);
         }catch(SQLException e){
             Log.e("SQLADD",e.toString());
         }
         return newRowId;
     }
 
-    public Perfil obtenerPerfilDetalle() {
+   /* public Perfil obtenerPerfilDetalle() {
 
-        String [] columns = {DataBaseSchema.ContactoTable._ID, DataBaseSchema.ContactoTable.COLUMN_NAME_NOMBRE,
-                DataBaseSchema.ContactoTable.COLUMN_NAME_CELULAR, DataBaseSchema.ContactoTable.COLUMN_NAME_TELEFONO,
-                DataBaseSchema.ContactoTable.COLUMN_NAME_CATEGORIA, DataBaseSchema.ContactoTable.COLUMN_NAME_EMERGENCIA,
-                DataBaseSchema.ContactoTable.COLUMN_NAME_FAVORITO, DataBaseSchema.ContactoTable.COLUMN_NAME_IMAGEN};
-        Cursor cursor = db.query(DataBaseSchema.ContactoTable.TABLE_NAME,
-                columns, DataBaseSchema.ContactoTable.COLUMN_NAME_NOMBRE, null, null, null, null);
+        String [] columns = {DataBaseSchema.PerfilTable._ID, DataBaseSchema.PerfilTable.COLUMN_NAME_NOMBRE,
+                DataBaseSchema.PerfilTable.COLUMN_NAME_CELULAR, DataBaseSchema.PerfilTable.COLUMN_NAME_TELEFONO,
+                DataBaseSchema.PerfilTable.COLUMN_NAME_CATEGORIA, DataBaseSchema.PerfilTable.COLUMN_NAME_EMERGENCIA,
+                DataBaseSchema.PerfilTable.COLUMN_NAME_FAVORITO, DataBaseSchema.PerfilTable.COLUMN_NAME_IMAGEN};
+        Cursor cursor = db.query(DataBaseSchema.PerfilTable.TABLE_NAME,
+                columns, DataBaseSchema.PerfilTable.COLUMN_NAME_NOMBRE, null, null, null, null);
         StringBuffer buffer = new StringBuffer();
         while(cursor.moveToNext()) {
             perfil = new Perfil(
@@ -94,6 +94,8 @@ public class PerfilOperations {
         }
         return perfil;
     }
+
+    */
 
     public String ups() {
         String count = "SELECT count(*) FROM " + DataBaseSchema.PerfilTable.TABLE_NAME;
