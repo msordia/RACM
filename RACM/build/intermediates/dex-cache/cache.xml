@@ -4,6 +4,7 @@
     <item
         is-multidex="true"
 <<<<<<< HEAD
+<<<<<<< HEAD
         jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -175,6 +176,59 @@
         sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
         <dex dex="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.0_0b2fae1d333f052df638c5bcffca6636cff590fd/classes.dex" />
 >>>>>>> master
+=======
+        jar="/Users/ricardo/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_5499d1c498644ecf318bbff4c6d57ad4e2e332a8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
+        <dex dex="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.0_8b9deeaaab73739186a733a382ae3af7df4bdf62/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.3.1_f006c1a086bdc7f9f18c30c3d1adafbad6f60db6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.0_e74e2dc96d5fddb423fba3c7d7a8e52ebf5d4caf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_f22a6b8546b2db4847c0fde860c6e48429479cff/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.0_0b2fae1d333f052df638c5bcffca6636cff590fd/classes.dex" />
+>>>>>>> master
     </item>
     <item
         is-multidex="true"
@@ -182,6 +236,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
+<<<<<<< HEAD
 <<<<<<< HEAD
         sha1="d6e9e9b492f0570fa60d188d9cc13b737b3c082d">
         <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_52614b5700475cb3c8b4d13e23f149bbc50c9e31/classes.dex" />
@@ -206,11 +261,20 @@
         is-multidex="true"
         jar="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
 >>>>>>> master
+=======
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.3.1_512781ac68309bef2e8f7b2a269d04b1e7fca00c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+>>>>>>> master
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="a83e7472a1f2d78180aaafef0b95597361bb9275">
         <dex dex="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_425a3983e15193a49be7554fb1e3d992ed386751/classes.dex" />
+<<<<<<< HEAD
     </item>
     <item
         is-multidex="true"
@@ -612,18 +676,21 @@
         revision="25.0.2"
         sha1="2d5d113b0352ab60946fc44c518cf68fd26cbb79">
         <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-10.0.1_3552f3e88e4e5474db80ab1bb697dfa187db1e6c/classes.dex" />
+=======
+>>>>>>> master
     </item>
     <item
         is-multidex="true"
-        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.3.1/jars/classes.jar"
+        jar="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.3.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.3.1_a5b8a0aa50ed789048c71315f52bd197a7de7063/classes.dex" />
+        <dex dex="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.3.1_714022c4398c4083704d300e3daa0a6a5cc955a3/classes.dex" />
     </item>
     <item
         is-multidex="true"
+<<<<<<< HEAD
         jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -639,18 +706,27 @@
         revision="25.0.2"
         sha1="7a64bf6dc775198eed9db9468a133adf7dfe6562">
         <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-10.0.1_cd649e3394075c67f4d1fac30ffc5c85a67632c1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/sergiosanchez/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+=======
+        jar="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.3.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_f8e0c74daf6b1656f5828f6fc001a122c4450de8/classes.dex" />
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.3.1_6467bc5d1cb4de7158955d637ad4e4cf5bdd28ad/classes.dex" />
+>>>>>>> master
     </item>
     <item
         is-multidex="true"
+        jar="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.3.1_f2c0c4460dbfa2206414b30893a16877fd42f45e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+<<<<<<< HEAD
         jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-v4-impl/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -680,6 +756,30 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
+=======
+        jar="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.0_5b97e20127537d19aede571b1886436b6ca67c1a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
+        <dex dex="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.0_2dde7c1dc153c412e2dce1803d63991addbff7c2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+>>>>>>> master
         sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
         <dex dex="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.3.1_dd85040d4fdab21aa7f3a788c47960acfbcd24bf/classes.dex" />
     </item>
@@ -691,6 +791,9 @@
         revision="25.0.2"
         sha1="da06f78f12fc88bf23e7bf57bf15874772ca1cf8">
         <dex dex="/Users/ricardo/Desktop/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d187a2939e5bb0115e226d9ebf8205e8f8be8e13/classes.dex" />
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
     </item>
 
