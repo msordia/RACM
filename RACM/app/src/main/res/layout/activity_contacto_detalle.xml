@@ -1,120 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.AppCompat.Light">
 
-    <android.support.design.widget.AppBarLayout
+    <fragment
+        android:name="itesm.mx.racm.MenuFragment"
+        android:id="@+id/fragment_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-        <android.support.design.widget.TabLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="2dp"
-            app:tabGravity="fill"
-            app:tabMode="scrollable"
-            android:layout_alignBottom="@+id/toolbar3"
-            android:layout_alignParentStart="true">
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/contactos"
-                android:text="Contactos"/>
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/home"
-                android:text="Casa"/>
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/sos"
-                android:text="Ayuda"/>
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/perfil"
-                android:text="Perfil"/>
-        </android.support.design.widget.TabLayout>
-
-    </android.support.design.widget.AppBarLayout>
+        tools:layout="@layout/fragment_menu"/>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/linearLayoutCD"
         android:background="@color/family"
         android:weightSum="1">
 
         <ImageButton
-            android:background="@color/family"
-            android:layout_width="218dp"
-            android:layout_height="250dp"
+            android:background="@android:color/transparent"
+            android:layout_width="227dp"
+            android:layout_height="wrap_content"
             app:srcCompat="@drawable/family_contact"
             android:id="@+id/image_fotoPD"
             android:layout_margin="0dp"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.47" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.92">
+            android:weightSum="1">
 
 
             <ImageButton
                 android:id="@+id/photo_modify"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/modify_user"
-                android:background="@color/family"
+                android:layout_width="70dp"
+                android:layout_height="75dp"
+                android:src="@drawable/modify_blanco"
+                android:background="@android:color/transparent"
                 android:paddingLeft="10dp"/>
+
             <LinearLayout
-                android:paddingLeft="20dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="0.86"
+                android:layout_width="170dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Luis Mendez"
+                    android:text="evert"
+                    android:textAlignment="center"
                     android:textSize="20dp"
                     android:textColor="#FFF"
-                    android:paddingTop="10dp"
-                    android:ems="10"
-                    android:id="@+id/text_nombreCC" />
+                    android:id="@+id/text_nombreCD" />
 
 
                 <TextView
-                    android:layout_width="216dp"
                     android:layout_height="wrap_content"
-                    android:text="38499583"
+                    android:text="Cel: 8101929"
+                    android:textAlignment="center"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:textColor="#FFF"
-                    android:paddingTop="10dp"
-                    android:ems="10"
-                    android:id="@+id/text_telefonoCC" />
+                    android:id="@+id/text_celularCD"
+                    android:enabled="false"
+                    android:layout_width="match_parent" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:text="Tel: 38499583"
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#FFF"
+                    android:id="@+id/text_telefonoCD"
+                    android:enabled="false"
+                    android:layout_width="match_parent" />
 
 
             </LinearLayout>
 
             <ImageButton
                 android:id="@+id/photo_phone"
-                android:background="@color/family"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/contact_family_phone"/>
-
-
+                android:background="@android:color/transparent"
+                android:src="@drawable/llamar_icono"/>
 
 
         </LinearLayout>
@@ -122,16 +102,97 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFF"
-            android:layout_gravity="end">
+            android:layout_height="78dp">
 
-            <ImageButton
-                android:id="@+id/photo_icons"
-                android:layout_width="380dp"
+            <TextView
                 android:layout_height="wrap_content"
-                android:src="@drawable/icons_message"
-                android:background="#FFF"/>
+                android:text="Contacto de Emergencia"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#FFF"
+                android:visibility="gone"
+                android:paddingTop="10dp"
+                android:ems="10"
+                android:id="@+id/text_emergenciaCD"
+                android:enabled="false"
+                android:layout_width="match_parent" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="Contacto Favorito"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="#FFF"
+                android:paddingTop="10dp"
+                android:visibility="gone"
+                android:ems="10"
+                android:id="@+id/text_favoritoCD"
+                android:enabled="false"
+                android:layout_width="match_parent" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.36" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:background="#FFF"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.15"
+            android:weightSum="1">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.35" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="end">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/comidaemoji"
+                    android:id="@+id/image_button_hambreCD"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/enfermoemoji"
+                    android:id="@+id/image_button_enfermoCD"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/tristeemoji"
+                    android:id="@+id/image_button_soloCD"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/corazonrotoemoji"
+                    android:id="@+id/image_button_tristeCD"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
         </LinearLayout>
 

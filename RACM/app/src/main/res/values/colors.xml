@@ -6,6 +6,10 @@
 
     <color name="family">#467fd7</color>
     <color name="neight">#f28500</color>
+    <color name="green">#54C242</color>
+    <color name="green_darker">#0c3b05</color>
+    <color name="accent">#f28500</color>
+
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="windowBackground">#00eceded</color>
     <color name="navigationBarColor">#000000</color>

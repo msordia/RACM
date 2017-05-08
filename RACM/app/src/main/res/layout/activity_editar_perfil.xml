@@ -1,52 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
+    <fragment
+        android:name="itesm.mx.racm.MenuFragment"
+        android:id="@+id/fragment_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        tools:layout="@layout/fragment_menu"/>
 
-        <android.support.design.widget.TabLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="2dp"
-            app:tabGravity="fill"
-            app:tabMode="scrollable"
-            android:layout_alignBottom="@+id/toolbar3"
-            android:layout_alignParentStart="true">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/contactos"
-                android:text="Contactos"/>
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/home"
-                android:text="Casa"/>
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/sos"
-                android:text="Ayuda"/>
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/perfil"
-                android:text="Perfil"/>
-        </android.support.design.widget.TabLayout>
-
-    </android.support.design.widget.AppBarLayout>
-
-    <LinearLayout
+        <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -86,6 +57,22 @@
             android:id="@+id/edit_nombreEP" />
 
         <TextView
+            android:text="Celular"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_celularEP" />
+
+        <EditText
+            android:text="81853524"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edit_celularEP" />
+
+        <TextView
             android:text="@string/telefono"
             android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
@@ -117,16 +104,6 @@
             android:ems="10"
             android:id="@+id/edit_direccionEP" />
 
-        <Button
-            android:text="@string/confirmar_direccion"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/buttonshape"
-            android:layout_gravity="center"
-            android:id="@+id/button_ubicacionEP" />
-
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -142,5 +119,5 @@
             android:background="@drawable/buttonshape"
             android:id="@+id/button_guardarEP" />
     </LinearLayout>
-
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

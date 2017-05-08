@@ -1,10 +1,12 @@
 package itesm.mx.racm.datos;
 
+import java.io.Serializable;
+
 /**
  * Created by sergiosanchez on 04/04/17.
  */
 
-public class Perfil {
+public class Perfil implements Serializable{
     private long id;
     private String nombre;
     private String celular;

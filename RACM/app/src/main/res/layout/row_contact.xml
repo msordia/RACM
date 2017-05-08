@@ -1,61 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/family"
+        android:id="@+id/linear_Row"
         android:weightSum="1">
 
         <ImageButton
+            android:focusable="false"
             android:id="@+id/photo_contact"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/family_contact"
-            android:background="@color/family"
+            android:layout_width="100dp"
+            android:src="@drawable/white_user"
             android:paddingTop="5dp"
-            />
+            android:background="@android:color/transparent"
+            android:focusableInTouchMode="false"
+            android:layout_height="100dp" />
         <LinearLayout
-            android:padding="20dp"
+            android:focusable="false"
+            android:padding="10dp"
             android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.74">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <TextView
+                android:focusable="false"
                 android:id="@+id/text_nombreCC"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Luis Mendez"
-                android:textSize="20dp"
-                android:textColor="#FFF"
-                android:paddingBottom="10dp"/>
-
-            <TextView
-                android:id="@+id/text_telefonoCC"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="38499583"
+                android:text="Nombre"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:textColor="#FFF"
-                android:paddingTop="10dp"/>
+                android:paddingBottom="0dp"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1">
+
+                <TextView
+                    android:focusable="false"
+                    android:id="@+id/text_telefonoCC"
+                    android:layout_height="match_parent"
+                    android:text="Telefono"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#FFF"
+                    android:paddingTop="20dp"
+                    android:layout_width="131dp" />
+
+                <ImageButton
+                    android:focusable="false"
+                    android:id="@+id/photo_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/llamar_icono"
+                    android:background="@android:color/transparent"
+                    android:elevation="0dp" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/photo_phone"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@drawable/family_phone"
-            android:background="@color/family"
-            android:layout_weight="0.26" />
-
     </LinearLayout>
-
-
-
 
 </LinearLayout>
