@@ -95,8 +95,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
 
     private void showLocationDialog(final ArrayList<Contacto> lista) {
 
-        //perfil = dao_Perfil.findPerfil();
-        Log.d("Este es el perfil", dao_Perfil.findPerfil().getNombre());
+        perfil = dao_Perfil.findPerfil();
         AlertDialog.Builder builder =
                 new AlertDialog.Builder(getContext(), R.style.alertDialog);
         builder.setTitle("Se enviará un mensaje a los contactos de emergencia");
@@ -107,7 +106,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
                 for (int i = 0; i < lista.size(); i++) {
                     Log.d("Celular", lista.get(i).getCelular());
                     SmsManager smsManager = SmsManager.getDefault();
-                    smsManager.sendTextMessage(lista.get(i).getCelular(), null, "¡Necesito Ayuda!", null, null);
+                    smsManager.sendTextMessage(lista.get(i).getCelular(), null, "Soy " + perfil.getNombre() + ", ¡Necesito ayuda urgente!", null, null);
                 }
 
 
