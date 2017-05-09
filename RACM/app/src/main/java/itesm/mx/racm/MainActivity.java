@@ -180,16 +180,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onClose() {
+        Intent inte = new Intent(this, PerfilDetalle.class);
+        startActivity(inte);
+
         return false;
     }
 
     @Override
     public boolean onQueryTextSubmit(String query) {
+        
         return false;
     }
 
     @Override
     public boolean onQueryTextChange(String newText) {
+
+
         return false;
     }
 }
