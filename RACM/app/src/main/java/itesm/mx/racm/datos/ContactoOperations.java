@@ -121,10 +121,40 @@ public class ContactoOperations {
         return contacto;
     }
 
+    public ArrayList<Contacto> obtenerContacto(String search){
+        ArrayList<Contacto> listaContactos= new ArrayList<Contacto>();
+
+        String selectQuery= "SELECT * FROM "+ DataBaseSchema.ContactoTable.TABLE_NAME+ " WHERE "+DataBaseSchema.ContactoTable.COLUMN_NAME_NOMBRE + " LIKE \"" + search + "%\""  +" Order By idCategoria ASC";;
+        Log.d("Select", selectQuery);
+
+        try{
+            Cursor cursor= db.rawQuery(selectQuery, null);
+            if(cursor.moveToFirst()){
+                do{
+                    contacto= new Contacto(
+                            cursor.getInt(0),
+                            cursor.getString(1),
+                            cursor.getString(2),
+                            cursor.getString(3),
+                            cursor.getInt(4),
+                            cursor.getInt(5),
+                            cursor.getInt(6),
+                            cursor.getBlob(7));
+
+                    listaContactos.add(contacto);
+                }while(cursor.moveToNext());
+            }
+            cursor.close();
+        }catch(SQLException e){
+            Log.e("SQLList", e.toString());
+        }
+        return listaContactos;
+    }
+
     public ArrayList<Contacto> obtenerContactos(){
         ArrayList<Contacto> listaContactos= new ArrayList<Contacto>();
 
-        String selectQuery= "SELECT * FROM "+ DataBaseSchema.ContactoTable.TABLE_NAME+ " Order By idCategoria ASC";;
+        String selectQuery= "SELECT * FROM " + DataBaseSchema.ContactoTable.TABLE_NAME + " Order By idCategoria ASC";;
         Log.d("Select", selectQuery);
 
         try{

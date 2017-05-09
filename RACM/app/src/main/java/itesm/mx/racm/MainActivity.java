@@ -22,8 +22,10 @@ import itesm.mx.racm.datos.CategoriaOperations;
 import itesm.mx.racm.datos.Contacto;
 import itesm.mx.racm.datos.ContactoOperations;
 import itesm.mx.racm.datos.ListaContacto;
+import android.widget.SearchView;
+import android.app.SearchManager;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener,  SearchView.OnQueryTextListener, SearchView.OnCloseListener{
 
     ExpandableListAdapter listAdapter;
     ExpandableListView expListView;
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     List<String> titulos;
     HashMap<String,List<Contacto>> listaContactos;
     MenuFragment fragmentoMenu;
+    SearchView search;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         crearCategoriasEstaticas();
         //crearContactosEstaticos();
+
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        search = (SearchView) findViewById(R.id.search);
 
         contactosCompletos= new ArrayList<Contacto>();
         contactosCompletos= dao_Contactos.obtenerContactos();
@@ -74,9 +81,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ////BOTON FLOTANTE
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_Crear_Contacto);
-        ImageButton ibSearch = (ImageButton) findViewById(R.id.ib_search);
-        ibSearch.setOnClickListener(this);
+        //ImageButton ibSearch = (ImageButton) findViewById(R.id.ib_search);
+        //ibSearch.setOnClickListener(this);
         fab.setOnClickListener(this);
+        search.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        search.setIconifiedByDefault(false);
+        search.setOnQueryTextListener(this);
+        search.setOnCloseListener(this);
     }
 
     @Override
@@ -101,26 +112,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
 
-            case R.id.ib_search:
+          //  case R.id.ib_search:
 
-                break;
+           //     break;
         }
     }
 
     public void separarCategorias(){
         ArrayList<Contacto> arregloLista= new ArrayList<Contacto>();
+        ArrayList<Contacto> arregloFavoritos= new ArrayList<Contacto>();
 
         if(contactosCompletos.size()!=0) {
 
             int categoriaActual = contactosCompletos.get(0).getCategoria();
             arregloLista.add(contactosCompletos.get(0));
+            titulos.add("Favoritos");
             titulos.add(obtenerNombreCategoria(categoriaActual));
+            if(contactosCompletos.get(0).getFavorito()==1){
+                arregloFavoritos.add(contactosCompletos.get(0));
+            }
+            listaContactos.put("Favoritos",arregloFavoritos);
 
             for (int i = 1; i <= contactosCompletos.size(); i++) {
 
                 if (i == contactosCompletos.size()) {
-                    listaContactos.put(obtenerNombreCategoria(arregloLista.get(0).getCategoria()), arregloLista);//enviar categoria y arreglo de contactos
+                    listaContactos.put(obtenerNombreCategoria(arregloLista.get(0).getCategoria()), arregloLista);//enviar categoria y arreglo de contacto
+
+                    if(arregloFavoritos.size()>0) {
+                        listaContactos.put("Favoritos", arregloFavoritos);
+                    }else{
+                        listaContactos.remove("Favoritos");
+                        titulos.remove("Favoritos");
+                    }
                 } else {
+
+                    if(contactosCompletos.get(i).getFavorito()==1){
+                        arregloFavoritos.add(contactosCompletos.get(i));
+                    }
+
                     if (categoriaActual == contactosCompletos.get(i).getCategoria()) {
                         arregloLista.add(contactosCompletos.get(i));
                     } else {
@@ -165,5 +194,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                  }
                 }
         return categoria;
+    }
+
+    @Override
+    public boolean onClose() {
+        contactosCompletos= new ArrayList<Contacto>();
+        contactosCompletos= dao_Contactos.obtenerContactos();
+        categorias= new ArrayList<Categoria>();
+        categorias= dao_Categorias.obtenerCategorias();
+        titulos= new ArrayList<String>();
+        listaContactos= new HashMap<String,List<Contacto>>();
+        separarCategorias();
+        listAdapter = new ExpandableListAdapter(this, titulos,listaContactos);
+        expListView.setAdapter(listAdapter);
+
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        contactosCompletos= new ArrayList<Contacto>();
+        contactosCompletos= dao_Contactos.obtenerContacto(query);
+        categorias= new ArrayList<Categoria>();
+        categorias= dao_Categorias.obtenerCategorias();
+        titulos= new ArrayList<String>();
+        listaContactos= new HashMap<String,List<Contacto>>();
+        separarCategorias();
+        listAdapter = new ExpandableListAdapter(this, titulos,listaContactos);
+        expListView.setAdapter(listAdapter);
+
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+
+
+        return false;
     }
 }
