@@ -3,21 +3,48 @@
 
     <item
         is-multidex="true"
-        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
-        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.0_2db079681a5224c4266eac5d52a88af8c8efacd6/classes.dex" />
+        sha1="92c871a22463a247e8a77a9f3fd231c278788c4a">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-10.0.1_de5f135b5abbf1cd42521d6f6d5327386502e1f6/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
-        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.0_841217fc31cc9fa92f65bdb7eba7792587a8d509/classes.dex" />
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-10.0.1_da55c7087d6abb029818f2dd4998de6c0865e956/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b955cb3a1ad6f1b6ff728ce1e0cd592c1717b440">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-10.0.1_a580a1750491d38bd52112ac8ad6758c83d8cb39/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-10.0.1_78a6953d00be6248fb482b91d801acdec6059671/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-10.0.1_86bc3046c070f847689584932ded7ebc2776226e/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -30,6 +57,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-10.0.1_699c2ec760d84f8fc60e3545d6d103c7bcdcdc12/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.3.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -39,21 +75,66 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
-        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.0_2833a3cf40fb192feb25e29207c47b37ea849111/classes.dex" />
+        sha1="f6cf557be4dbd0282ea2388633e5378634423226">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-safetynet-10.0.1_b226192c94c1aa062951bac984638f168710f038/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.0/jars/classes.jar"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
-        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.0_18c2d9d2bfe4a87a905d49c58c56f2ca930281c4/classes.dex" />
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-10.0.1_04901744e181d490975453771dc81a9619368be1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="57c2eceb8548de84509d1ebc293fedec53231f6c">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gass-10.0.1_c354b463295492781998be5e1431b70b8146f902/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/palette-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-palette-v7-24.0.0_ec72d2441a8c452d27a050946b053ee07e95783f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-10.0.1_48854209bdc1b6699d1d83c3d9cab100eae88617/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-10.0.1_fc5695ba407074e0d53c9784c431c4718ddf1b18/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="771267c5b0c7a5b348d3205dcfa1f871af7e0177">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-10.0.1_1bd1bef90b3f8a3466568cecce5c853bea6e0603/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -61,8 +142,17 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="a54c25bb2c95e1c061bf4eabda31e9686533f016">
+        sha1="ca9d1e447c61e22b7588f194055a8fd45892dc01">
         <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_52614b5700475cb3c8b4d13e23f149bbc50c9e31/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="028f8255cb977b29cdffbfcf05caa0459686120c">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-10.0.1_aa28d33dd6174f09c6751b8132eba13df14a0952/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -75,30 +165,147 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.3.1/jars/classes.jar"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.3.1_a5b8a0aa50ed789048c71315f52bd197a7de7063/classes.dex" />
+        sha1="a48dc0b148059764d32500be558702d5ff932058">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-10.0.1_578d5998037e1e5f526a3510e31b6cbbaf1f5122/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
-        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_d9f3cba8c415dcc3a62db72058870975f8f426f6/classes.dex" />
+        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-24.0.0_1453e2372096bd78316021b86100c9010fadf701/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/sergiosanchez/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_f8e0c74daf6b1656f5828f6fc001a122c4450de8/classes.dex" />
+        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-10.0.1_6e91f02bc668eb21fdde91297ce49cca7afd833b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_325314f64d2e1c061b3241848eebf5a774c84292/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d0460bf07cc3657e0be518ca01c174493951c6b8">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-10.0.1_70eb1b5539bf94c0a1f90fb5f36f8ce5c699f4a8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-10.0.1_f1ec9e0f08916cce960ffec52edb1d6bddfd74f7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f3e51e9c5233b8897f61e08a6a27bc36283c2724">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-places-10.0.1_82e44701f21a8361d1297f637d85918b26f52f3d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b1df8fa3d372a27e4e969ce00b00689ee1eed031">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-api-10.0.1_49804668f697402245278d6a28aa5e35da1dbae7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/transition/25.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.3.1_ff4afaa0754bf3d7415173580ca484e0a1b68554/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="408a599ac77cd17fe8e8919326bec617b3d005bd">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-10.0.1_56b1029663048600a83a9e6fe17886aaed5e9044/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1d193729baf37df3d902a423291423a0df7e3779">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-clearcut-10.0.1_9fbdd419b7503fd65a4108cc65a663cecfde5cf2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.3.1_57b65de935332d1dc948c7c1a4acbc8168525e40/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.firebase/firebase-appindexing/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-appindexing-10.0.1_545add5d31640e4ee212c0fc56ea986b625aa0f6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6bb5d347ebc0c6ef3c83a905222a688da5d2f7b4">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-10.0.1_225941ca6fe571ce4d0e4b3be632f2571dd47bcf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.3.1_ab9f9f3979fd6005a5371b3f13dbd4404230755d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1e11c68fec92a17c84dd8d1dd80e74c4e67b12e2">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-10.0.1_c6745ae0b42d658b42d3a8c2c501806eadbdc8f7/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -111,6 +318,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-10.0.1_0bec50619e736a3af273b5a7361c3d2824c77b0d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.3.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -120,21 +336,264 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8308ed003522a2ee8958311afcc4cfd0470377cd">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-10.0.1_2f72c35944587c65c9463fb9e31270f6833a414f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-10.0.1_ff9af950976c4052bdcc406685f82e2196bd33ca/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="0de8d758c99970388dd21745ea673d7486876b83">
+        sha1="94092c851f2ac3ac6f34b195634cdeb25eee09a9">
         <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0c1b713d1049442bf11b27c65ee81c84d184af7b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
-        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.0_a099542fcbf5acb79b6cbba3143395cee6242f30/classes.dex" />
+        sha1="ba6aa5e69ef31dee57208125323cee958fc67565">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-10.0.1_156fc252fadd0538f8c031a793446f1974dce7b7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.3.1_1c8359ba461f68a754ed4ed4513d5820019311d3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/design/25.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.3.1_8356b44b30f70cbd2362627b3d0f40a126806a79/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-10.0.1_7e5c34a62a08aca0e713032b47bc2ea117f9195c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="df1cb17511aabbb63264a0024949d1e42502a512">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-framework-10.0.1_f5c50d5819157a065a4e8aad0874ca0d7cef6213/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e871881b36b32e6bfd271a830c6eeb54ff0fc185">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-10.0.1_adb7f996cde789724aa34383d0b9e0a69b194b52/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ffc15e965a9e8c28f24455eedd4cac215c45d1fc">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-10.0.1_38be1d1cb2d9b467e13f97804b5528373e143b68/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-10.0.1_a621671a87bc55752ab6e3aa1a192449870a4a91/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-10.0.1_9298421e1f59afe2a08d64803f97e2909b8eb62f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.3.1_59339adfb6107d65d2316d49b6b351e8a2567027/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c6e1f361e9d61aece9dac39b77fcc98a337a144d">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-10.0.1_6c121bc7c7c921eb293b671a67f63b9244e9b88f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4c829ff0ccfecb28a999ee46d9e75948dfc777a4">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-10.0.1_9ead5c431cc01f6703d32f585e47f4163833d5af/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-10.0.1_14c305c88479c3d68cc5489662b0ef4976ef7359/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c14f0c89f28cf782e42581ab0aba5f63af39b3d2">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-10.0.1_11d21f1224af0f82404cb571e102ee24e0fb8d0e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-instantapps/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45305e6af414dab5aba6c3225081c2f15c3bdd1e">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-instantapps-10.0.1_a210823a989f2313085de77801cf4eae67b16938/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-10.0.1_46ee1d793c59f6f22d75d62b10653f3e0f665fb5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-awareness/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4385ccc0a88b33d182a836eadb47be55c8eb1107">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-awareness-10.0.1_a6bfa012d691617f5b3e958eb9a56cca60ed9483/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="39907d5c8f5902fffef30160ca7447c93b82405c">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-10.0.1_9b5637b839eb7a342a231d079bf7c171e771b9b7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2d5d113b0352ab60946fc44c518cf68fd26cbb79">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-10.0.1_3552f3e88e4e5474db80ab1bb697dfa187db1e6c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.3.1_a5b8a0aa50ed789048c71315f52bd197a7de7063/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-10.0.1_d00ca95e7dba71cb9d303a0a8ee8a8736ae9e0d8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7a64bf6dc775198eed9db9468a133adf7dfe6562">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-10.0.1_cd649e3394075c67f4d1fac30ffc5c85a67632c1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_f8e0c74daf6b1656f5828f6fc001a122c4450de8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-v4-impl/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f23ad0f8e58713ff4b55f61c0bbde3830378347c">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-v4-impl-10.0.1_31fd337ab07a7107e6c669ee8a823f58c89d6a6f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-10.0.1_bdf21660a535a6f303abea80bd4bcc3f73542073/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="971509bbe30bb7b971fc1c49d7b23d0d818830ac">
+        <dex dex="/Users/sergiosanchez/AndroidStudioProjects/RACM/RACM/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-10.0.1_a1febaa180b8ca231e42e5fa45083a7647218628/classes.dex" />
     </item>
 
 </items>

@@ -39,13 +39,32 @@ public class PerfilOperations {
 
     //Acciones sobre Base de Datos
 
+    public void modificarPerfil(Perfil perfil){
+        try{
+            Log.e("id", String.valueOf(perfil.getId()));
+            ContentValues values= new ContentValues();
+            values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_NOMBRE,perfil.getNombre());
+            values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_CELULAR,perfil.getCelular());
+            values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_TELEFONO,perfil.getTelefonoFIjo());
+            values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_DIRECCION,perfil.getDireccion());
+            values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_UBICACION,perfil.getUbicacion());
+            values.put(DataBaseSchema.PerfilTable.COLUMN_NAME_IMAGEN,perfil.getFoto());
+
+            String selection= DataBaseSchema.PerfilTable._ID+"=?";
+            String[] selectionArgs = {Long.toString(perfil.getId())};
+            db.update(DataBaseSchema.PerfilTable.TABLE_NAME,values,selection,selectionArgs);
+        }catch(SQLException e){
+            Log.e("SQLUPD",e.toString());
+        }
+    }
+
     public Perfil findPerfil(){
         String query = "Select * FROM " + DataBaseSchema.PerfilTable.TABLE_NAME;
         try{
             Cursor cursor = db.rawQuery(query, null);
             perfil = null;
             if(cursor.moveToFirst()){
-                perfil = new Perfil(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getBlob(7));
+                perfil = new Perfil(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getBlob(6));
 
             }
             cursor.close();

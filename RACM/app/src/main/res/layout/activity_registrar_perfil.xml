@@ -6,12 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment
-        android:name="itesm.mx.racm.MenuFragment"
-        android:id="@+id/fragment_menu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout="@layout/fragment_menu"/>
 
     <LinearLayout
         android:orientation="vertical"
@@ -64,11 +58,27 @@
             android:id="@+id/text_telefonoRP" />
 
         <EditText
-            android:hint="Escribe tu teléfono"
+            android:hint="Escribe tu teléfono fijo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:id="@+id/edit_telefonoRP"
+            android:inputType="phone" />
+
+        <TextView
+            android:text="@string/telefonoCelular"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_telefonoCelularRP" />
+
+        <EditText
+            android:hint="Escribe tu teléfono celular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/edit_telefonoCelularRP"
             android:inputType="phone" />
 
         <TextView

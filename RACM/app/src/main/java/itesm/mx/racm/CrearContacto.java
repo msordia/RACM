@@ -83,28 +83,17 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.image_fotoCC:
-
-
                 mostrarOpciones();
-
                 break;
             case R.id.button_guardarCC:
-
                 //Guardar el contacto en la base de datos
-
-
                 if(posicionCategoria == 0 || etNombre.getText().toString().isEmpty() || etTelefono.getText().toString().isEmpty() || etCelular.getText().toString().isEmpty())  {
                     Toast.makeText(getApplicationContext(), "Favor de completar la información", Toast.LENGTH_SHORT).show();
                 }else{
-
                     nuevoContacto();
                     finish();
                 }
-                /*
-                //Intent a Contacto Detalle
-                Intent intent2 = new Intent(this, ContactoDetalle.class);
-                startActivity(intent2);
-                */
+
                 break;
 
             default:
@@ -115,12 +104,10 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
 
     public Contacto nuevoContacto(){
         if (checkEmergencia.isChecked()){
-
             checkEme = 1;
         }
 
         if (checkFavorito.isChecked()){
-
             checkFav = 1;
         }
 

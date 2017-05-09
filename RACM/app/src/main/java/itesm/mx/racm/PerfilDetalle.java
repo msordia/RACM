@@ -1,6 +1,8 @@
 package itesm.mx.racm;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,8 +26,10 @@ public class PerfilDetalle extends AppCompatActivity implements View.OnClickList
     TextView tvCelular;
     TextView tvDireccion;
 
+    Bitmap imageBitmap;
+
     String nombre;
-    Perfil perfilPrueba;
+    Perfil perfil;
     long idPerfil;
     PerfilOperations dao_Perfil;
 
@@ -47,18 +51,18 @@ public class PerfilDetalle extends AppCompatActivity implements View.OnClickList
         dao_Perfil = new PerfilOperations(this);
         dao_Perfil.open();
 
-        perfilPrueba = new Perfil(1,"PruebaNom", "81111111", "82222222", "direccion de prueba", "la ubicacion de prueba", null);
-        tvNombre.setText(perfilPrueba.getNombre());
-        tvCelular.setText(perfilPrueba.getCelular());
-        tvTelefono.setText(perfilPrueba.getTelefonoFIjo());
-        tvDireccion.setText(perfilPrueba.getDireccion());
-/*
-        perfilPrueba = dao_Perfil.findPerfil();
+        perfil = dao_Perfil.findPerfil();
 
-        tvNombre.setText(perfilPrueba.getNombre());
-        tvTelefono.setText(perfilPrueba.getCelular());
-        tvDireccion.setText(perfilPrueba.getDireccion());
-*/
+        tvNombre.setText(perfil.getNombre());
+        tvCelular.setText(perfil.getCelular());
+        tvTelefono.setText(perfil.getTelefonoFIjo());
+        tvDireccion.setText(perfil.getDireccion());
+
+        if(perfil.getFoto() != null) {
+            imageBitmap = BitmapFactory.decodeByteArray(perfil.getFoto(), 0, perfil.getFoto().length);
+            ivFotoPD.setImageBitmap(imageBitmap);
+        }
+
         ImageButton ibModificarPD= (ImageButton) findViewById(R.id.image_modificarPD);
         ibModificarPD.setOnClickListener(this);
     }
@@ -68,13 +72,16 @@ public class PerfilDetalle extends AppCompatActivity implements View.OnClickList
         switch (v.getId()){
             case R.id.image_modificarPD:
                 Intent  intentModify= new Intent(this,EditarPerfil.class);
-                intentModify.putExtra("perfil", perfilPrueba);
+                intentModify.putExtra("perfil", perfil);
                 startActivity(intentModify);
                 break;
 
             case R.id.image_fotoPD:
-                Intent  intentFoto= new Intent(this,VerFoto.class);
-                startActivity(intentFoto);
+                if(perfil.getFoto().length != 1) {
+                    Intent intent = new Intent(this, VerFoto.class);
+                    intent.putExtra("foto", perfil.getFoto());
+                    startActivity(intent);
+                }
                 break;
         }
     }

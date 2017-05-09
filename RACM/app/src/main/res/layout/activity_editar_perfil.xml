@@ -28,12 +28,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.23" />
 
-        <ImageView
+        <ImageButton
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="130dp"
+            android:background="@android:color/transparent"
             app:srcCompat="@drawable/user"
-            android:id="@+id/image_fotoEP"
-            android:layout_weight="0.17" />
+            android:id="@+id/image_fotoEP" />
 
         <Space
             android:layout_width="match_parent"
@@ -118,6 +118,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/buttonshape"
             android:id="@+id/button_guardarEP" />
+
     </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

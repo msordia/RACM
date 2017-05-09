@@ -21,6 +21,7 @@
             android:background="@android:color/transparent"
             android:focusableInTouchMode="false"
             android:layout_height="100dp" />
+
         <LinearLayout
             android:focusable="false"
             android:padding="10dp"
@@ -66,9 +67,7 @@
                     android:elevation="0dp" />
 
             </LinearLayout>
-
         </LinearLayout>
-
     </LinearLayout>
 
 </LinearLayout>
