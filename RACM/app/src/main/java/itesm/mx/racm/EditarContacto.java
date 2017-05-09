@@ -28,8 +28,8 @@ import itesm.mx.racm.datos.ContactoOperations;
 
 public class EditarContacto extends AppCompatActivity implements View.OnClickListener {
 
-    Button btnGuardar,btnEliminar;
-    ImageView imgFoto;
+    Button btnGuardar;
+    ImageView imgFoto,imgBorrar;
     MenuFragment fragmentoMenu;
     ContactoOperations dao;
     EditText etNombre, etCelular, etTelefono;
@@ -60,7 +60,7 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
         checkFavorito = (CheckBox) findViewById(R.id.check_FavoritoEC);
         btnGuardar = (Button) findViewById(R.id.button_guardarEC);
 
-        btnEliminar = (Button) findViewById(R.id.button_eliminarEC);
+        imgBorrar = (ImageView) findViewById(R.id.imageBasurero);
         imgFoto = (ImageView) findViewById(R.id.image_fotoEC);
 
         String[] items = new String[]{"Seleccione la categoría","Familia", "Amigos", "Salud", "Proveedores", "Servicios"};
@@ -90,7 +90,7 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
 
         btnGuardar.setOnClickListener(this);
         imgFoto.setOnClickListener(this);
-        btnEliminar.setOnClickListener(this);
+        imgBorrar.setOnClickListener(this);
     }
 
     @Override
@@ -116,7 +116,7 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
                 abrirCamera();
                 break;
 
-            case R.id.button_eliminarEC:
+            case R.id.imageBasurero:
                 showLocationDialog();
                 break;
             default:

@@ -27,7 +27,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="27dp" />
 
-            <ImageButton
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
                 android:background="@android:color/transparent"
                 android:layout_width="227dp"
                 android:layout_height="wrap_content"
@@ -37,6 +42,14 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="0.17" />
 
+                <ImageView
+                    android:layout_width="47dp"
+                    android:layout_height="41dp"
+                    app:srcCompat="@drawable/basurero"
+                    android:id="@+id/imageBasurero"
+                    android:paddingRight="10dp"/>
+
+            </LinearLayout>
             <TextView
                 android:text="Nombre"
                 android:textStyle="bold"
@@ -150,17 +163,6 @@
                     android:layout_weight="0.04" />
 
             </LinearLayout>
-
-            <Button
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/buttonshape"
-                android:text="Eliminar"
-                android:layout_gravity="center"
-                android:id="@+id/button_eliminarEC"
-                android:layout_weight="0.23" />
 
             <Button
                 android:textColor="#FFFFFF"
