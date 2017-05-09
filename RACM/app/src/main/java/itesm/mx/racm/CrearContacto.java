@@ -124,7 +124,7 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
     }
 
     public void mostrarOpciones(){
-        final CharSequence[] option = {"Tomar fotografía", "Elegir de galería", "Cancelar"};
+        final CharSequence[] option = {"Tomar fotografía", "Cancelar"};
         final AlertDialog.Builder builder = new AlertDialog.Builder(CrearContacto.this);
         builder.setTitle("Seleccione una opción");
         builder.setItems(option, new DialogInterface.OnClickListener() {
@@ -134,8 +134,6 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
             public void onClick(DialogInterface dialog, int which) {
                 if(option[which] == "Tomar fotografía"){
                     abrirCamera();
-                }else if(option[which] == "Elegir de galería"){
-                    cargarGaleria();
                 }else {
                     dialog.dismiss();
                 }
