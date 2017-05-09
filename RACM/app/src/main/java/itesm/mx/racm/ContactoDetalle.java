@@ -50,7 +50,7 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
     String texto = "";
 
     ContactoOperations dao_Contactos;
-    Contacto contactoPrueba;
+    Contacto contact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,8 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
         fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
 
         ibFoto = (ImageButton) findViewById(R.id.image_fotoPD);
+        ibFoto.setOnClickListener(this);
+
         ibModify = (ImageButton) findViewById(R.id.photo_modify);
         ibPhone = (ImageButton) findViewById(R.id.photo_phone);
         ibHambre = (ImageButton) findViewById(R.id.image_button_hambreCD);
@@ -78,7 +80,7 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
         tvNombre.setText(contacto.getNombre());
         tvTelefono.setText(contacto.getTelefono());
         */
-        ibFoto.setOnClickListener(this);
+
         ibModify.setOnClickListener(this);
         ibPhone.setOnClickListener(this);
         ibHambre.setOnClickListener(this);
@@ -96,11 +98,11 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
            idContacto = bundle.getLong("idContacto");
             Log.d("Este es el id", String.valueOf(idContacto));
 
-            contactoPrueba = dao_Contactos.findContacto(idContacto);
-            Log.d("Nombre", contactoPrueba.getNombre());
+            contact = dao_Contactos.findContacto(idContacto);
+            Log.d("Nombre", contact.getNombre());
             LinearLayout ll;
             ll = (LinearLayout) findViewById(R.id.linearLayoutCD);
-            switch (contactoPrueba.getCategoria()) {
+            switch (contact.getCategoria()) {
                 case 1:
                     ll.setBackgroundColor(Color.parseColor("#2244aa"));//Azul #000000
                     break;
@@ -118,20 +120,25 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
                     break;
             }
             //Cambiar imageFoto,tvNombre y tvTelefono
-            imageBitmap = BitmapFactory.decodeByteArray(contactoPrueba.getFoto(), 0, contactoPrueba.getFoto().length);
-            ibFoto.setImageBitmap(imageBitmap);
-            tvNombre.setText(contactoPrueba.getNombre());
-            tvCelular.setText("Cel. " + contactoPrueba.getCelular());
-            tvTelefono.setText("Tel. " + contactoPrueba.getTelefono());
 
-            if(contactoPrueba.getEmergencia() == 1) {
+
+            if(contact.getFoto().length != 1) {
+                imageBitmap = BitmapFactory.decodeByteArray(contact.getFoto(), 0, contact.getFoto().length);
+                ibFoto.setImageBitmap(imageBitmap);
+            }
+
+            tvNombre.setText(contact.getNombre());
+            tvCelular.setText("Cel. " + contact.getCelular());
+            tvTelefono.setText("Tel. " + contact.getTelefono());
+
+            if(contact.getEmergencia() == 1) {
                 tvEmergencia.setVisibility(View.VISIBLE);
             }
-            if(contactoPrueba.getFavorito() == 1) {
+            if(contact.getFavorito() == 1) {
                 tvFavorito.setVisibility(View.VISIBLE);
             }
 
-            telefono = contactoPrueba.getCelular();
+            telefono = contact.getCelular();
         }
         // Marca al numero de CELULAR
         ibPhone.setFocusable(false);
@@ -139,7 +146,7 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onClick(View v) {
                 Intent callIntent = new Intent(Intent.ACTION_VIEW);
-                callIntent.setData(Uri.parse("tel:"+contactoPrueba.getCelular()));
+                callIntent.setData(Uri.parse("tel:"+contact.getCelular()));
                 startActivity(callIntent);
             }
         });
@@ -174,41 +181,36 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.image_fotoPD:
-                Intent intent = new Intent(this, VerFoto.class);
-                intent.putExtra("foto",contactoPrueba.getFoto());
-                startActivity(intent);
+                if(contact.getFoto().length != 1) {
+                    Intent intent = new Intent(this, VerFoto.class);
+                    intent.putExtra("foto",contact.getFoto());
+                    startActivity(intent);
+                }
                 break;
 
             case  R.id.photo_modify:
                 Intent intent2 = new Intent(this, EditarContacto.class);
-                intent2.putExtra("contacto",contactoPrueba);
+                intent2.putExtra("contacto",contact);
                 startActivity(intent2);
                 break;
 
             case R.id.image_button_hambreCD:
-
                 texto = "Tengo hambre";
-
                 showLocationDialog(texto);
-
-
                 break;
 
             case R.id.image_button_enfermoCD:
                 texto = "Estoy enfermo";
-
                 showLocationDialog(texto);
                 break;
 
             case R.id.image_button_soloCD:
                 texto = "Me siento solo";
-
                 showLocationDialog(texto);
                 break;
 
             case R.id.image_button_tristeCD:
                 texto = "Estoy triste";
-
                 showLocationDialog(texto);
                 break;
         }
