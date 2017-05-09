@@ -22,7 +22,7 @@ import itesm.mx.racm.datos.RACM_DBHelper;
 public class RegistrarPerfil extends FragmentActivity implements View.OnClickListener {
 
     private Button btnGuardar, btnDireccion;
-    private EditText editNombre, editTelefono, editDireccion;
+    private EditText editNombre, editTelefono, editTelefonoCel, editDireccion;
     private ImageButton btnImagePhoto;
     private SessionManager session;
     private ProgressDialog pDialog;
@@ -44,6 +44,9 @@ public class RegistrarPerfil extends FragmentActivity implements View.OnClickLis
         editNombre = (EditText) findViewById(R.id.edit_nombreRP);
         editDireccion = (EditText) findViewById(R.id.edit_direccionRP);
         editTelefono = (EditText) findViewById(R.id.edit_telefonoRP);
+        editTelefonoCel = (EditText) findViewById(R.id.edit_telefonoCelularRP);
+
+
 
         btnGuardar = (Button) findViewById(R.id.button_guardarRP);
         //btnDireccion = (Button) findViewById(R.id.button_ubicacionRP);
@@ -77,11 +80,12 @@ public class RegistrarPerfil extends FragmentActivity implements View.OnClickLis
             case R.id.button_guardarRP:
                 String name = editNombre.getText().toString().trim();
                 String phone = editTelefono.getText().toString().trim();
+                String cel = editTelefonoCel.getText().toString().trim();
                 String adress = editDireccion.getText().toString().trim();
 
                 //Falta la foto
-                if(!name.isEmpty() && !adress.isEmpty() && !phone.isEmpty()){
-                    login(name, phone, adress);
+                if(!name.isEmpty() && !adress.isEmpty() && !cel.isEmpty() && !phone.isEmpty()){
+                    login(name, phone, cel, adress);
                 }else{
                     Toast.makeText(getApplicationContext(), "Favor de completar la información", Toast.LENGTH_SHORT).show();
 
@@ -122,7 +126,7 @@ public class RegistrarPerfil extends FragmentActivity implements View.OnClickLis
         }
     }
 
-    private void login(final String name, final String phone, final String adress){
+    private void login(final String name, final String phone, final String cel, final String adress){
         String tag_string_req = "req_login";
 
         pDialog.setMessage("Registrando ...");
@@ -131,7 +135,7 @@ public class RegistrarPerfil extends FragmentActivity implements View.OnClickLis
         session.setLogin(true);
 
 
-        Perfil perfil = new Perfil(name, phone, phone, adress, adress, byteArray);
+        Perfil perfil = new Perfil(name, cel, phone, adress, adress, byteArray);
 
         long id = dao_Perfil.registrarPerfil(perfil);
         perfil.setId(id);

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">RACM</string>
     <string name="nombre">Nombre</string>
-    <string name="telefono">Teléfono</string>
+    <string name="telefono">Teléfono de casa</string>
     <string name="direccion">Dirección</string>
     <string name="guardar">Guardar</string>
     <string name="definir_direccion">Definir Dirección</string>
@@ -16,4 +16,5 @@
     <string name="guardarCF">Guardar</string>
     <string name="buscar">Buscar Contacto</string>
     <string name="title_activity_navegar_casa">Map</string>
+    <string name="telefonoCelular">Teléfono celular</string>
 </resources>
