@@ -29,12 +29,12 @@
                 android:layout_height="11dp" />
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
                 app:srcCompat="@drawable/user"
                 android:id="@+id/image_fotoCC"
-                android:layout_weight="0.23"
-                android:layout_gravity="left"/>
+                android:layout_weight="0.23" />
 
             <TextView
                 android:text="Nombre"

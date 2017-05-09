@@ -29,9 +29,10 @@
             android:layout_weight="0.23" />
 
         <ImageButton
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="130dp"
             android:background="@android:color/transparent"
+            android:layout_gravity="center_horizontal"
             app:srcCompat="@drawable/user"
             android:id="@+id/image_fotoEP" />
 

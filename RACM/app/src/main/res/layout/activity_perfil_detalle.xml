@@ -57,11 +57,12 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             app:srcCompat="@drawable/user"
             android:id="@+id/image_fotoPD"
-            android:layout_weight="0.37" />
+            android:layout_weight="0.22"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="150dp"
+            android:layout_height="150dp" />
 
         <Space
             android:layout_width="match_parent"
