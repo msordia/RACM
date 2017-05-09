@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,8 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
+
 import itesm.mx.racm.datos.Contacto;
 import itesm.mx.racm.datos.ContactoOperations;
 
@@ -33,7 +36,13 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
     Spinner spinnerCategoria;
     CheckBox checkEmergencia,checkFavorito;
     Contacto contact;
+    Bitmap imageBitmap;
+    int REQUEST_CODE = 1;
+    Bitmap bitmap;
+    byte[] byteArray;
 
+    private static final int SELECT_PICTURE = 2;
+    private static final int REQUEST_IMAGE_CAPTURE = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,15 +76,16 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
             etTelefono.setText(contact.getTelefono());
             spinnerCategoria.setSelection(contact.getCategoria());
 
-            if (contact.getEmergencia()==1){
+            if(contact.getEmergencia() == 1){
                 checkEmergencia.setChecked(true);
             }
             if (contact.getFavorito()==1){
                 checkFavorito.setChecked(true);
             }
-
-            Bitmap imageBitmap = BitmapFactory.decodeByteArray(contact.getFoto(), 0, contact.getFoto().length);
-            imgFoto.setImageBitmap(imageBitmap);
+            if(contact.getFoto().length != 1) {
+                Bitmap imageBitmap = BitmapFactory.decodeByteArray(contact.getFoto(), 0, contact.getFoto().length);
+                imgFoto.setImageBitmap(imageBitmap);
+            }
         }
 
         btnGuardar.setOnClickListener(this);
@@ -103,10 +113,7 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
 
             case R.id.image_fotoEC:
                 //Intent a Cambiar Foto
-
-                Intent intentFoto = new Intent(this, CambiarFoto.class);
-                startActivity(intentFoto);
-
+                abrirCamera();
                 break;
 
             case R.id.button_eliminarEC:
@@ -131,7 +138,7 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
             contact.setFavorito(1);
         else
             contact.setFavorito(0);
-
+        contact.setFoto(byteArray);
         return contact;
     }
 
@@ -155,5 +162,27 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
             }
         });
         builder.show();
+    }
+
+    public void abrirCamera() {
+        Intent fotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (fotoIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(fotoIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            imageBitmap = (Bitmap) extras.get("data");
+            imgFoto.setImageBitmap(imageBitmap);
+
+            bitmap = (Bitmap)data.getExtras().get("data");
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            //Imagen que se pasa con el contacto
+            byteArray = stream.toByteArray();
+        }
     }
 }

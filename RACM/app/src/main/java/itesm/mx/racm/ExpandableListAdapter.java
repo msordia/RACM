@@ -91,9 +91,11 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             ivFoto.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent= new Intent(_context,VerFoto.class);
-                    intent.putExtra("foto",contact.getFoto());
-                    _context.startActivity(intent);
+                    if(contact.getFoto().length != 1) {
+                        Intent intent = new Intent(_context, VerFoto.class);
+                        intent.putExtra("foto", contact.getFoto());
+                        _context.startActivity(intent);
+                    }
                 }
             });
             cambiarColor(contact);

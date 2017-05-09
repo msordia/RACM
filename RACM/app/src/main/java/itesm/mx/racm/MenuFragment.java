@@ -28,11 +28,12 @@ import itesm.mx.racm.datos.PerfilOperations;
 import static android.R.attr.button;
 
 
-public class MenuFragment extends Fragment implements View.OnClickListener{
+public class MenuFragment extends Fragment implements View.OnClickListener {
 
     private static final String DEBUG_TAG = "DEBUG_FRAGMENT_MENU";
     ImageButton ibtnContactos;
     ImageButton ibtnAyuda;
+    ImageButton ibtnCasa;
     ImageButton ibtnPerfil;
     ContactoOperations dao_Contactos;
     PerfilOperations dao_Perfil;
@@ -64,9 +65,11 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
         ibtnContactos = (ImageButton) view.findViewById(R.id.image_button_contactos);
         ibtnAyuda = (ImageButton) view.findViewById(R.id.image_button_ayuda);
         ibtnPerfil = (ImageButton) view.findViewById(R.id.image_button_perfil);
+        ibtnCasa = (ImageButton) view.findViewById(R.id.image_button_casa);
 
         ibtnContactos.setOnClickListener(this);
         ibtnAyuda.setOnClickListener(this);
+        ibtnCasa.setOnClickListener(this);
         ibtnPerfil.setOnClickListener(this);
         return view;
     }
@@ -88,6 +91,13 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
             case R.id.image_button_perfil:
                 intent = new Intent(getActivity(), PerfilDetalle.class);
                 startActivity(intent);
+                break;
+
+            case R.id.image_button_casa:
+                /*
+                intent = new Intent(getActivity(), PerfilDetalle.class);
+                startActivity(intent);
+                */
                 break;
 
         }
