@@ -30,6 +30,8 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
+import itesm.mx.racm.datos.Perfil;
+import itesm.mx.racm.datos.PerfilOperations;
 import itesm.mx.racm.mapa.DirectionFinderListener;
 import itesm.mx.racm.mapa.DirectionFinder;
 import itesm.mx.racm.mapa.Route;
@@ -44,6 +46,9 @@ public class NavegarCasaActivity extends FragmentActivity  implements OnMapReady
     private ProgressDialog progressDialog;
     double longitude;
     double latitude;
+    MenuFragment fragmentoMenu;
+    Perfil perfil;
+    PerfilOperations dao_Perfil;
 
     private Location location;
 
@@ -56,10 +61,17 @@ public class NavegarCasaActivity extends FragmentActivity  implements OnMapReady
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        sendRequest();
+        fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
+
+        dao_Perfil = new PerfilOperations(this);
+        dao_Perfil.open();
+
+        perfil = dao_Perfil.findPerfil();
+
+        sendRequest(perfil.getUbicacion());
     }
 
-    private void sendRequest() {
+    private void sendRequest(String destino) {
 
         LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         try {
@@ -73,7 +85,10 @@ public class NavegarCasaActivity extends FragmentActivity  implements OnMapReady
 
 
         String origin = latitude+","+longitude;
-        String destination = "25.645998,-100.294231";
+
+        Toast.makeText(this, ""+destino, Toast.LENGTH_SHORT).show();
+
+        String destination = destino;
 
         try {
             new DirectionFinder(this, origin, destination).execute();
