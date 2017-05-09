@@ -198,14 +198,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onClose() {
-        Intent inte = new Intent(this, PerfilDetalle.class);
-        startActivity(inte);
+        contactosCompletos= new ArrayList<Contacto>();
+        contactosCompletos= dao_Contactos.obtenerContactos();
+        categorias= new ArrayList<Categoria>();
+        categorias= dao_Categorias.obtenerCategorias();
+        titulos= new ArrayList<String>();
+        listaContactos= new HashMap<String,List<Contacto>>();
+        separarCategorias();
+        listAdapter = new ExpandableListAdapter(this, titulos,listaContactos);
+        expListView.setAdapter(listAdapter);
 
         return false;
     }
 
     @Override
     public boolean onQueryTextSubmit(String query) {
+        contactosCompletos= new ArrayList<Contacto>();
+        contactosCompletos= dao_Contactos.obtenerContacto(query);
+        categorias= new ArrayList<Categoria>();
+        categorias= dao_Categorias.obtenerCategorias();
+        titulos= new ArrayList<String>();
+        listaContactos= new HashMap<String,List<Contacto>>();
+        separarCategorias();
+        listAdapter = new ExpandableListAdapter(this, titulos,listaContactos);
+        expListView.setAdapter(listAdapter);
 
         return false;
     }
