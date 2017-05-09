@@ -109,18 +109,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void separarCategorias(){
         ArrayList<Contacto> arregloLista= new ArrayList<Contacto>();
+        ArrayList<Contacto> arregloFavoritos= new ArrayList<Contacto>();
 
         if(contactosCompletos.size()!=0) {
 
             int categoriaActual = contactosCompletos.get(0).getCategoria();
             arregloLista.add(contactosCompletos.get(0));
+            titulos.add("Favoritos");
             titulos.add(obtenerNombreCategoria(categoriaActual));
+            if(contactosCompletos.get(0).getFavorito()==1){
+                arregloFavoritos.add(contactosCompletos.get(0));
+            }
+            listaContactos.put("Favoritos",arregloFavoritos);
 
             for (int i = 1; i <= contactosCompletos.size(); i++) {
 
                 if (i == contactosCompletos.size()) {
-                    listaContactos.put(obtenerNombreCategoria(arregloLista.get(0).getCategoria()), arregloLista);//enviar categoria y arreglo de contactos
+                    listaContactos.put(obtenerNombreCategoria(arregloLista.get(0).getCategoria()), arregloLista);//enviar categoria y arreglo de contacto
+
+                    if(arregloFavoritos.size()>0) {
+                        listaContactos.put("Favoritos", arregloFavoritos);
+                    }else{
+                        listaContactos.remove("Favoritos");
+                        titulos.remove("Favoritos");
+                    }
                 } else {
+
+                    if(contactosCompletos.get(i).getFavorito()==1){
+                        arregloFavoritos.add(contactosCompletos.get(i));
+                    }
+
                     if (categoriaActual == contactosCompletos.get(i).getCategoria()) {
                         arregloLista.add(contactosCompletos.get(i));
                     } else {

@@ -103,32 +103,37 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
 
     private void showLocationDialog(final ArrayList<Contacto> lista) {
 
-        //perfil = dao_Perfil.findPerfil();
-        Log.d("Este es el perfil", dao_Perfil.findPerfil().getNombre());
-        AlertDialog.Builder builder =
-                new AlertDialog.Builder(getContext(), R.style.alertDialog);
-        builder.setTitle("Se enviará un mensaje a los contactos de emergencia");
-        builder.setMessage("¿Está seguro?");
-        builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                // smsManager.sendTextMessage(phoneNo, null, sms, null, null);
-                for (int i = 0; i < lista.size(); i++) {
-                    Log.d("Celular", lista.get(i).getCelular());
-                    SmsManager smsManager = SmsManager.getDefault();
-                    smsManager.sendTextMessage(lista.get(i).getCelular(), null, "¡Necesito Ayuda!", null, null);
+        if( lista.size() == 0 ){
+            Toast.makeText(getContext(), "No hay contactos de emergencia", Toast.LENGTH_LONG).show();
+        }else{
+            perfil = dao_Perfil.findPerfil();
+            AlertDialog.Builder builder =
+                    new AlertDialog.Builder(getContext(), R.style.alertDialog);
+            builder.setTitle("Se enviará un mensaje a los contactos de emergencia");
+            builder.setMessage("¿Está seguro?");
+            builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // smsManager.sendTextMessage(phoneNo, null, sms, null, null);
+                    for (int i = 0; i < lista.size(); i++) {
+                        Log.d("Celular", lista.get(i).getCelular());
+                        SmsManager smsManager = SmsManager.getDefault();
+                        smsManager.sendTextMessage(lista.get(i).getCelular(), null, "Soy " + perfil.getNombre() + ", ¡Necesito ayuda urgente!", null, null);
+                    }
+
+
                 }
+            });
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener(){
+                public void onClick(DialogInterface dialog, int which) {
+                    // Write your code here to execute after dialog
+                    //Toast.makeText(getContext(), "No", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            builder.show();
+        }
 
 
-            }
-        });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener(){
-            public void onClick(DialogInterface dialog, int which) {
-                // Write your code here to execute after dialog
-                //Toast.makeText(getContext(), "No", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        builder.show();
 
     }
 
