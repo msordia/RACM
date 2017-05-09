@@ -86,8 +86,6 @@ public class NavegarCasaActivity extends FragmentActivity  implements OnMapReady
 
         String origin = latitude+","+longitude;
 
-        Toast.makeText(this, ""+destino, Toast.LENGTH_SHORT).show();
-
         String destination = destino;
 
         try {
