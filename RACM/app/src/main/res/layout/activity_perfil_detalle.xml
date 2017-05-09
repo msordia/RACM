@@ -78,6 +78,7 @@
 
         <TextView
             android:text="Verónica Meneses"
+            android:textColor="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/text_nombrePD"
@@ -98,6 +99,7 @@
 
         <TextView
             android:text="8115122622"
+            android:textColor="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/text_celularPD"
@@ -113,6 +115,7 @@
 
         <TextView
             android:text="818543342"
+            android:textColor="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/text_telefonoPD"
@@ -133,6 +136,7 @@
 
         <TextView
             android:text="Avenida Siempre Viva, 742"
+            android:textColor="@android:color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/text_DireccionPD"
