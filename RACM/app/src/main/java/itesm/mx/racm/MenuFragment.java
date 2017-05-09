@@ -94,10 +94,8 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.image_button_casa:
-                /*
-                intent = new Intent(getActivity(), PerfilDetalle.class);
+                intent = new Intent(getActivity(), NavegarCasaActivity.class);
                 startActivity(intent);
-                */
                 break;
 
         }

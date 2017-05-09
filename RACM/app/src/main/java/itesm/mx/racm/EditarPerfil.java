@@ -62,7 +62,7 @@ public class EditarPerfil extends AppCompatActivity implements View.OnClickListe
         Bundle bundle= getIntent().getExtras();
         if(bundle!=null) {
             perfil = (Perfil) bundle.getSerializable("perfil");
-            if(perfil.getFoto().length != 1) {
+            if(perfil.getFoto() != null) {
                 imageBitmap = BitmapFactory.decodeByteArray(perfil.getFoto(), 0, perfil.getFoto().length);
                 ibFoto.setImageBitmap(imageBitmap);
             }

@@ -58,7 +58,7 @@ public class PerfilDetalle extends AppCompatActivity implements View.OnClickList
         tvTelefono.setText(perfil.getTelefonoFIjo());
         tvDireccion.setText(perfil.getDireccion());
 
-        if(perfil.getFoto().length != 1) {
+        if(perfil.getFoto() != null) {
             imageBitmap = BitmapFactory.decodeByteArray(perfil.getFoto(), 0, perfil.getFoto().length);
             ivFotoPD.setImageBitmap(imageBitmap);
         }
