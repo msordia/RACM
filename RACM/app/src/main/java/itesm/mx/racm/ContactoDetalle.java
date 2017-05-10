@@ -168,6 +168,8 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
 
                 SmsManager smsManager = SmsManager.getDefault();
                 smsManager.sendTextMessage(telefono, null, sms, null, null);
+                Toast.makeText(getApplicationContext(), "Mensaje enviado", Toast.LENGTH_SHORT).show();
+
 
             }
         });

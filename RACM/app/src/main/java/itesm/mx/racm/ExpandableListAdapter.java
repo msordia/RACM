@@ -72,7 +72,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             tvTelefono.setText(contact.getCelular());
 
             byte[] image = contact.getFoto();
-            if(image.length>1){
+            if(image != null){
                 Bitmap bmimage = BitmapFactory.decodeByteArray(image, 0, image.length);
                ivFoto.setImageBitmap(bmimage);
             }else{
