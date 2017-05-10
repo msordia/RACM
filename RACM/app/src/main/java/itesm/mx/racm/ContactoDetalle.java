@@ -125,7 +125,7 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
             //Cambiar imageFoto,tvNombre y tvTelefono
 
 
-            if(contact.getFoto().length != 1) {
+            if(contact.getFoto() != null) {
                 imageBitmap = BitmapFactory.decodeByteArray(contact.getFoto(), 0, contact.getFoto().length);
                 ibFoto.setImageBitmap(imageBitmap);
             }
@@ -186,7 +186,7 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.image_fotoPD:
-                if(contact.getFoto().length != 1) {
+                if(contact.getFoto() != null) {
                     Intent intent = new Intent(this, VerFoto.class);
                     intent.putExtra("foto",contact.getFoto());
                     startActivity(intent);
