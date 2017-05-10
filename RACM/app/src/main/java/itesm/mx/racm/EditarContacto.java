@@ -85,7 +85,7 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
             if (contact.getFavorito()==1){
                 checkFavorito.setChecked(true);
             }
-            if(contact.getFoto().length != 1) {
+            if(contact.getFoto() != null) {
                 Bitmap imageBitmap = BitmapFactory.decodeByteArray(contact.getFoto(), 0, contact.getFoto().length);
                 imgFoto.setImageBitmap(imageBitmap);
             }
