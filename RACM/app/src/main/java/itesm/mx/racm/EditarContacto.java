@@ -115,8 +115,7 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
                 break;
 
             case R.id.image_fotoEC:
-                //Intent a Cambiar Foto
-                abrirCamera();
+                mostrarOpciones();
                 break;
 
             case R.id.imageBasurero:
@@ -162,6 +161,25 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
             public void onClick(DialogInterface dialog, int which) {
 
 
+            }
+        });
+        builder.show();
+    }
+
+    public void mostrarOpciones(){
+        final CharSequence[] option = {"Tomar fotografía", "Cancelar"};
+        final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(EditarContacto.this);
+        builder.setTitle("Seleccione una opción");
+        builder.setItems(option, new DialogInterface.OnClickListener() {
+
+            @Override
+
+            public void onClick(DialogInterface dialog, int which) {
+                if(option[which] == "Tomar fotografía"){
+                    abrirCamera();
+                }else {
+                    dialog.dismiss();
+                }
             }
         });
         builder.show();
