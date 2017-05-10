@@ -229,7 +229,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onQueryTextChange(String newText) {
 
-        if(newText == ""){
+        if(newText.isEmpty()){
             contactosCompletos= new ArrayList<Contacto>();
             contactosCompletos= dao_Contactos.obtenerContactos();
             categorias= new ArrayList<Categoria>();
