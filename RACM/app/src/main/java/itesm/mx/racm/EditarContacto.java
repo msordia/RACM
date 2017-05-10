@@ -51,6 +51,7 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_contacto);
 
+        byteArray = new byte[1];
         dao = new ContactoOperations(this);
         dao.open();
         fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
@@ -79,6 +80,7 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
             etTelefono.setText(contact.getTelefono());
             spinnerCategoria.setSelection(contact.getCategoria());
 
+
             if(contact.getEmergencia() == 1){
                 checkEmergencia.setChecked(true);
             }
@@ -88,6 +90,7 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
             if(contact.getFoto() != null) {
                 Bitmap imageBitmap = BitmapFactory.decodeByteArray(contact.getFoto(), 0, contact.getFoto().length);
                 imgFoto.setImageBitmap(imageBitmap);
+                byteArray = contact.getFoto();
             }
         }
 
