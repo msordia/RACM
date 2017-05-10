@@ -50,6 +50,7 @@ public class EditarPerfil extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_editar_perfil);
         fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
 
+        byteArray = new byte[1];
         ibFoto = (CircleImageView) findViewById(R.id.image_fotoEP);
         ibFoto.setOnClickListener(this);
 
@@ -67,6 +68,7 @@ public class EditarPerfil extends AppCompatActivity implements View.OnClickListe
             if(perfil.getFoto() != null) {
                 imageBitmap = BitmapFactory.decodeByteArray(perfil.getFoto(), 0, perfil.getFoto().length);
                 ibFoto.setImageBitmap(imageBitmap);
+                byteArray = perfil.getFoto();
             }
         }
 
