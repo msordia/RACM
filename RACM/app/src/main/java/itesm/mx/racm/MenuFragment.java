@@ -118,8 +118,9 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
                         Log.d("Celular", lista.get(i).getCelular());
                         SmsManager smsManager = SmsManager.getDefault();
                         smsManager.sendTextMessage(lista.get(i).getCelular(), null, "Soy " + perfil.getNombre() + ", ¡Necesito ayuda urgente!", null, null);
-                        Toast.makeText(getContext(), "Mensaje de emergencia enviado", Toast.LENGTH_LONG).show();
+
                     }
+                    Toast.makeText(getContext(), "Mensaje de emergencia enviado", Toast.LENGTH_LONG).show();
 
 
                 }
