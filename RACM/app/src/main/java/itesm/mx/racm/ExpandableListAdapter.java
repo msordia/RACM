@@ -18,6 +18,7 @@ package itesm.mx.racm;
     import android.widget.ImageView;
     import android.widget.LinearLayout;
     import android.widget.TextView;
+    import android.widget.Toast;
 
     import de.hdodenhof.circleimageview.CircleImageView;
     import itesm.mx.racm.datos.Contacto;
@@ -72,7 +73,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             tvTelefono.setText(contact.getCelular());
 
             byte[] image = contact.getFoto();
-            if(image != null){
+            if(image.length>1){
                 Bitmap bmimage = BitmapFactory.decodeByteArray(image, 0, image.length);
                ivFoto.setImageBitmap(bmimage);
             }else{
