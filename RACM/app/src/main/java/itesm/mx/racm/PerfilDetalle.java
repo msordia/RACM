@@ -61,8 +61,13 @@ public class PerfilDetalle extends AppCompatActivity implements View.OnClickList
         tvDireccion.setText(perfil.getDireccion());
 
         if(perfil.getFoto() != null) {
-            imageBitmap = BitmapFactory.decodeByteArray(perfil.getFoto(), 0, perfil.getFoto().length);
-            ivFotoPD.setImageBitmap(imageBitmap);
+            if(perfil.getFoto().length == 1){
+                ivFotoPD.setImageResource(R.drawable.user);
+            }else{
+                imageBitmap = BitmapFactory.decodeByteArray(perfil.getFoto(), 0, perfil.getFoto().length);
+                ivFotoPD.setImageBitmap(imageBitmap);
+            }
+
         }
 
         ImageButton ibModificarPD= (ImageButton) findViewById(R.id.image_modificarPD);

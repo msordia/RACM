@@ -66,9 +66,14 @@ public class EditarPerfil extends AppCompatActivity implements View.OnClickListe
         if(bundle!=null) {
             perfil = (Perfil) bundle.getSerializable("perfil");
             if(perfil.getFoto() != null) {
-                imageBitmap = BitmapFactory.decodeByteArray(perfil.getFoto(), 0, perfil.getFoto().length);
-                ibFoto.setImageBitmap(imageBitmap);
-                byteArray = perfil.getFoto();
+                if(perfil.getFoto().length == 1){
+                    ibFoto.setImageResource(R.drawable.user);
+                }else{
+                    imageBitmap = BitmapFactory.decodeByteArray(perfil.getFoto(), 0, perfil.getFoto().length);
+                    ibFoto.setImageBitmap(imageBitmap);
+                    byteArray = perfil.getFoto();
+                }
+
             }
         }
 
