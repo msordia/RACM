@@ -23,13 +23,16 @@ import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import itesm.mx.racm.datos.Contacto;
 import itesm.mx.racm.datos.ContactoOperations;
 
 public class EditarContacto extends AppCompatActivity implements View.OnClickListener {
 
     Button btnGuardar;
-    ImageView imgFoto,imgBorrar;
+    CircleImageView imgFoto;
+//    ImageView imgFoto,imgBorrar;
+    ImageView imgBorrar;
     MenuFragment fragmentoMenu;
     ContactoOperations dao;
     EditText etNombre, etCelular, etTelefono;
@@ -61,7 +64,7 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
         btnGuardar = (Button) findViewById(R.id.button_guardarEC);
 
         imgBorrar = (ImageView) findViewById(R.id.imageBasurero);
-        imgFoto = (ImageView) findViewById(R.id.image_fotoEC);
+        imgFoto = (CircleImageView) findViewById(R.id.image_fotoEC);
 
         String[] items = new String[]{"Seleccione la categoría","Familia", "Amigos", "Salud", "Proveedores", "Servicios"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);

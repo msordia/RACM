@@ -10,10 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import itesm.mx.racm.datos.Perfil;
 import itesm.mx.racm.datos.PerfilOperations;
 import itesm.mx.racm.datos.RACM_DBHelper;
@@ -23,23 +25,21 @@ public class RegistrarPerfil extends FragmentActivity implements View.OnClickLis
 
     private Button btnGuardar, btnDireccion;
     private EditText editNombre, editTelefono, editTelefonoCel, editDireccion;
-    private ImageButton btnImagePhoto;
+    //private ImageView btnImagePhoto;
+    private CircleImageView btnImagePhoto;
     private SessionManager session;
     private ProgressDialog pDialog;
     private PerfilOperations dao_Perfil;
-
-    MenuFragment fragmentoMenu;
 
     Bitmap imageBitmap;
     int REQUEST_CODE = 1;
     Bitmap bitmap;
     byte[] byteArray;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_perfil);
-
-        fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
 
         editNombre = (EditText) findViewById(R.id.edit_nombreRP);
         editDireccion = (EditText) findViewById(R.id.edit_direccionRP);
@@ -50,7 +50,7 @@ public class RegistrarPerfil extends FragmentActivity implements View.OnClickLis
 
         btnGuardar = (Button) findViewById(R.id.button_guardarRP);
         //btnDireccion = (Button) findViewById(R.id.button_ubicacionRP);
-        btnImagePhoto = (ImageButton) findViewById(R.id.image_fotoRP);
+        btnImagePhoto = (CircleImageView) findViewById(R.id.image_fotoRP);
 
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
@@ -83,7 +83,7 @@ public class RegistrarPerfil extends FragmentActivity implements View.OnClickLis
                 String cel = editTelefonoCel.getText().toString().trim();
                 String adress = editDireccion.getText().toString().trim();
 
-                //Falta la foto
+
                 if(!name.isEmpty() && !adress.isEmpty() && !cel.isEmpty() && !phone.isEmpty()){
                     login(name, phone, cel, adress);
                 }else{
@@ -94,17 +94,11 @@ public class RegistrarPerfil extends FragmentActivity implements View.OnClickLis
                 break;
 
             case  R.id.image_fotoRP:
-                //Intent a Media Store
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 if(intent.resolveActivity(getPackageManager()) != null){
                     startActivityForResult(intent, REQUEST_CODE);
                 }
                 break;
-            /*
-            case R.idx.button_ubicacionRP:
-                Toast.makeText(this.getApplicationContext(), "Activar GPS", Toast.LENGTH_LONG).show();
-                break;
-              */
         }
 
 

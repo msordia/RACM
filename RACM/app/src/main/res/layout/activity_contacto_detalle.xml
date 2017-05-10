@@ -23,14 +23,28 @@
         android:background="@color/family"
         android:weightSum="1">
 
-        <ImageButton
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/image_fotoPD"
+            android:focusable="false"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/white_user_r"
+            android:focusableInTouchMode="false"
+            app:civ_border_width="3dp"
+            app:civ_border_color="#d6ffffff"/>
+
+        <!--<ImageButton
             android:background="@android:color/transparent"
             android:layout_height="100dp"
             android:src="@drawable/white_user"
             android:id="@+id/image_fotoPD"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.09"
-            android:layout_width="100dp" />
+            android:layout_width="100dp" />-->
 
         <LinearLayout
             android:orientation="horizontal"

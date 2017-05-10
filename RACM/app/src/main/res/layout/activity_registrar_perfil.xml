@@ -18,14 +18,27 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.23" />
 
-        <ImageButton
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/image_fotoRP"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
-            android:background="#00ffffff"
+            android:padding="0dp"
+            android:src="@drawable/user"
+            app:civ_border_width="0dp"
+            app:civ_border_color="#00FFFFFF"/>
+
+        <!--<ImageView
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/imageshape"
             android:padding="0dp"
             android:layout_width="100dp"
-            app:srcCompat="@drawable/user"
+            android:src="@drawable/user"
             android:id="@+id/image_fotoRP"
-            android:layout_height="100dp" />
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:layout_height="100dp" />-->
 
         <Space
             android:layout_width="match_parent"

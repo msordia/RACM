@@ -56,13 +56,28 @@
             </LinearLayout>
         </LinearLayout>
 
-        <ImageView
-            app:srcCompat="@drawable/user"
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/image_fotoPD"
-            android:layout_weight="0.22"
-            android:layout_gravity="center_horizontal"
             android:layout_width="150dp"
-            android:layout_height="150dp" />
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="0dp"
+            android:src="@drawable/user"
+            app:civ_border_width="0dp"
+            app:civ_border_color="#00FFFFFF"/>
+
+        <!--<ImageView
+            android:src="@drawable/user"
+            android:id="@+id/image_fotoPD"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/imageshape"
+            android:padding="0dp"
+            android:layout_width="150dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:layout_height="150dp" />-->
+
 
         <Space
             android:layout_width="match_parent"

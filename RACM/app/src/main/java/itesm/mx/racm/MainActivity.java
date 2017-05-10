@@ -229,6 +229,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onQueryTextChange(String newText) {
 
+        if(newText == ""){
+            contactosCompletos= new ArrayList<Contacto>();
+            contactosCompletos= dao_Contactos.obtenerContactos();
+            categorias= new ArrayList<Categoria>();
+            categorias= dao_Categorias.obtenerCategorias();
+            titulos= new ArrayList<String>();
+            listaContactos= new HashMap<String,List<Contacto>>();
+            separarCategorias();
+            listAdapter = new ExpandableListAdapter(this, titulos,listaContactos);
+            expListView.setAdapter(listAdapter);
+        }
 
         return false;
     }

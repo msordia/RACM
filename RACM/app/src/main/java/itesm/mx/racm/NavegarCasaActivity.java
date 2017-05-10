@@ -5,7 +5,9 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Criteria;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -36,7 +38,7 @@ import itesm.mx.racm.mapa.DirectionFinderListener;
 import itesm.mx.racm.mapa.DirectionFinder;
 import itesm.mx.racm.mapa.Route;
 
-public class NavegarCasaActivity extends FragmentActivity  implements OnMapReadyCallback, DirectionFinderListener {
+public class NavegarCasaActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener, LocationListener {
 
     private GoogleMap mMap;
 
@@ -46,7 +48,12 @@ public class NavegarCasaActivity extends FragmentActivity  implements OnMapReady
     private ProgressDialog progressDialog;
     double longitude;
     double latitude;
+
+    public Criteria criteria;
+    public String bestProvider;
+
     MenuFragment fragmentoMenu;
+
     Perfil perfil;
     PerfilOperations dao_Perfil;
 
@@ -56,12 +63,11 @@ public class NavegarCasaActivity extends FragmentActivity  implements OnMapReady
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navegar_casa);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-        fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
 
         dao_Perfil = new PerfilOperations(this);
         dao_Perfil.open();
@@ -69,19 +75,38 @@ public class NavegarCasaActivity extends FragmentActivity  implements OnMapReady
         perfil = dao_Perfil.findPerfil();
 
         sendRequest(perfil.getUbicacion());
+
     }
 
     private void sendRequest(String destino) {
 
-        LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        criteria = new Criteria();
+        bestProvider = String.valueOf(lm.getBestProvider(criteria, true)).toString();
+
         try {
             location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         } catch (SecurityException e) {
             e.printStackTrace();
         }
 
-        longitude = location.getLongitude();
-        latitude = location.getLatitude();
+        if (location != null) {
+            latitude = location.getLatitude();
+            longitude = location.getLongitude();
+        } else {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
+            lm.requestLocationUpdates(bestProvider, 1000, 0, this);
+            sendRequest(destino);
+        }
 
 
         String origin = latitude+","+longitude;
@@ -171,5 +196,25 @@ public class NavegarCasaActivity extends FragmentActivity  implements OnMapReady
 
             polylinePaths.add(mMap.addPolyline(polylineOptions));
         }
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+
     }
 }

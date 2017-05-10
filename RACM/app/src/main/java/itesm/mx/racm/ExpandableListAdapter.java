@@ -18,6 +18,8 @@ package itesm.mx.racm;
     import android.widget.ImageView;
     import android.widget.LinearLayout;
     import android.widget.TextView;
+
+    import de.hdodenhof.circleimageview.CircleImageView;
     import itesm.mx.racm.datos.Contacto;
 
 
@@ -60,7 +62,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             ll= (LinearLayout)  convertView.findViewById(R.id.linear_Row);
             TextView tvNombre = (TextView) convertView.findViewById(R.id.text_nombreCC);
             TextView tvTelefono = (TextView) convertView.findViewById(R.id.text_telefonoCC);
-            ImageView ivFoto = (ImageView) convertView.findViewById(R.id.photo_contact);
+            CircleImageView ivFoto = (CircleImageView) convertView.findViewById(R.id.photo_contact);
             ImageButton ibLlamar = (ImageButton) convertView.findViewById(R.id.photo_phone);
 
             ibLlamar.setFocusable(false);
@@ -74,7 +76,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                 Bitmap bmimage = BitmapFactory.decodeByteArray(image, 0, image.length);
                ivFoto.setImageBitmap(bmimage);
             }else{
-               ivFoto.setImageResource(R.drawable.white_user);
+               ivFoto.setImageResource(R.drawable.white_user_r);
             }
 
 

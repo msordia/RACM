@@ -12,13 +12,15 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.ImageView;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import itesm.mx.racm.datos.ContactoOperations;
 import itesm.mx.racm.datos.Perfil;
 import itesm.mx.racm.datos.PerfilOperations;
 
 public class PerfilDetalle extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView ivFotoPD;
+//  ImageView ivFotoPD;
+    CircleImageView ivFotoPD;
     MenuFragment fragmentoMenu;
 
     TextView tvNombre;
@@ -40,7 +42,7 @@ public class PerfilDetalle extends AppCompatActivity implements View.OnClickList
 
         fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
 
-        ivFotoPD= (ImageView) findViewById(R.id.image_fotoPD);
+        ivFotoPD= (CircleImageView) findViewById(R.id.image_fotoPD);
         ivFotoPD.setOnClickListener(this);
 
         tvNombre = (TextView) findViewById(R.id.text_nombrePD);
@@ -77,7 +79,7 @@ public class PerfilDetalle extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.image_fotoPD:
-                if(perfil.getFoto().length != 1) {
+                if(perfil.getFoto() != null) {
                     Intent intent = new Intent(this, VerFoto.class);
                     intent.putExtra("foto", perfil.getFoto());
                     startActivity(intent);

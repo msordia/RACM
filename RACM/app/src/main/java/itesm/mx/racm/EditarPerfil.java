@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import itesm.mx.racm.datos.ContactoOperations;
 import itesm.mx.racm.datos.Perfil;
 import itesm.mx.racm.datos.PerfilOperations;
@@ -27,7 +28,8 @@ public class EditarPerfil extends AppCompatActivity implements View.OnClickListe
     MenuFragment fragmentoMenu;
 
     Button btnGuardar;
-    ImageButton ibFoto;
+//  ImageButton ibFoto;
+    CircleImageView ibFoto;
     EditText etNombre;
     EditText etCelular;
     EditText etTelefono;
@@ -48,7 +50,7 @@ public class EditarPerfil extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_editar_perfil);
         fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
 
-        ibFoto = (ImageButton) findViewById(R.id.image_fotoEP);
+        ibFoto = (CircleImageView) findViewById(R.id.image_fotoEP);
         ibFoto.setOnClickListener(this);
 
         etNombre = (EditText) findViewById(R.id.edit_nombreEP);
