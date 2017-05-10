@@ -21,12 +21,14 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import itesm.mx.racm.datos.Contacto;
 import itesm.mx.racm.datos.ContactoOperations;
 
 public class ContactoDetalle extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton ibFoto;
+//  ImageButton ibFoto;
+    CircleImageView ibFoto;
     ImageButton ibModify;
     ImageButton ibPhone;
     ImageButton ibHambre;
@@ -37,6 +39,7 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
 
 
     MenuFragment fragmentoMenu;
+
     long idContacto;
     TextView tvNombre;
     TextView tvTelefono;
@@ -59,7 +62,7 @@ public class ContactoDetalle extends AppCompatActivity implements View.OnClickLi
 
         fragmentoMenu = (MenuFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_menu);
 
-        ibFoto = (ImageButton) findViewById(R.id.image_fotoPD);
+        ibFoto = (CircleImageView) findViewById(R.id.image_fotoPD);
         ibFoto.setOnClickListener(this);
 
         ibModify = (ImageButton) findViewById(R.id.photo_modify);

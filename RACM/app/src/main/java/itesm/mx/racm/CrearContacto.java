@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import itesm.mx.racm.datos.Contacto;
 import itesm.mx.racm.datos.ContactoOperations;
 
@@ -32,7 +33,8 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
     EditText etCelular;
     CheckBox checkEmergencia;
     CheckBox checkFavorito;
-    ImageView ivFoto;
+//    ImageView ivFoto;
+    CircleImageView ivFoto;
     Spinner spinnerCategorias;
     int posicionCategoria;
     ContactoOperations dao;
@@ -73,7 +75,7 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
         etCelular = (EditText) findViewById(R.id.edit_celularCC);
         checkEmergencia = (CheckBox) findViewById(R.id.check_EmergenciaCC);
         checkFavorito = (CheckBox) findViewById(R.id.check_FavoritoCC);
-        ivFoto = (ImageView)findViewById(R.id.image_fotoCC);
+        ivFoto = (CircleImageView) findViewById(R.id.image_fotoCC);
 
         ivFoto.setOnClickListener(this);
         btnGuardar.setOnClickListener(this);
@@ -124,7 +126,7 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
     }
 
     public void mostrarOpciones(){
-        final CharSequence[] option = {"Tomar fotografía", "Elegir de galería", "Cancelar"};
+        final CharSequence[] option = {"Tomar fotografía", "Cancelar"};
         final AlertDialog.Builder builder = new AlertDialog.Builder(CrearContacto.this);
         builder.setTitle("Seleccione una opción");
         builder.setItems(option, new DialogInterface.OnClickListener() {
@@ -134,8 +136,6 @@ public class CrearContacto extends AppCompatActivity implements View.OnClickList
             public void onClick(DialogInterface dialog, int which) {
                 if(option[which] == "Tomar fotografía"){
                     abrirCamera();
-                }else if(option[which] == "Elegir de galería"){
-                    cargarGaleria();
                 }else {
                     dialog.dismiss();
                 }
