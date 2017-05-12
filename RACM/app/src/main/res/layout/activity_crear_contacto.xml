@@ -61,7 +61,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:hint="Escribe el nombre del contacto"
                 android:ems="10"
                 android:id="@+id/edit_nombreCC"
                 android:textAlignment="viewStart"
@@ -81,7 +80,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:hint="Escribe el teléfono del contacto"
                 android:ems="10"
                 android:id="@+id/edit_telefonoCC"
                 android:textAlignment="viewStart"
@@ -103,8 +101,7 @@
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/edit_celularCC"
-                android:layout_weight="0.23"
-                android:hint="Escribe el celular del contacto" />
+                android:layout_weight="0.23" />
 
             <TextView
                 android:text="Categorías"

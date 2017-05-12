@@ -54,7 +54,6 @@
             android:id="@+id/text_nombreRP" />
 
         <EditText
-            android:hint="Escribe tu nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -70,7 +69,6 @@
             android:id="@+id/text_telefonoRP" />
 
         <EditText
-            android:hint="Escribe tu teléfono fijo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -86,7 +84,6 @@
             android:id="@+id/text_telefonoCelularRP" />
 
         <EditText
-            android:hint="Escribe tu teléfono celular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -102,7 +99,6 @@
             android:id="@+id/text_direccionRP" />
 
         <EditText
-            android:hint="Escribe tu dirección"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
