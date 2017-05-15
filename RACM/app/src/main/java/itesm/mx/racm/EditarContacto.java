@@ -88,9 +88,15 @@ public class EditarContacto extends AppCompatActivity implements View.OnClickLis
                 checkFavorito.setChecked(true);
             }
             if(contact.getFoto() != null) {
-                Bitmap imageBitmap = BitmapFactory.decodeByteArray(contact.getFoto(), 0, contact.getFoto().length);
-                imgFoto.setImageBitmap(imageBitmap);
-                byteArray = contact.getFoto();
+
+                if(contact.getFoto().length == 1){
+                    imgFoto.setImageResource(R.drawable.user);
+                }else{
+                    Bitmap imageBitmap = BitmapFactory.decodeByteArray(contact.getFoto(), 0, contact.getFoto().length);
+                    imgFoto.setImageBitmap(imageBitmap);
+                    byteArray = contact.getFoto();
+                }
+
             }
         }
 
